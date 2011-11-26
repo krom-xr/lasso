@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <title>Do Not Forget Edit It</title>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.dragndrop.js"></script>
+
+    <script type="text/javascript" src="js/knockout.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/raphael.js"></script>
+
+    <script type="text/javascript" src="js/lasso.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+
+</head> 
+<body>
+    <div style="background-image: url(temp/727_img.jpg); width: 100%; height:800px;
+        background-position: left; background-repeat: no-repeat;
+        " 
+        id="lasso_area">
+        <div class="dots" data-bind="template: {name: 'dot', foreach: dots}">
+            <script id="dot" type="text/x-jquery-tmpl" >
+                <div class="dot" data-bind="
+                    style: {left: x - radius + 'px', top: y - radius + 'px'},
+                    css: {start: start},
+                    event: {drag: drag, dblclick: remove }
+                    ">
+                </div> 
+            </script>
+        </div>
+    </div>
+</body> 
+</html> 

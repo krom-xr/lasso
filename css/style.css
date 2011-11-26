@@ -1,0 +1,23 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+/*path{*/
+    /*cursor: pointer;*/
+/*}*/
+#lasso_area{
+    position: relative;
+}
+.dot {
+    position: absolute !important;
+    width: 6px;
+    height: 6px;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #ffeecc;
+    border: 1px solid black;
+}
+.dot.start {
+    background-color: red;
+}
