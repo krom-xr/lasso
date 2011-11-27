@@ -27,7 +27,7 @@
             <script id="dot" type="text/x-jquery-tmpl" >
                 <div class="dot" data-bind="
                     style: {left: x - radius + 'px', top: y - radius + 'px'},
-                    css: {start: start},
+                    css: {start: show_start_dot()},
                     event: {drag: drag, dblclick: remove }
                     ">
                 </div> 

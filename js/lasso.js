@@ -4,38 +4,42 @@ var Contur = function(data) {
     this.dots = ko.observableArray();
     this.closed = false;
 
-    this.contur = false;
-
-    this.paper = Raphael(0,0,800,600)
-
-     
-    this.back_path = [
+    this.back_path_right = [
         ['M', 0, 0], 
         ['L', 0, 600], 
         ['L', 800, 600], 
         [800, 0, 'z']
     ];
+    this.back_path_left= [
+        ['M', 0, 0], 
+        ['L', 800, 0], 
+        ['L', 800, 600], 
+        [0, 800, 'z']
+    ];
+
+    this.paper = Raphael(0,0,800,600)
+
+    this.contur = this.paper.path();
+    this.contur.attr('stroke', "#fff");
+    this.contur.attr('stroke-dasharray', "--..");
+    this.contur.attr('stroke-width', "1");
+    this.contur.attr('cursor', 'pointer');
+     
     this.back = this.paper.path();
     this.back.attr('fill', '#fff');
     this.back.attr('opacity', 0.5)
 
-
-
-
-
-
     this.lasso_area = this.paper.rect(0,0,800,600)
     this.lasso_area.attr('fill', "#000");
-    this.lasso_area.attr('opacity', '0.4');
+    this.lasso_area.attr('opacity', '0');
 
     var lasso_area_mousdown = function(e) {
-        console.log(e);
         new Dot({x: e.layerX || e.clientX, y: e.layerY||e.clientY});
     }
-    this.lasso_area.mouseup(lasso_area_mousdown);
+    this.lasso_area.click(lasso_area_mousdown);
 
     var lasso_area_mousemove = function(e) {
-        if (it.contur && !it.closed) {
+        if (it.dots().length && !it.closed) {
             it.render_path(it.get_path(["L", e.layerX || e.clientX, e.layerY || e.clientY]));
         };
     }
@@ -56,32 +60,43 @@ var Contur = function(data) {
         return path
     }
 
+    this.direction_path = false;
+
     this.render_path = function(path) {
         if (!path) { path = this.get_path() }
         it.contur.attr('path', path);
-        if (it.closed) {
-            it.back.attr('path', it.back_path + path);
-        };
-    }
 
-    var contur_click = function(e) {
-        console.log(e);
-        new Dot({x: e.layerX||e.clientX, y: e.layerY || e.clientY});
-    }
-    var contur_mousedown = function(e){
-        $('div.dot').trigger('drag', $('div.dot'));
+        if (it.closed) {
+            if (!this.direction_path) {
+                var A = 0; B = 0; C = 0; D = 0;
+                $.each(it.dots(), function(i, dot) {
+                    if (!i) { A = dot; A.i = 0; B = dot; B.i = 0; C = dot; C.i = 0; D = dot; D.i = 0 };
+                    if (A.x > dot.x) { A = dot; A.i = i };
+                    if (B.y > dot.y) { B = dot; B.i = i };
+                    if (C.x < dot.x) { C = dot; C.i = i };
+                    if (D.y < dot.y) { D = dot; D.i = i };
+                });
+
+                var abcd = [A, B, C ,D];
+                abcd.sort(function(a, b) {return a.i - b.i}); // сортировка по возрастанию i
+
+                this.direction_path = it.back_path_left;
+                switch(abcd.toString()) {
+                    case [A, B, C ,D].toString():
+                    case [B, C ,D, A].toString():
+                    case [C ,D, A ,B].toString():
+                    case [D, A, B, C].toString():
+                        this.direction_path = it.back_path_right;
+                }
+            }
+            it.back.attr('path', this.direction_path + path );
+        };
     }
 
     $(document).on('newDot', function(e, dot){
         if (!Boolean(it.dots().length)) { 
             dot.start(true);
-            it.contur = it.paper.path("M" + dot.x + " " + dot.y);
-            it.contur.attr('stroke', "#fff");
-            it.contur.attr('stroke-width', "1");
-            it.contur.attr('cursor', 'pointer');
-            it.contur.click(contur_click);
-            it.contur.mousedown(contur_click);
-            it.contur.drag(contur_mousedown)
+            it.render_path();
         }
         if (!it.closed) {
             it.dots.push(dot);
@@ -111,7 +126,6 @@ var Contur = function(data) {
     });
 
     $(document).on('click', 'div.start', function() {
-        console.log('clicked');
         if (it.closed) { return false };
         if(it.dots().length > 2) {
 
@@ -160,18 +174,25 @@ var Contur = function(data) {
 var Dot = function(data) {
 
     this.start = ko.observable(false);
+    this.contur_closed = ko.observable(false);
+
+
     this.stop = false;
     this.x = data.x;
     this.y = data.y;
     this.radius = 3;
 
+    this.show_start_dot = function(){
+        return true;
+    }
+
     this.drag = function(e, dot) {
-        console.log(dot);
         this.x = dot.offset.left + this.radius;
         this.y = dot.offset.top + this.radius;
         $(document).trigger('dotDragged');
         return true;
     }
+
 
     this.remove = function(e, dot) {
         $(document).trigger('removeDot', this);
@@ -179,6 +200,9 @@ var Dot = function(data) {
 
     $(document).trigger('newDot', this);
 
+    this.toString = function(){
+        return this.i;
+    }
 
 }
 
