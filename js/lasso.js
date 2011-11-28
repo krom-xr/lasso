@@ -34,7 +34,7 @@ var Contur = function(data) {
     this.lasso_area.attr('opacity', '0');
 
     var lasso_area_mousdown = function(e) {
-        new Dot({x: e.layerX || e.clientX, y: e.layerY||e.clientY});
+        new Dot({x: e.layerX || e.clientX, y: e.layerY||e.clientY, contur_closed: it.closed});
     }
     this.lasso_area.click(lasso_area_mousdown);
 
@@ -67,28 +67,27 @@ var Contur = function(data) {
         it.contur.attr('path', path);
 
         if (it.closed) {
-            if (!this.direction_path) {
-                var A = 0; B = 0; C = 0; D = 0;
+            if (!this.direction_path){
+                // этот кусок кода определяет замкнут контур: по часовой или против.
+                // если сумма sum больше 0 то по, иначе - против
+                var sum = 0;
+                var first_dot = 0;
+                var last_index = it.dots().length - 1;
                 $.each(it.dots(), function(i, dot) {
-                    if (!i) { A = dot; A.i = 0; B = dot; B.i = 0; C = dot; C.i = 0; D = dot; D.i = 0 };
-                    if (A.x > dot.x) { A = dot; A.i = i };
-                    if (B.y > dot.y) { B = dot; B.i = i };
-                    if (C.x < dot.x) { C = dot; C.i = i };
-                    if (D.y < dot.y) { D = dot; D.i = i };
-                });
-
-                var abcd = [A, B, C ,D];
-                abcd.sort(function(a, b) {return a.i - b.i}); // сортировка по возрастанию i
-
-                this.direction_path = it.back_path_left;
-                switch(abcd.toString()) {
-                    case [A, B, C ,D].toString():
-                    case [B, C ,D, A].toString():
-                    case [C ,D, A ,B].toString():
-                    case [D, A, B, C].toString():
-                        this.direction_path = it.back_path_right;
+                    if (i==0) {first_dot = dot; console.log('test');};
+                    if (i!=last_index) {
+                        sum = sum + (it.dots()[i+1].x - dot.x)*(it.dots()[i+1].y + dot.y);
+                    } else {
+                        sum = sum + (first_dot.x - dot.x)*(first_dot.y + dot.y);
+                    }
+                })
+                if (sum > 0) {
+                    this.direction_path = this.back_path_left;
+                } else {
+                    this.direction_path = this.back_path_right;
                 }
-            }
+
+            };
             it.back.attr('path', this.direction_path + path );
         };
     }
@@ -134,7 +133,8 @@ var Contur = function(data) {
             //it.contur.unclick(contur_click);
 
             //последня точка приобретает значение stop
-            it.dots()[it.dots().length -1].stop = true;
+            it.dots()[it.dots().length -1].stop = true;         
+            $(document).trigger('contur_closed');
             it.closed = true;
             it.render_path();
 
@@ -172,19 +172,23 @@ var Contur = function(data) {
 
 }
 var Dot = function(data) {
+    var it = this;
 
     this.start = ko.observable(false);
-    this.contur_closed = ko.observable(false);
 
-
+    this.contur_closed = ko.observable(data.contur_closed || false);
     this.stop = false;
     this.x = data.x;
     this.y = data.y;
     this.radius = 3;
 
     this.show_start_dot = function(){
-        return true;
+        return this.start() && !this.contur_closed();
     }
+
+    $(document).one('contur_closed', function() {
+        it.contur_closed(true);
+    })
 
     this.drag = function(e, dot) {
         this.x = dot.offset.left + this.radius;
@@ -208,32 +212,38 @@ var Dot = function(data) {
 
 $(document).ready(function(){
     contur = new Contur();
-    // Creates circle at x = 50, y = 40, with radius 10
-    //var circle = paper.path("M 140.40625 162.40625 L 140.40625 412.9375 L 415.1875 412.9375 L 415.1875 162.40625 L 140.40625 162.40625 z M 204.0625 220 L 363.65625 220 L 363.65625 360.40625 L 204.0625 360.40625 L 204.0625 220 z ");
-    // Sets the fill attribute of the circle to red (#f00)
-    //circle.attr("fill", "#f00");
-    //circle.attr("opacity", '0.5');
-    //circle.attr("stroke","#00e");
-    //circle.attr("stroke-width","8");
-
-    //circle.click(function(){
-        //alert('fffuuuu');
-    //})
-
-    // Sets the stroke attribute of the circle to white
-    //circle.attr("stroke", "#fff");
-
-
-
-
-
-
-
-
-
-
-
-
-
     $(".dot").draggable();
 });
+
+
+
+
+
+
+
+
+
+
+            ////if (!this.direction_path) {
+                //var A = 0; B = 0; C = 0; D = 0;
+                //$.each(it.dots(), function(i, dot) {
+                    //if (!i) { A = dot; A.i = 0; B = dot; B.i = 0; C = dot; C.i = 0; D = dot; D.i = 0 };
+                    //if (A.x > dot.x) { A = dot; A.i = i };
+                    //if (B.y > dot.y) { B = dot; B.i = i };
+                    //if (C.x < dot.x) { C = dot; C.i = i };
+                    //if (D.y < dot.y) { D = dot; D.i = i };
+                //});
+
+                //var abcd = [A, B, C ,D];
+                //abcd.sort(function(a, b) {return a.i - b.i}); // сортировка по возрастанию i
+
+                //this.direction_path = it.back_path_left;
+                //switch(abcd.toString()) {
+                    //case [A, B, C ,D].toString():
+                    //case [B, C ,D, A].toString():
+                    //case [C ,D, A ,B].toString():
+                    //case [D, A, B, C].toString():
+                        //this.direction_path = it.back_path_right;
+                //}
+            ////}
+            //console.log(abcd.toString());
