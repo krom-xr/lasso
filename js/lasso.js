@@ -1,46 +1,85 @@
-
 var Contur = function(data) {
     var it = this;
+    this.data = data;
     this.dots = ko.observableArray();
     this.closed = false;
 
+    var get_browser_offset = function(e, axis) {
+        if ($.browser.opera) {
+            if (axis == 'x') {
+                var offset = it.data.start_point.x;
+            } else {
+                var offset = it.data.start_point.y;
+            }
+            return e['offset' + axis.toUpperCase()] + offset;
+        };
+        return e['layer' + axis.toUpperCase()];
+    }
+
+    this.back_path_right = [
+        ['M', data.start_point.x, data.start_point.y], 
+        ['L', data.start_point.x, data.start_point.y + data.paper_size.h], 
+        ['L', data.start_point.x + data.paper_size.w, data.start_point.y + data.paper_size.h], 
+        [data.start_point.x + data.paper_size.w, data.start_point.y , 'z']
+    ];
+    this.back_path_left= [
+        ['M', data.start_point.x, data.start_point.y], 
+        ['L', data.start_point.x + data.paper_size.w, data.start_point.y], 
+        ['L', data.start_point.x + data.paper_size.w, data.start_point.y + data.paper_size.h], 
+        [data.start_point.x, data.start_point.y + data.paper_size.h, 'z']
+    ];
     this.back_path_right = [
         ['M', 0, 0], 
-        ['L', 0, 600], 
-        ['L', 800, 600], 
-        [800, 0, 'z']
+        ['L', 0, data.paper_size.h], 
+        ['L', data.paper_size.w, data.paper_size.h], 
+        [data.paper_size.w, 0, 'z']
     ];
     this.back_path_left= [
         ['M', 0, 0], 
-        ['L', 800, 0], 
-        ['L', 800, 600], 
-        [0, 800, 'z']
+        ['L', data.paper_size.w, 0], 
+        ['L', data.paper_size.w, data.paper_size.h], 
+        [0, data.paper_size.h, 'z']
     ];
 
-    this.paper = Raphael(0,0,800,600)
+    this.paper = Raphael(data.start_point.x, data.start_point.y, 
+                         data.paper_size.w, data.paper_size.h);
 
+    this.paper = Raphael(data.start_point.x, data.start_point.y, 
+                         data.paper_size.w, data.paper_size.h);
     this.contur = this.paper.path();
-    this.contur.attr('stroke', "#fff");
-    this.contur.attr('stroke-dasharray', "--..");
-    this.contur.attr('stroke-width', "1");
-    this.contur.attr('cursor', 'pointer');
+    this.contur.attr('stroke', data.contur.color);
+    this.contur.attr('stroke-dasharray', data.contur.dasharray);
+    this.contur.attr('stroke-width', data.contur.width);
+    //this.contur.attr('cursor', 'pointer');
      
     this.back = this.paper.path();
-    this.back.attr('fill', '#fff');
-    this.back.attr('opacity', 0.5)
+    this.back.attr('fill', data.back.color);
+    this.back.attr('opacity', data.back.opacity)
+    this.back.attr('stroke', 0)
 
-    this.lasso_area = this.paper.rect(0,0,800,600)
-    this.lasso_area.attr('fill', "#000");
-    this.lasso_area.attr('opacity', '0');
+    this.lasso_area = this.paper.rect(data.start_point.x, data.start_point.y, 
+                                      data.paper_size.w, data.paper_size.h);
+    this.lasso_area.attr('fill', data.lasso_area.color);
+    this.lasso_area.attr('opacity', data.lasso_area.opacity);
 
     var lasso_area_mousdown = function(e) {
-        new Dot({x: e.layerX || e.clientX, y: e.layerY||e.clientY, contur_closed: it.closed});
+        console.log(e);
+        new Dot({
+            x: get_browser_offset(e, 'x'),
+            y: get_browser_offset(e, 'y'),
+            contur_closed: it.closed,
+            radius: (data.dot.size/2).toFixed(),
+        });
     }
     this.lasso_area.click(lasso_area_mousdown);
 
     var lasso_area_mousemove = function(e) {
         if (it.dots().length && !it.closed) {
-            it.render_path(it.get_path(["L", e.layerX || e.clientX, e.layerY || e.clientY]));
+            it.render_path(it.get_path([
+                "L", 
+                get_browser_offset(e, 'x'),
+                get_browser_offset(e, 'y'),
+            ]));
         };
     }
     this.lasso_area.mousemove(lasso_area_mousemove);
@@ -48,12 +87,13 @@ var Contur = function(data) {
     this.get_path = function(new_coord) {
         var path = []
         $.each(it.dots(), function(i, dot) {
+            console.log(dot.x());
             if (dot.start()) {
-                path.push(['M', dot.x, dot.y]);
+                path.push(['M', dot.x(), dot.y()]);
             } else if (dot.stop) {
-                path.push([ dot.x, dot.y, 'Z']);
+                path.push([ dot.x(), dot.y(), 'Z']);
             } else {
-                path.push(['L', dot.x, dot.y]);
+                path.push(['L', dot.x(), dot.y()]);
             }
         })
         if (new_coord) { path.push(new_coord) };
@@ -64,30 +104,31 @@ var Contur = function(data) {
 
     this.render_path = function(path) {
         if (!path) { path = this.get_path() }
-        it.contur.attr('path', path);
+        this.contur.attr('path', path);
 
-        if (it.closed) {
-            if (!this.direction_path){
-                // этот кусок кода определяет замкнут контур: по часовой или против.
-                // если сумма sum больше 0 то по, иначе - против
-                var sum = 0;
-                var first_dot = 0;
-                var last_index = it.dots().length - 1;
-                $.each(it.dots(), function(i, dot) {
-                    if (i==0) {first_dot = dot; console.log('test');};
-                    if (i!=last_index) {
-                        sum = sum + (it.dots()[i+1].x - dot.x)*(it.dots()[i+1].y + dot.y);
+        if (this.closed) {
+            // эта функция определяет замкнут контур: по часовой или против.
+            // если сумма sum больше 0 то по, иначе - против
+            (function() 
+            {
+                if (it.direction_path){ return false };
+                    var sum = 0;
+                    var first_dot = 0;
+                    var last_index = it.dots().length - 1;
+                    $.each(it.dots(), function(i, dot) {
+                        if (i==0) { first_dot = dot };
+                        if (i!=last_index) {
+                            sum = sum + (it.dots()[i+1].x() - dot.x())*(it.dots()[i+1].y() + dot.y());
+                        } else {
+                            sum = sum + (first_dot.x() - dot.x())*(first_dot.y() + dot.y());
+                        }
+                    })
+                    if (sum > 0) {
+                        it.direction_path = it.back_path_left;
                     } else {
-                        sum = sum + (first_dot.x - dot.x)*(first_dot.y + dot.y);
+                        it.direction_path = it.back_path_right;
                     }
-                })
-                if (sum > 0) {
-                    this.direction_path = this.back_path_left;
-                } else {
-                    this.direction_path = this.back_path_right;
-                }
-
-            };
+            })();
             it.back.attr('path', this.direction_path + path );
         };
     }
@@ -103,8 +144,8 @@ var Contur = function(data) {
             var old_dot = it.dots()[it.dots().length - 1];
             var index = false;
             $.each(it.dots(), function(i, _dot) {
-                var a = Math.sqrt(Math.pow((dot.x - _dot.x), 2) + Math.pow((dot.y - _dot.y), 2)) + Math.sqrt(Math.pow((old_dot.x - dot.x), 2) + Math.pow((old_dot.y - dot.y), 2));
-                var b = Math.sqrt(Math.pow((_dot.x - old_dot.x), 2) + Math.pow((_dot.y - old_dot.y), 2));
+                var a = Math.sqrt(Math.pow((dot.x() - _dot.x()), 2) + Math.pow((dot.y() - _dot.y()), 2)) + Math.sqrt(Math.pow((old_dot.x() - dot.x()), 2) + Math.pow((old_dot.y() - dot.y()), 2));
+                var b = Math.sqrt(Math.pow((_dot.x() - old_dot.x()), 2) + Math.pow((_dot.y() - old_dot.y()), 2));
                 if (Math.abs(a-b) < 0.1) {
                     index = i;
                     return false;
@@ -164,23 +205,40 @@ var Contur = function(data) {
         }
         it.render_path();
     })
-
-
+    var style = [
+        ".dot{ background-color: "+ data.dot.color + "}",
+        ".dot{ width: "+ data.dot.size + "px}",
+        ".dot{ height: "+ data.dot.size + "px}",
+        ".dot{ border_radius: "+ data.dot.border_radius + "px}",
+        ".dot{ border-radius: "+ data.dot.border_radius + "px}",
+        ".dot.start{ background-color: "+ data.dot.start_color + "}",
+    ];
+    $("<style>" + style.join('') + "</style>").appendTo('body');
+    $(".dot").draggable();
 
     ko.applyBindings(this, $('#lasso_area').get(0));
-
-
 }
+
 var Dot = function(data) {
     var it = this;
+    var _x = data.x;
+    var _y = data.y;
 
     this.start = ko.observable(false);
 
     this.contur_closed = ko.observable(data.contur_closed || false);
     this.stop = false;
-    this.x = data.x;
-    this.y = data.y;
-    this.radius = 3;
+    //this.x = data.x;
+    //this.y = data.y;
+    this.x = function(x) {
+        if (!x) { return _x };
+        _x = x;
+    }
+    this.y = function(y) {
+        if (!y) { return _y };
+        _y = y
+    }
+    this.radius = data.radius;
 
     this.show_start_dot = function(){
         return this.start() && !this.contur_closed();
@@ -191,8 +249,9 @@ var Dot = function(data) {
     })
 
     this.drag = function(e, dot) {
-        this.x = dot.offset.left + this.radius;
-        this.y = dot.offset.top + this.radius;
+        this.x(parseInt(dot.position.left) + parseInt(this.radius));
+        this.y(parseInt(dot.position.top) + parseInt(this.radius));
+
         $(document).trigger('dotDragged');
         return true;
     }
@@ -208,42 +267,37 @@ var Dot = function(data) {
         return this.i;
     }
 
+    //TODO максимальные - минимальные координаты
 }
 
 $(document).ready(function(){
-    contur = new Contur();
-    $(".dot").draggable();
+    contur = new Contur({
+        image_url: "temp/727_img.jpg",
+        start_point: {x: 50, y: 50},
+        paper_size: {w: 800, h: 600},
+        contur: {
+            color: 'white',
+            dasharray: "--..", // possible values “”, “-”, “.”, “-.”, “-..”, “. ”, “- ”, “--”, “- .”, “--.”, “--..”
+            width: 2,
+        },
+        back: {
+            color: 'green',
+            opacity: 0.8,
+        },
+        lasso_area: {
+            color: 'black',
+            opacity: 0
+        },
+        dot: {
+            color: 'yellow',
+            start_color: 'red',
+            size: 6,// число должно быть четным
+            border_radius: 2,
+        },
+
+
+
+
+    });
+
 });
-
-
-
-
-
-
-
-
-
-
-            ////if (!this.direction_path) {
-                //var A = 0; B = 0; C = 0; D = 0;
-                //$.each(it.dots(), function(i, dot) {
-                    //if (!i) { A = dot; A.i = 0; B = dot; B.i = 0; C = dot; C.i = 0; D = dot; D.i = 0 };
-                    //if (A.x > dot.x) { A = dot; A.i = i };
-                    //if (B.y > dot.y) { B = dot; B.i = i };
-                    //if (C.x < dot.x) { C = dot; C.i = i };
-                    //if (D.y < dot.y) { D = dot; D.i = i };
-                //});
-
-                //var abcd = [A, B, C ,D];
-                //abcd.sort(function(a, b) {return a.i - b.i}); // сортировка по возрастанию i
-
-                //this.direction_path = it.back_path_left;
-                //switch(abcd.toString()) {
-                    //case [A, B, C ,D].toString():
-                    //case [B, C ,D, A].toString():
-                    //case [C ,D, A ,B].toString():
-                    //case [D, A, B, C].toString():
-                        //this.direction_path = it.back_path_right;
-                //}
-            ////}
-            //console.log(abcd.toString());

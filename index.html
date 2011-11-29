@@ -6,6 +6,7 @@
 
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="js/jquery.rule.js"></script>
     <script type="text/javascript" src="js/jquery-ui.dragndrop.js"></script>
 
     <script type="text/javascript" src="js/knockout.js"></script>
@@ -19,19 +20,24 @@
 
 </head> 
 <body>
-    <div style="background-image: url(temp/727_img.jpg); width: 100%; height:800px;
-        background-position: left; background-repeat: no-repeat;
-        " 
-        id="lasso_area">
-        <div class="dots" data-bind="template: {name: 'dot', foreach: dots}">
-            <script id="dot" type="text/x-jquery-tmpl" >
-                <div class="dot" data-bind="
-                    style: {left: x - radius + 'px', top: y - radius + 'px'},
-                    css: {start: show_start_dot() },
-                    event: {drag: drag, dblclick: remove }
-                    ">
-                </div> 
-            </script>
+    <div id="lasso_area">
+        <div style="position: absolute;
+            background-position: left; background-repeat: no-repeat; border: 1px solid black" 
+            data-bind="style: {'width': data.paper_size.w + 'px', 'height': data.paper_size.h + 'px',
+                               'left': data.start_point.x + 'px', 'top': data.start_point.y + 'px',
+                               'backgroundImage': 'url(temp/727_img.jpg)',
+            }" 
+            >
+            <div class="dots" data-bind="template: {name: 'dot', foreach: dots}">
+                <script id="dot" type="text/x-jquery-tmpl" >
+                    <div class="dot" data-bind="
+                        style: {left: x() - radius + 'px', top: y() - radius + 'px'},
+                        css: {start: show_start_dot() },
+                        event: {drag: drag, dblclick: remove }
+                        ">
+                    </div> 
+                </script>
+            </div>
         </div>
     </div>
 </body> 
