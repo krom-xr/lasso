@@ -15,14 +15,7 @@ var Contur = function(data) {
     global.paper_size = data.paper_size;
 
     var get_browser_offset = function(e, axis) {
-        if ($.browser.opera) {
-            if (axis == 'x') {
-                var offset = it.data.start_point.x;
-            } else {
-                var offset = it.data.start_point.y;
-            }
-            return e['offset' + axis.toUpperCase()] + offset;
-        };
+        if ($.browser.opera) { return e['offset' + axis.toUpperCase()] };
         return e['layer' + axis.toUpperCase()];
     }
 
@@ -67,7 +60,7 @@ var Contur = function(data) {
     this.back.attr('opacity', data.back.opacity)
     this.back.attr('stroke', 0)
 
-    this.lasso_area = this.paper.rect(data.start_point.x, data.start_point.y, 
+    this.lasso_area = this.paper.rect(0, 0, 
                                       data.paper_size.w, data.paper_size.h);
     this.lasso_area.attr('fill', data.lasso_area.color);
     this.lasso_area.attr('opacity', data.lasso_area.opacity);
@@ -213,6 +206,17 @@ var Contur = function(data) {
         }
         it.render_path();
     })
+
+    $('.clear_all').click(function() {
+        it.dots.removeAll();
+        it.closed = false;
+        it.render_path();
+        it.direction_path = false;
+        it.back.attr('path', '');
+        it.lasso_area.mousemove(lasso_area_mousemove);
+    })
+
+
     var style = [
         ".dot{ background-color: "+ data.dot.color + "}",
         ".dot{ width: "+ data.dot.size + "px}",
@@ -289,8 +293,6 @@ var Dot = function(data) {
     this.toString = function(){
         return this.i;
     }
-
-    //TODO максимальные - минимальные координаты
 }
 
 $(document).ready(function(){
@@ -309,7 +311,7 @@ $(document).ready(function(){
         },
         lasso_area: {
             color: 'black',
-            opacity: 0
+            opacity: 0.5,
         },
         dot: {
             color: 'yellow',
