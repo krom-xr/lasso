@@ -1,8 +1,18 @@
+// объект заполнятеся при инициализации объекта Contur
+var global = {
+    start_point: {x: '', y: ''},
+    paper_size: {w: '', h: ''} 
+
+}
+
 var Contur = function(data) {
     var it = this;
     this.data = data;
     this.dots = ko.observableArray();
     this.closed = false;
+
+    global.start_point = data.start_point;
+    global.paper_size = data.paper_size;
 
     var get_browser_offset = function(e, axis) {
         if ($.browser.opera) {
@@ -63,7 +73,6 @@ var Contur = function(data) {
     this.lasso_area.attr('opacity', data.lasso_area.opacity);
 
     var lasso_area_mousdown = function(e) {
-        console.log(e);
         new Dot({
             x: get_browser_offset(e, 'x'),
             y: get_browser_offset(e, 'y'),
@@ -87,7 +96,6 @@ var Contur = function(data) {
     this.get_path = function(new_coord) {
         var path = []
         $.each(it.dots(), function(i, dot) {
-            console.log(dot.x());
             if (dot.start()) {
                 path.push(['M', dot.x(), dot.y()]);
             } else if (dot.stop) {
@@ -232,11 +240,23 @@ var Dot = function(data) {
     //this.y = data.y;
     this.x = function(x) {
         if (!x) { return _x };
-        _x = x;
+        if (x + global.start_point.x < global.start_point.x) {
+            _x = 0; 
+        } else if (x > global.paper_size.w) {
+            _x = global.paper_size.w;
+        } else {
+            _x = x;
+        }
     }
     this.y = function(y) {
         if (!y) { return _y };
-        _y = y
+        if (y + global.start_point.y < global.start_point.y) {
+            _y = 0; 
+        } else if (y > global.paper_size.h) {
+            _y = global.paper_size.h;
+        } else {
+            _y = y;
+        }
     }
     this.radius = data.radius;
 
@@ -251,7 +271,10 @@ var Dot = function(data) {
     this.drag = function(e, dot) {
         this.x(parseInt(dot.position.left) + parseInt(this.radius));
         this.y(parseInt(dot.position.top) + parseInt(this.radius));
-
+        if (dot.position.left < this.x() || dot.position.left > this.x()) 
+            { dot.position.left = this.x() - this.radius };
+        if (dot.position.top < this.y() || dot.position.top > this.y()) 
+            { dot.position.top = this.y() - this.radius };
         $(document).trigger('dotDragged');
         return true;
     }

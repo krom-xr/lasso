@@ -25,9 +25,7 @@
             background-position: left; background-repeat: no-repeat; border: 1px solid black" 
             data-bind="style: {'width': data.paper_size.w + 'px', 'height': data.paper_size.h + 'px',
                                'left': data.start_point.x + 'px', 'top': data.start_point.y + 'px',
-                               'backgroundImage': 'url(temp/727_img.jpg)',
-            }" 
-            >
+                               'backgroundImage': 'url(temp/727_img.jpg)'}">
             <div class="dots" data-bind="template: {name: 'dot', foreach: dots}">
                 <script id="dot" type="text/x-jquery-tmpl" >
                     <div class="dot" data-bind="
