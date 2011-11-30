@@ -295,34 +295,3 @@ var Dot = function(data) {
     }
 }
 
-$(document).ready(function(){
-    contur = new Contur({
-        image_url: "temp/727_img.jpg",
-        start_point: {x: 50, y: 50},
-        paper_size: {w: 800, h: 600},
-        contur: {
-            color: 'white',
-            dasharray: "--..", // possible values “”, “-”, “.”, “-.”, “-..”, “. ”, “- ”, “--”, “- .”, “--.”, “--..”
-            width: 2,
-        },
-        back: {
-            color: 'green',
-            opacity: 0.8,
-        },
-        lasso_area: {
-            color: 'black',
-            opacity: 0.5,
-        },
-        dot: {
-            color: 'yellow',
-            start_color: 'red',
-            size: 6,// число должно быть четным
-            border_radius: 2,
-        },
-
-
-
-
-    });
-
-});

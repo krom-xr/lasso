@@ -15,6 +15,35 @@
 
     <script type="text/javascript" src="js/lasso.js"></script>
 
+    <script type="text/javascript">
+        $(document).ready(function() {
+            contur = new Contur({
+                image_url: "temp/727_img.jpg",
+                start_point: {x: 50, y: 50},
+                paper_size: {w: 800, h: 600},
+                contur: {
+                    color: 'white',
+                    dasharray: "--..", // possible values “”, “-”, “.”, “-.”, “-..”, “. ”, “- ”, “--”, “- .”, “--.”, “--..”
+                    width: 2,
+                },
+                back: {
+                    color: 'green',
+                    opacity: 0.8,
+                },
+                lasso_area: {
+                    color: 'black',
+                    opacity: 0.5,
+                },
+                dot: {
+                    color: 'yellow',
+                    start_color: 'red',
+                    size: 6,// число должно быть четным
+                    border_radius: 2,
+                },
+            });
+        });
+    </script>
+
 
 	<link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
 
@@ -39,6 +68,20 @@
         </div>
 
         <input type="button" name="clear_all" class="clear_all" value="очистить все">
+
+        <form action="move_face.html" method="get" accept-charset="utf-8">
+            <div data-bind="template: {name: 'dot_input', foreach: dots}">
+                <script id="dot_input" type="text/x-jquery-tmpl" >
+                    <input type="hidden" name="dot[]" data-bind="value: x() + ':' + y()">
+                </script> 
+            </div>
+
+
+            
+        
+            <input type="submit" value="Continue &rarr;">
+        </form>
+
 
     </div>
 </body> 
