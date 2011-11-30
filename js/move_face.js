@@ -3,10 +3,20 @@ $(document).ready(function(){
     var angle = 0;
 
     var transform = function() {
-        console.log(angle);
         var transform = "scaleX(" + flip + ") rotate(" + angle + "deg)";
-        $("#face .main").css('-moz-transform', transform);
-        console.log(transform);
+        switch(true) {
+            case $.browser.mozilla:
+                $("#face .main").css('-moz-transform', transform);
+                break;
+            case $.browser.opera:
+                $("#face .main").css('-o-transform', transform);
+                break;
+            case $.browser.webkit:
+                $("#face .main").css('-webkit-transform', transform);
+                break;
+            default:
+                $("#face .main").css('transform', transform);
+        }
     }
 
 
