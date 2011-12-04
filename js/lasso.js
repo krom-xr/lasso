@@ -1,15 +1,74 @@
 // объект заполнятеся при инициализации объекта Contur
 var global = {
     start_point: {x: '', y: ''},
-    paper_size: {w: '', h: ''} 
+    paper_size: {w: '', h: ''},
+    dot_size: 4,
+    contur_closed: ko.observable(false),
+}
 
+var Dot = function(data) {
+    var it = this;
+    var _x = data.x;
+    var _y = data.y;
+
+    this.start = ko.observable(data.start||false);
+
+    this.stop = data.stop||false;
+    //this.x = data.x;
+    //this.y = data.y;
+    this.x = function(x) {
+        if (!x) { return _x };
+        if (x + global.start_point.x < global.start_point.x) {
+            _x = 0; 
+        } else if (x > global.paper_size.w) {
+            _x = global.paper_size.w;
+        } else {
+            _x = x;
+        }
+    }
+    this.y = function(y) {
+        if (!y) { return _y };
+        if (y + global.start_point.y < global.start_point.y) {
+            _y = 0; 
+        } else if (y > global.paper_size.h) {
+            _y = global.paper_size.h;
+        } else {
+            _y = y;
+        }
+    }
+    this.radius = (global.dot_size/2).toFixed();
+
+    this.show_start_dot = function(){
+        return this.start() && !global.contur_closed();
+    }
+
+    this.drag = function(e, dot) {
+        this.x(parseInt(dot.position.left) + parseInt(this.radius));
+        this.y(parseInt(dot.position.top) + parseInt(this.radius));
+        if (dot.position.left < this.x() || dot.position.left > this.x()) 
+            { dot.position.left = this.x() - this.radius };
+        if (dot.position.top < this.y() || dot.position.top > this.y()) 
+            { dot.position.top = this.y() - this.radius };
+        $(document).trigger('dotDragged');
+        return true;
+    }
+
+
+    this.remove = function(e, dot) {
+        $(document).trigger('removeDot', this);
+    }
+
+    $(document).trigger('newDot', this);
+
+    this.toString = function(){
+        return this.i;
+    }
 }
 
 var Contur = function(data) {
     var it = this;
     this.data = data;
     this.dots = ko.observableArray();
-    this.closed = false;
 
     global.start_point = data.start_point;
     global.paper_size = data.paper_size;
@@ -69,14 +128,12 @@ var Contur = function(data) {
         new Dot({
             x: get_browser_offset(e, 'x'),
             y: get_browser_offset(e, 'y'),
-            contur_closed: it.closed,
-            radius: (data.dot.size/2).toFixed(),
         });
     }
     this.lasso_area.click(lasso_area_mousdown);
 
     var lasso_area_mousemove = function(e) {
-        if (it.dots().length && !it.closed) {
+        if (it.dots().length && !global.contur_closed()) {
             it.render_path(it.get_path([
                 "L", 
                 get_browser_offset(e, 'x'),
@@ -101,13 +158,15 @@ var Contur = function(data) {
         return path
     }
 
+
     this.direction_path = false;
+
 
     this.render_path = function(path) {
         if (!path) { path = this.get_path() }
         this.contur.attr('path', path);
 
-        if (this.closed) {
+        if (global.contur_closed()) {
             // эта функция определяет замкнут контур: по часовой или против.
             // если сумма sum больше 0 то по, иначе - против
             (function() 
@@ -134,12 +193,13 @@ var Contur = function(data) {
         };
     }
 
+
     $(document).on('newDot', function(e, dot){
         if (!Boolean(it.dots().length)) { 
             dot.start(true);
             it.render_path();
         }
-        if (!it.closed) {
+        if (!global.contur_closed()) {
             it.dots.push(dot);
         } else {
             var old_dot = it.dots()[it.dots().length - 1];
@@ -167,7 +227,7 @@ var Contur = function(data) {
     });
 
     $(document).on('click', 'div.start', function() {
-        if (it.closed) { return false };
+        if (global.contur_closed()) { return false };
         if(it.dots().length > 2) {
 
             it.lasso_area.unmousemove(lasso_area_mousemove);
@@ -176,8 +236,7 @@ var Contur = function(data) {
 
             //последня точка приобретает значение stop
             it.dots()[it.dots().length -1].stop = true;         
-            $(document).trigger('contur_closed');
-            it.closed = true;
+            global.contur_closed(true);
             it.render_path();
 
         }
@@ -209,7 +268,7 @@ var Contur = function(data) {
 
     $('.clear_all').click(function() {
         it.dots.removeAll();
-        it.closed = false;
+        global.contur_closed(false);
         it.render_path();
         it.direction_path = false;
         it.back.attr('path', '');
@@ -229,69 +288,27 @@ var Contur = function(data) {
     $(".dot").draggable();
 
     ko.applyBindings(this, $('#lasso_area').get(0));
+
+    this.add_dots = function(dots) {
+        var last_index = dots.length - 1;
+        $.each(dots, function(i, dot) {
+            var start = false;
+            var stop = false;
+            if (i == 0) { start = true };
+
+
+            console.log(stop);
+            var dot = new Dot({
+                x: dot[0],
+                y: dot[1],
+                start: start,
+                radius: 3,
+
+            });
+            if (i == last_index) { global.contur_closed(true) };
+        });
+        it.render_path();
+    }
+    if (data.dots) { this.add_dots(data.dots) };
+    console.log(this.dots());
 }
-
-var Dot = function(data) {
-    var it = this;
-    var _x = data.x;
-    var _y = data.y;
-
-    this.start = ko.observable(false);
-
-    this.contur_closed = ko.observable(data.contur_closed || false);
-    this.stop = false;
-    //this.x = data.x;
-    //this.y = data.y;
-    this.x = function(x) {
-        if (!x) { return _x };
-        if (x + global.start_point.x < global.start_point.x) {
-            _x = 0; 
-        } else if (x > global.paper_size.w) {
-            _x = global.paper_size.w;
-        } else {
-            _x = x;
-        }
-    }
-    this.y = function(y) {
-        if (!y) { return _y };
-        if (y + global.start_point.y < global.start_point.y) {
-            _y = 0; 
-        } else if (y > global.paper_size.h) {
-            _y = global.paper_size.h;
-        } else {
-            _y = y;
-        }
-    }
-    this.radius = data.radius;
-
-    this.show_start_dot = function(){
-        return this.start() && !this.contur_closed();
-    }
-
-    $(document).one('contur_closed', function() {
-        it.contur_closed(true);
-    })
-
-    this.drag = function(e, dot) {
-        this.x(parseInt(dot.position.left) + parseInt(this.radius));
-        this.y(parseInt(dot.position.top) + parseInt(this.radius));
-        if (dot.position.left < this.x() || dot.position.left > this.x()) 
-            { dot.position.left = this.x() - this.radius };
-        if (dot.position.top < this.y() || dot.position.top > this.y()) 
-            { dot.position.top = this.y() - this.radius };
-        $(document).trigger('dotDragged');
-        return true;
-    }
-
-
-    this.remove = function(e, dot) {
-        $(document).trigger('removeDot', this);
-    }
-
-    $(document).trigger('newDot', this);
-
-    this.toString = function(){
-        return this.i;
-    }
-}
-
