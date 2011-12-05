@@ -53,7 +53,7 @@ var MoveFace = function(data) {
     var angle = 0;
 
     var transform = function() {
-        var transform = "scaleX(" + flip + ") rotate(" + angle + "deg)";
+        var transform = "scaleX(" + flip + ") rotate(" + flip*angle + "deg)";
         switch(true) {
             case $.browser.mozilla:
                 //$(it.data.selectors.face_img).css('-moz-transform', transform);
@@ -87,6 +87,9 @@ var MoveFace = function(data) {
         maxWidth: it.data.restrict.max,
         minWidth: it.data.restrict.min,
         alsoResize: it.data.selectors.face_img,
+        resize: function() {
+            $(it.data.selectors.rotate_view).trigger('drag');
+        }
     });
 
 
@@ -106,13 +109,24 @@ var MoveFace = function(data) {
         //transform();
     //})
     $(it.data.selectors.rotate_view).draggable({
-        handle: 'b',
+        //handle: 'b',
+        start: function(e, data) {
+            //console.log(data.position.left);
+            //console.log(data.position.top);
+            //$(this).detach();
+            //$(this).prependTo('#face');
+
+        },
         drag: function(e, data) {
+            //data = $(this);
+            //console.log($(this));
+            //console.log($(this));
+            //console.log(data);
             var R = $(it.data.selectors.face_holder).height()/2;
             var O = {}
             O.x = $(it.data.selectors.face_holder).width()/2;
             O.y = $(it.data.selectors.face_holder).height()/2;
-            var x_y = rotation(O, {x: data.position.left, y: data.position.top}, R);
+            var x_y = rotation(O, {x: data.position.left, y: data.position.top}, R + 20);
 
             if (x_y.l) {
                 angle = Math.atan(x_y.k)*57 + 90;
@@ -121,32 +135,96 @@ var MoveFace = function(data) {
             }
             transform();
 
-            data.position.left = x_y.x;
-            data.position.top = x_y.y;
-            return true;
-        }
+            //data.position.left = x_y.x;
+            //data.position.top = x_y.y;
+            //$(this).css('left', x_y.x + 'px');
+            //$(this).css('top', x_y.y + 'px');
+
+            //$(this).css('left', '0px');
+            //$(this).css('top', '0px');
+            //data.position.left = 0;//x_y.x;
+            //data.position.top = 0;//x_y.y;
+            //return false;
+        },
+        stop: function(e, data){
+            console.log($('#test2').offset());
+            //console.log(data);
+            //$(this).appendTo($('#test2 b'));
+            //$(this).css('left', 'auto');
+            //$(this).css('top', 'auto');
+            //console.log($('#test2 b').offset().left);
+            //console.log($('#test2 b'));
+
+            //data.offset.left = $('#test2 b').position().left;
+            //data.offset.top = $('#test2 b').position().top;
+            //$(it.data.selectors.rotate_view).css('left', $('#test2 b').offset().left + 'px');
+            //$(it.data.selectors.rotate_view).css('top', $('#test2 b').offset().top + 'px');
+        },
+        //revert: true,
+
     });
-    var old_x = 0;
-    var old_y = 0;
-    $('#test').draggable();
-    $('#test').bind('drag', function(e, data){
-        if(!old_x) {old_x = data.offset.left};
-        if (data.offset.left < old_x) {
-            angle-=Math.abs(old_x - data.offset.left);
-        } else {
-            angle+=Math.abs(old_x - data.offset.left);
-        }
-        old_x = data.offset.left;
-        old_y = e.clientY;
-        transform();
-        data.position.left = 0;
-        data.position.top = 0;
-        //return false;
+
+    $("#test2 b").mouseover(function(e, data){
+        $(it.data.selectors.rotate_view).css('left', e.clientX - $('#maneken').position().left - 8 + 'px');
+        $(it.data.selectors.rotate_view).css('top', e.clientY - $('#maneken').position().top - 8 + 'px');
     })
-    $('#test').bind('dragstop', function(e, data){
-        old_x = 0;
-        old_y = 0;
-    });
+
+    //$(it.data.selectors.rotate_view).css('left', $('#test2 b').position().left + 'px');
+    //$(it.data.selectors.rotate_view).css('top', $('#test2 b').position().top + 'px');
+    //console.log($('#test2 b').position().top);
+
+    //var old_x = 0;
+    //var old_y = 0;
+    //$('#test').draggable();
+    //$('#test').bind('drag', function(e, data){
+        //var offset = '';
+        //if(!old_x) { old_x = data.offset.left };
+        //if(!old_y) { old_y = data.offset.top};
+        //if ((data.offset.left < old_x)&&(data.offset.top < old_y)) { offset = 'xy' };
+        //if ((data.offset.left < old_x)&&(data.offset.top > old_y)) { offset = 'xY' };
+        //if ((data.offset.left > old_x)&&(data.offset.top < old_y)) { offset = 'Xy' };
+        //if ((data.offset.left > old_x)&&(data.offset.top > old_y)) { offset = 'XY' };
+
+        //if ((data.offset.left > old_x)&&(data.offset.top == old_y)) { offset = 'X' };
+        //if ((data.offset.left < old_x)&&(data.offset.top == old_y)) { offset = 'x' };
+
+        //if ((data.offset.left == old_x)&&(data.offset.top > old_y)) { offset = 'Y' };
+        //if ((data.offset.left == old_x)&&(data.offset.top < old_y)) { offset = 'y' };
+
+        ////if (data.offset.left >= old_x) {
+            ////if(data.offset.top >= old_y) {
+                ////offset = "XY";
+            ////} else {
+                ////offset = "Xy";
+            ////};
+        ////} else {
+            ////if(data.offset.top > old_y) {
+                ////offset = "xY";
+            ////} else {
+                ////offset = "xy";
+            ////};
+        ////};
+        
+        //console.log(offset);
+
+        ////if (data.offset.left < old_x) {
+            //////angle-=Math.abs(old_x - data.offset.left);
+            ////angle--;
+        ////} else {
+            //////angle+=Math.abs(old_x - data.offset.left);
+            //angle++;
+        ////}
+        //old_x = data.offset.left;
+        //old_y = data.offset.top; 
+        //transform();
+        //data.position.left = 0;
+        //data.position.top = 0;
+        ////return false;
+    //})
+    //$('#test').bind('dragstop', function(e, data){
+        //old_x = 0;
+        //old_y = 0;
+    //});
 }
 $(document).ready(function(){
     new MoveFace({
@@ -164,7 +242,7 @@ $(document).ready(function(){
             face_img: "#face img.main",
             flip: "#face .flip",
             rotate: "#angle_image",
-            rotate_view: "#face .rotate",
+            rotate_view: ".rotate",
         }
     });
 
