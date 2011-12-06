@@ -57,7 +57,7 @@ body {
     top: 0px;  
     z-index: 200; 
     cursor: pointer;
-    background-color: red;
+    /*background-color: red;*/
 }
 #rotate_handle {
     width: 100%; 
