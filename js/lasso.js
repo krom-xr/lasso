@@ -10,7 +10,7 @@ var Dot = function(data) {
     var it = this;
     var _x = data.x;
     var _y = data.y;
-
+    this.data = data;
     this.start = ko.observable(data.start||false);
 
     this.stop = data.stop||false;
@@ -226,7 +226,7 @@ var Contur = function(data) {
 
     });
 
-    $(document).on('click', 'div.start', function() {
+    $(document).on('click', it.data.selectors.start, function() {
         if (global.contur_closed()) { return false };
         if(it.dots().length > 2) {
 
@@ -242,7 +242,7 @@ var Contur = function(data) {
         }
     })
 
-    $(document).on('mouseenter', 'div.dot', function() {
+    $(document).on('mouseenter', it.data.selectors.dot, function() {
         var $this = $(this);
         if(!$(this).is(':data(draggable)')) {
             $(this).draggable();
@@ -276,18 +276,19 @@ var Contur = function(data) {
     })
 
 
+    var dot = it.data.selectors.dot;
     var style = [
-        ".dot{ background-color: "+ data.dot.color + "}",
-        ".dot{ width: "+ data.dot.size + "px}",
-        ".dot{ height: "+ data.dot.size + "px}",
-        ".dot{ border_radius: "+ data.dot.border_radius + "px}",
-        ".dot{ border-radius: "+ data.dot.border_radius + "px}",
-        ".dot.start{ background-color: "+ data.dot.start_color + "}",
+        it.data.selectors.dot + "{ background-color: "+ data.dot.color + "}",
+        it.data.selectors.dot + "{ width: "+ data.dot.size + "px}",
+        it.data.selectors.dot + "{ height: "+ data.dot.size + "px}",
+        it.data.selectors.dot + "{ border_radius: "+ data.dot.border_radius + "px}",
+        it.data.selectors.dot + "{ border-radius: "+ data.dot.border_radius + "px}",
+        it.data.selectors.start + "{ background-color: "+ data.dot.start_color + "}",
     ];
     $("<style>" + style.join('') + "</style>").appendTo('body');
-    $(".dot").draggable();
+    $(it.data.selectors.dot).draggable();
 
-    ko.applyBindings(this, $('#lasso_area').get(0));
+    ko.applyBindings(this, $(it.data.selectors.lasso_area).get(0));
 
     this.add_dots = function(dots) {
         var last_index = dots.length - 1;
