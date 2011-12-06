@@ -125,9 +125,12 @@ var MoveFace = function(data) {
     });
 
     $(it.data.selectors.rotate_handle).mouseover(function(e, data){
+        console.log(e);
         $(it.data.selectors.rotate).show();
-        $(it.data.selectors.rotate).css('left', e.clientX - $(it.data.selectors.model).position().left - $('#face').position().left - 16 + 'px');
-        $(it.data.selectors.rotate).css('top' , e.clientY - $(it.data.selectors.model).position().top - $('#face').position().top - 16 + 'px');
+        $(it.data.selectors.rotate).css('left', e.pageX - $(it.data.selectors.model).position().left 
+            - $(it.data.selectors.face).position().left - 16 + 'px');
+        $(it.data.selectors.rotate).css('top' , e.pageY - $(it.data.selectors.model).position().top
+            - $(it.data.selectors.face).position().top - 16 + 'px');
     })
     $(it.data.selectors.rotate).mouseout(function(){
         $(this).hide();
