@@ -1,4 +1,4 @@
-body{
+body {
     padding: 0;
     margin: 0;
 }
@@ -6,8 +6,14 @@ body{
 /*path{*/
     /*cursor: pointer;*/
 /*}*/
-#lasso_area{
+#lasso_area {
     position: relative;
+}
+#lasso_area .model {
+    position: absolute;
+    background-position: left;
+    background-repeat: no-repeat;
+    border: 1px solid black;
 }
 .dot {
     position: absolute !important;
