@@ -176,36 +176,28 @@ var Contur = function(data) {
             var x = get_browser_offset(e, 'x');
             var y = get_browser_offset(e, 'y');
 
-            var old_dot = it.dots()[it.dots().length - 1];
-            var index = false;
-            $.each(it.dots(), function(i, _dot) {
-                if (belongs_to_segment({x: _dot.x(), y: _dot.y()}, {x: old_dot.x(), y: old_dot.y()}, {x: x, y: y}, 5)) {
-                    _dot.test('blue');
-                    old_dot.test('green')
-                    l_a.attr('cursor', 'pointer');
-                    return false;
-                };
-                old_dot = _dot;
-            })
-            l_a.attr('cursor', 'default');
-                //this.attr('cursor', 'pointer');
+            if(it.between(x, y, 5)) {
+                l_a.attr('cursor', 'pointer');
+            } else {
+                l_a.attr('cursor', 'default');
+            }
         }
     }
     this.lasso_area.mousemove(lasso_area_mousemove);
 
-    this.between = function(x, y) {
+    this.between = function(x, y, assumption) {
         var old_dot = it.dots()[it.dots().length - 1];
         var index = false;
         $.each(it.dots(), function(i, _dot) {
-            if (belongs_to_segment({x: _dot.x(), y: _dot.y()}, {x: old_dot.x(), y: old_dot.y()}, {x: x, y: y}, 5)) {
-                _dot.test('blue');
-                old_dot.test('green')
-                l_a.attr('cursor', 'pointer');
+            if (belongs_to_segment({x: _dot.x(), y: _dot.y()}, {x: old_dot.x(), y: old_dot.y()}, {x: x, y: y}, assumption)) {
+                index = i;
                 return false;
             };
             old_dot = _dot;
         })
-
+        if (index === false) { return false };
+        if (index === 0) { return it.dots().length - 1 };
+        return index;
     }
 
     this.get_path = function(new_coord) {
@@ -258,7 +250,7 @@ var Contur = function(data) {
     }
 
 
-    $(document).on('newDot', function(e, dot){
+    $(document).on('newDot', function(e, dot) {
         if (!Boolean(it.dots().length)) { 
             dot.start(true);
             it.render_path();
