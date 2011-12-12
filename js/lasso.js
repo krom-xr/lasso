@@ -1,32 +1,3 @@
-// находит коэффициэнты k и b для уравнения y=kx+b
-// заданного точками A и B
-var find_k_b = function(A, B) {
-    A.x = parseInt(A.x);
-    A.y = parseInt(A.y);
-    B.x = parseInt(B.x);
-    B.y = parseInt(B.y);
-
-
-    var k = (A.y - B.y)/(A.x - B.x);
-    var b = B.y - k*B.x;
-    return {k: k, b: b};
-}
-
-// проверяет лежит ли точка С на отрезка А, В
-// assumption - погрешность
-var belongs_to_segment = function(A, B, C, assumption) {
-    var on_segment = function(A, B, x, assumption) {
-        return Math.abs(Math.abs(A-x) + Math.abs(B-x) - Math.abs(B - A)) < assumption;
-    }
-    var kb = find_k_b({x: A.x, y: A.y}, {x: B.x, y: B.y});
-    if (Math.abs(C.y - C.x*kb.k - kb.b) < assumption) { 
-        if (on_segment(A.x, B.x, C.x, assumption) && on_segment(A.y, B.y, C.y, assumption)) {
-            return true;
-        }
-    };
-    return false;
-}
-
 // объект заполнятеся при инициализации объекта Contur
 var global = {
     start_point: {x: '', y: ''},
@@ -196,7 +167,7 @@ var Contur = function(data) {
             old_dot = _dot;
         })
         if (index === false) { return false };
-        if (index === 0) { return it.dots().length - 1 };
+        if (index === 0) { return it.dots().length };
         return index;
     }
 
@@ -258,42 +229,26 @@ var Contur = function(data) {
         if (!global.contur_closed()) {
             it.dots.push(dot);
         } else {
-            var old_dot = it.dots()[it.dots().length - 1];
-            var index = false;
-            $.each(it.dots(), function(i, _dot) {
-                var a = Math.sqrt(Math.pow((dot.x() - _dot.x()), 2) + Math.pow((dot.y() - _dot.y()), 2)) + Math.sqrt(Math.pow((old_dot.x() - dot.x()), 2) + Math.pow((old_dot.y() - dot.y()), 2));
-                var b = Math.sqrt(Math.pow((_dot.x() - old_dot.x()), 2) + Math.pow((_dot.y() - old_dot.y()), 2));
-                if (Math.abs(a-b) < 0.1) {
-                    index = i;
-                    return false;
-                };
-                old_dot = _dot;
-            })
-            if (index === false) { return };
-            if (index) {
-                it.dots.splice(index,0,dot);
-            } else {
+            var index = it.between(dot.x(), dot.y(), 5);
+            if (!index) { return };
+            if (index == it.dots().length) {
                 dot.stop = true;
                 it.dots()[it.dots().length - 1].stop = false;
                 it.dots.push(dot);
+            } else {
+                it.dots.splice(index, 0, dot);
             };
             it.render_path();
-        }
+        };
     });
 
     $(document).on('click', it.data.selectors.start, function() {
         if (global.contur_closed()) { return false };
         if(it.dots().length > 2) {
-
-            //it.lasso_area.unmousemove(lasso_area_mousemove);
-            //it.lasso_area.unmouseup(lasso_area_mousdown);
-            //it.contur.unclick(contur_click);
-
             //последня точка приобретает значение stop
             it.dots()[it.dots().length -1].stop = true;         
             global.contur_closed(true);
             it.render_path();
-
         }
     })
 
