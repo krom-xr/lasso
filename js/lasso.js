@@ -1,4 +1,5 @@
-// y=kx+b
+// находит коэффициэнты k и b для уравнения y=kx+b
+// заданного точками A и B
 var find_k_b = function(A, B) {
     A.x = parseInt(A.x);
     A.y = parseInt(A.y);
@@ -11,8 +12,19 @@ var find_k_b = function(A, B) {
     return {k: k, b: b};
 }
 
-var belongs_to_segment = function(A, B, x, assumption) {
-    return Math.abs(Math.abs(A-x) + Math.abs(B-x) - Math.abs(B - A)) < assumption;
+// проверяет лежит ли точка С на отрезка А, В
+// assumption - погрешность
+var belongs_to_segment = function(A, B, C, assumption) {
+    var on_segment = function(A, B, x, assumption) {
+        return Math.abs(Math.abs(A-x) + Math.abs(B-x) - Math.abs(B - A)) < assumption;
+    }
+    var kb = find_k_b({x: A.x, y: A.y}, {x: B.x, y: B.y});
+    if (Math.abs(C.y - C.x*kb.k - kb.b) < assumption) { 
+        if (on_segment(A.x, B.x, C.x, assumption) && on_segment(A.y, B.y, C.y, assumption)) {
+            return true;
+        }
+    };
+    return false;
 }
 
 // объект заполнятеся при инициализации объекта Contur
@@ -167,22 +179,34 @@ var Contur = function(data) {
             var old_dot = it.dots()[it.dots().length - 1];
             var index = false;
             $.each(it.dots(), function(i, _dot) {
-                var kb = find_k_b({x: _dot.x(), y: _dot.y()}, {x: old_dot.x(), y: old_dot.y()});
-                if (Math.abs(y - x*kb.k - kb.b) < 5) { 
-                    if (belongs_to_segment(old_dot.x(), _dot.x(), x, 5) && belongs_to_segment(old_dot.y(), _dot.y(), y, 5)) {
-                        _dot.test('blue');
-                        old_dot.test('green')
-                        l_a.attr('cursor', 'pointer');
-                        return false;
-                    }
+                if (belongs_to_segment({x: _dot.x(), y: _dot.y()}, {x: old_dot.x(), y: old_dot.y()}, {x: x, y: y}, 5)) {
+                    _dot.test('blue');
+                    old_dot.test('green')
+                    l_a.attr('cursor', 'pointer');
+                    return false;
                 };
-                l_a.attr('cursor', 'default');
                 old_dot = _dot;
             })
+            l_a.attr('cursor', 'default');
                 //this.attr('cursor', 'pointer');
         }
     }
     this.lasso_area.mousemove(lasso_area_mousemove);
+
+    this.between = function(x, y) {
+        var old_dot = it.dots()[it.dots().length - 1];
+        var index = false;
+        $.each(it.dots(), function(i, _dot) {
+            if (belongs_to_segment({x: _dot.x(), y: _dot.y()}, {x: old_dot.x(), y: old_dot.y()}, {x: x, y: y}, 5)) {
+                _dot.test('blue');
+                old_dot.test('green')
+                l_a.attr('cursor', 'pointer');
+                return false;
+            };
+            old_dot = _dot;
+        })
+
+    }
 
     this.get_path = function(new_coord) {
         var path = []
