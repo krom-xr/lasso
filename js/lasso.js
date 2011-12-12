@@ -1,3 +1,20 @@
+// y=kx+b
+var find_k_b = function(A, B) {
+    A.x = parseInt(A.x);
+    A.y = parseInt(A.y);
+    B.x = parseInt(B.x);
+    B.y = parseInt(B.y);
+
+
+    var k = (A.y - B.y)/(A.x - B.x);
+    var b = B.y - k*B.x;
+    return {k: k, b: b};
+}
+
+var belongs_to_segment = function(A, B, x, assumption) {
+    return Math.abs(Math.abs(A-x) + Math.abs(B-x) - Math.abs(B - A)) < assumption;
+}
+
 // объект заполнятеся при инициализации объекта Contur
 var global = {
     start_point: {x: '', y: ''},
@@ -7,6 +24,7 @@ var global = {
 }
 
 var Dot = function(data) {
+    this.test = ko.observable(false);
     var it = this;
     var _x = data.x;
     var _y = data.y;
@@ -130,7 +148,7 @@ var Contur = function(data) {
             y: get_browser_offset(e, 'y'),
         });
     }
-    this.lasso_area.click(lasso_area_mousdown);
+    this.lasso_area.mousedown(lasso_area_mousdown);
 
     var lasso_area_mousemove = function(e) {
         if (it.dots().length && !global.contur_closed()) {
@@ -140,6 +158,29 @@ var Contur = function(data) {
                 get_browser_offset(e, 'y'),
             ]));
         };
+        if (it.dots().length && global.contur_closed()) {
+            var l_a = this;
+            //l_a.attr('cursor', 'default');
+            var x = get_browser_offset(e, 'x');
+            var y = get_browser_offset(e, 'y');
+
+            var old_dot = it.dots()[it.dots().length - 1];
+            var index = false;
+            $.each(it.dots(), function(i, _dot) {
+                var kb = find_k_b({x: _dot.x(), y: _dot.y()}, {x: old_dot.x(), y: old_dot.y()});
+                if (Math.abs(y - x*kb.k - kb.b) < 5) { 
+                    if (belongs_to_segment(old_dot.x(), _dot.x(), x, 5) && belongs_to_segment(old_dot.y(), _dot.y(), y, 5)) {
+                        _dot.test('blue');
+                        old_dot.test('green')
+                        l_a.attr('cursor', 'pointer');
+                        return false;
+                    }
+                };
+                l_a.attr('cursor', 'default');
+                old_dot = _dot;
+            })
+                //this.attr('cursor', 'pointer');
+        }
     }
     this.lasso_area.mousemove(lasso_area_mousemove);
 
@@ -169,8 +210,7 @@ var Contur = function(data) {
         if (global.contur_closed()) {
             // эта функция определяет замкнут контур: по часовой или против.
             // если сумма sum больше 0 то по, иначе - против
-            (function() 
-            {
+            (function() {
                 if (it.direction_path){ return false };
                     var sum = 0;
                     var first_dot = 0;
@@ -223,14 +263,13 @@ var Contur = function(data) {
             };
             it.render_path();
         }
-
     });
 
     $(document).on('click', it.data.selectors.start, function() {
         if (global.contur_closed()) { return false };
         if(it.dots().length > 2) {
 
-            it.lasso_area.unmousemove(lasso_area_mousemove);
+            //it.lasso_area.unmousemove(lasso_area_mousemove);
             //it.lasso_area.unmouseup(lasso_area_mousdown);
             //it.contur.unclick(contur_click);
 
@@ -298,7 +337,6 @@ var Contur = function(data) {
             if (i == 0) { start = true };
 
 
-            console.log(stop);
             var dot = new Dot({
                 x: dot[0],
                 y: dot[1],
@@ -311,5 +349,4 @@ var Contur = function(data) {
         it.render_path();
     }
     if (data.dots) { this.add_dots(data.dots) };
-    console.log(this.dots());
 }

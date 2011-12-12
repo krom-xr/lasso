@@ -70,7 +70,9 @@
             <div class="dots" data-bind="template: {name: 'dot', foreach: dots}">
                 <script id="dot" type="text/x-jquery-tmpl" >
                     <div class="dot" data-bind="
-                        style: {left: x() - radius + 'px', top: y() - radius + 'px'},
+                        style: {left: x() - radius + 'px', top: y() - radius + 'px',
+                            backgroundColor: test,
+                        },
                         css: {start: show_start_dot() },
                         event: {drag: drag, dblclick: remove }
                         ">
