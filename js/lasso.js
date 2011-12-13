@@ -9,8 +9,8 @@ var global = {
 var Dot = function(data) {
     this.test = ko.observable(false);
     var it = this;
-    var _x = data.x;
-    var _y = data.y;
+    var _x = ko.observable(data.x);
+    var _y = ko.observable(data.y);
     this.data = data;
     this.start = ko.observable(data.start||false);
 
@@ -18,28 +18,28 @@ var Dot = function(data) {
     //this.x = data.x;
     //this.y = data.y;
     this.x = function(x) {
-        if (!x) { return _x };
+        if (!x) { return _x() };
         if (x + global.start_point.x < global.start_point.x) {
-            _x = 0; 
+            _x(0); 
         } else if (x > global.paper_size.w) {
-            _x = global.paper_size.w;
+            _x(global.paper_size.w);
         } else {
-            _x = x;
+            _x(x);
         }
     }
     this.y = function(y) {
-        if (!y) { return _y };
+        if (!y) { return _y() };
         if (y + global.start_point.y < global.start_point.y) {
-            _y = 0; 
+            _y(0); 
         } else if (y > global.paper_size.h) {
-            _y = global.paper_size.h;
+            _y(global.paper_size.h);
         } else {
-            _y = y;
+            _y(y);
         }
     }
     this.radius = (global.dot_size/2).toFixed();
 
-    this.show_start_dot = function(){
+    this.show_start_dot = function() {
         return this.start() && !global.contur_closed();
     }
 
@@ -61,9 +61,7 @@ var Dot = function(data) {
 
     $(document).trigger('newDot', this);
 
-    this.toString = function(){
-        return this.i;
-    }
+    this.toString = function() { return this.i };
 }
 
 var Contur = function(data) {
@@ -113,7 +111,7 @@ var Contur = function(data) {
     this.contur.attr('stroke', data.contur.color);
     this.contur.attr('stroke-dasharray', data.contur.dasharray);
     this.contur.attr('stroke-width', data.contur.width);
-    //this.contur.attr('cursor', 'pointer');
+    //this.contur.attr('fill', 'blue');
      
     this.back = this.paper.path();
     this.back.attr('fill', data.back.color);
@@ -125,6 +123,10 @@ var Contur = function(data) {
     this.lasso_area.attr('fill', data.lasso_area.color);
     this.lasso_area.attr('opacity', data.lasso_area.opacity);
 
+    this.lasso_area.mouseover(function(){
+        console.log('eeee');
+    });
+
     var lasso_area_mousdown = function(e) {
         new Dot({
             x: get_browser_offset(e, 'x'),
@@ -132,6 +134,33 @@ var Contur = function(data) {
         });
     }
     this.lasso_area.mousedown(lasso_area_mousdown);
+
+    /* Очень, очень плохая музыка */
+    this.temporary = Array(); //ko.observableArray();
+    this.testmove = function(x, y, a, b, e) {
+        if (!global.contur_closed()) { return false };
+        $.each(it.dots(), function(i, dot) {
+            var newx = it.temporary[i].x + x;
+            var newy = it.temporary[i].y + y;
+            dot.x(newx);
+            dot.y(newy);
+            console.log(newx, x, newx -x );
+        });
+        it.render_path();
+    }
+    this.startt = function() {
+        if (!global.contur_closed()) { return false };
+        $.each(it.dots(), function(i, dot) {
+            it.temporary.push({x: dot.x(), y: dot.y()});
+        })
+    }
+    this.stopp = function() {
+        if (!global.contur_closed()) { return false };
+        it.temporary = Array();//([]);
+    }
+    this.lasso_area.drag(this.testmove, this.startt, this.stopp);
+    /* end Очень, очень плохая музыка */
+
 
     var lasso_area_mousemove = function(e) {
         if (it.dots().length && !global.contur_closed()) {
@@ -198,7 +227,7 @@ var Contur = function(data) {
             // эта функция определяет замкнут контур: по часовой или против.
             // если сумма sum больше 0 то по, иначе - против
             (function() {
-                if (it.direction_path){ return false };
+                if (it.direction_path) { return false };
                     var sum = 0;
                     var first_dot = 0;
                     var last_index = it.dots().length - 1;
@@ -259,7 +288,7 @@ var Contur = function(data) {
         }
     })
 
-    $(document).on('dotDragged', function(){
+    $(document).on('dotDragged', function() {
         it.render_path();
     });
 
