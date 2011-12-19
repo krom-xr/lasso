@@ -3,7 +3,16 @@ var global = {
     start_point: {x: '', y: ''},
     paper_size: {w: '', h: ''},
     dot_size: 4,
-    contur_closed: ko.observable(false),
+    _contur_closed: ko.observable(false),
+    contur_closed: function(value) {
+        if (typeof value != 'undefined') {
+            global._contur_closed(value);
+        }
+        if (value === true) { $(document).trigger('conturClosed') };
+        if (value === false) { $(document).trigger('conturUnclosed') };
+        
+        return global._contur_closed();
+    },
 }
 
 var Dot = function(data) {
@@ -102,16 +111,12 @@ var Contur = function(data) {
         [0, data.paper_size.h, 'z']
     ];
 
-    this.paper = Raphael(data.start_point.x, data.start_point.y, 
-                         data.paper_size.w, data.paper_size.h);
+    //this.paper = Raphael(data.start_point.x, data.start_point.y, 
+                         //data.paper_size.w, data.paper_size.h);
 
     this.paper = Raphael(data.start_point.x, data.start_point.y, 
                          data.paper_size.w, data.paper_size.h);
-    this.contur = this.paper.path();
-    this.contur.attr('stroke', data.contur.color);
-    this.contur.attr('stroke-dasharray', data.contur.dasharray);
-    this.contur.attr('stroke-width', data.contur.width);
-    //this.contur.attr('fill', 'blue');
+    //this.paper = Raphael();
      
     this.back = this.paper.path();
     this.back.attr('fill', data.back.color);
@@ -123,9 +128,23 @@ var Contur = function(data) {
     this.lasso_area.attr('fill', data.lasso_area.color);
     this.lasso_area.attr('opacity', data.lasso_area.opacity);
 
-    this.lasso_area.mouseover(function(){
-        console.log('eeee');
-    });
+
+    this.contur = this.paper.path();
+    this.contur.attr('stroke', data.contur.color);
+    this.contur.attr('stroke-dasharray', data.contur.dasharray);
+    this.contur.attr('stroke-width', data.contur.width);
+    this.contur.attr('fill', 'blue');
+    this.contur.attr('fill-opacity', 0.3);
+
+
+
+    this.contur.hover(
+        function() {
+            this.attr('cursor', 'pointer');
+        },
+        function() {
+        }
+    );
 
     var lasso_area_mousdown = function(e) {
         new Dot({
@@ -134,6 +153,7 @@ var Contur = function(data) {
         });
     }
     this.lasso_area.mousedown(lasso_area_mousdown);
+    this.contur.mousedown(lasso_area_mousdown);
 
     /* Очень, очень плохая музыка */
     this.temporary = Array(); //ko.observableArray();
@@ -144,7 +164,6 @@ var Contur = function(data) {
             var newy = it.temporary[i].y + y;
             dot.x(newx);
             dot.y(newy);
-            console.log(newx, x, newx -x );
         });
         it.render_path();
     }
@@ -158,7 +177,7 @@ var Contur = function(data) {
         if (!global.contur_closed()) { return false };
         it.temporary = Array();//([]);
     }
-    this.lasso_area.drag(this.testmove, this.startt, this.stopp);
+    this.contur.drag(this.testmove, this.startt, this.stopp);
     /* end Очень, очень плохая музыка */
 
 
@@ -206,7 +225,8 @@ var Contur = function(data) {
             if (dot.start()) {
                 path.push(['M', dot.x(), dot.y()]);
             } else if (dot.stop) {
-                path.push([ dot.x(), dot.y(), 'Z']);
+                path.push(['L', dot.x(), dot.y()]);
+                path.push(['Z']);
             } else {
                 path.push(['L', dot.x(), dot.y()]);
             }
@@ -223,7 +243,54 @@ var Contur = function(data) {
         if (!path) { path = this.get_path() }
         this.contur.attr('path', path);
 
+
         if (global.contur_closed()) {
+            //it.paper.freeTransform(it.contur).setOpts({
+                //attrs:      { fill: 'red', stroke: 'white' },
+                //drag:       true,
+                //grid:       15,
+                //gridSnap:   15,
+                //keepRatio:  true,
+                //rotate:     false,
+                ////rotateSnap: 15,
+                //scale:      true,
+                ////showBBox:   true,
+                ////size:       5 
+            //}, function(e, data) {
+                ////console.log(it.contur);
+                ////console.log(e);
+                ////console.log(data);
+                ////console.log(it.contur._.sx);
+
+                //$.each(it.contur.attr('path'), function(i, val) {
+                    //if (val[0]!='Z') {
+                        ////it.dots()[i].x(val[1]);
+                        ////it.dots()[i].y(val[2]);
+                        ////
+                    //};
+                //})
+            //});
+
+            it.contur.mouseup(function() {
+                //console.log('test');
+                //console.log(it.contur._.sx);
+                //var k = 1.1;
+                //console.log(it.contur.attr('path'));
+                //it.contur.scale(1.1)
+                //$.each(it.contur.attr('path'), function(i, val) {
+                //$.each(it.dots(), function(i, val) {
+                    //val.x(val.x()*k);
+                    //val.y(val.y()*k);
+                //})
+                //it.paper.freeTransform(contur).unplug();
+                 
+                //console.log(it.contur.attr('path'));
+                //it.render_path();
+                //console.log(it.contur.getBBox());
+            });
+
+
+
             // эта функция определяет замкнут контур: по часовой или против.
             // если сумма sum больше 0 то по, иначе - против
             (function() {
@@ -247,6 +314,25 @@ var Contur = function(data) {
             })();
             it.back.attr('path', this.direction_path + path );
         };
+    }
+
+    this.increase = function() {
+        if(!global.contur_closed()) { return false };
+        $.each(it.dots(), function(i, dot) {
+            dot.x(dot.x() * 1.01);
+            dot.y(dot.y() * 1.01);
+        })
+        it.render_path();
+        //console.log('test');
+    }
+
+    this.decrease = function() {
+        if(!global.contur_closed()) { return false };
+        $.each(it.dots(), function(i, dot) {
+            dot.x(dot.x()*0.99);
+            dot.y(dot.y()*0.99 );
+        })
+        it.render_path();
     }
 
 
@@ -305,6 +391,7 @@ var Contur = function(data) {
         it.render_path();
     })
 
+
     $('.clear_all').click(function() {
         it.dots.removeAll();
         global.contur_closed(false);
@@ -335,12 +422,13 @@ var Contur = function(data) {
             var start = false;
             var stop = false;
             if (i == 0) { start = true };
-
+            if (i == last_index) { stop = true };
 
             var dot = new Dot({
                 x: dot[0],
                 y: dot[1],
                 start: start,
+                stop: stop,
                 radius: 3,
 
             });

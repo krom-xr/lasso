@@ -73,6 +73,7 @@ var belongs_to_segment = function(A, B, C, assumption) {
     var on_segment = function(A, B, x, assumption) {
         return Math.abs(Math.abs(A-x) + Math.abs(B-x) - Math.abs(B - A)) < assumption;
     }
+
     var kb = find_k_b({x: A.x, y: A.y}, {x: B.x, y: B.y});
     if (Math.abs(C.y - C.x*kb.k - kb.b) < assumption) { 
         if (on_segment(A.x, B.x, C.x, assumption) && on_segment(A.y, B.y, C.y, assumption)) {

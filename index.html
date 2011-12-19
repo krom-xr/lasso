@@ -12,6 +12,7 @@
     <script type="text/javascript" src="js/knockout.js"></script>
     <script type="text/javascript" src="js/utils.js"></script>
     <script type="text/javascript" src="js/raphael.js"></script>
+    <script type="text/javascript" src="js/raphael.freetransform.js"></script>
 
     <script type="text/javascript" src="js/lasso.js"></script>
 
@@ -82,6 +83,9 @@
         </div>
 
         <input type="button" name="clear_all" class="clear_all" value="очистить все">
+
+        <input type="button" name="some_name" value="+" data-bind="click: increase">
+        <input type="button" name="some_name" value="-" data-bind="click: decrease">
 
         <form action="move_face.html" method="get" accept-charset="utf-8">
             <div data-bind="template: {name: 'dot_input', foreach: dots}">
