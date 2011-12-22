@@ -1,0 +1,224 @@
+/* line 1, ../sass/personal-room-story.scss */
+#WishesContent {
+  margin-bottom: 40px;
+}
+/* line 6, ../sass/personal-room-story.scss */
+#WishesContent .content-block header {
+  margin-bottom: 20px;
+  height: 18px;
+}
+/* line 10, ../sass/personal-room-story.scss */
+#WishesContent .content-block header p {
+  float: left;
+  width: 470px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+/* line 16, ../sass/personal-room-story.scss */
+#WishesContent .content-block header p.welcome {
+  margin-top: 0;
+}
+/* line 19, ../sass/personal-room-story.scss */
+#WishesContent .content-block header p.welcome .user {
+  font-size: 16px;
+}
+/* line 25, ../sass/personal-room-story.scss */
+#WishesContent .content-block header .block.bonuses {
+  float: right;
+  text-align: center;
+}
+/* line 30, ../sass/personal-room-story.scss */
+#WishesContent .content-block footer {
+  background: none;
+  overflow: visible;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+}
+/* line 39, ../sass/personal-room-story.scss */
+#WishesContent .content-block .count-items-per-page, #WishesContent .content-block .paging {
+  float: right;
+  line-height: 18px;
+  margin-left: 30px;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+/* line 46, ../sass/personal-room-story.scss */
+#WishesContent .content-block .count-items-per-page span, #WishesContent .content-block .paging span {
+  float: left;
+  margin-right: 5px;
+}
+/* line 51, ../sass/personal-room-story.scss */
+#WishesContent .content-block .count-items-per-page a, #WishesContent .content-block .paging a {
+  display: block;
+  float: left;
+  text-decoration: none;
+  background: #959595;
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  margin-right: 2px;
+  color: #fff;
+}
+/* line 62, ../sass/personal-room-story.scss */
+#WishesContent .content-block .count-items-per-page a.last, #WishesContent .content-block .paging a.last {
+  margin-right: 0;
+}
+/* line 66, ../sass/personal-room-story.scss */
+#WishesContent .content-block .count-items-per-page a.active, #WishesContent .content-block .paging a.active {
+  background: #5a5a5a;
+}
+/* line 70, ../sass/personal-room-story.scss */
+#WishesContent .content-block .count-items-per-page a:hover, #WishesContent .content-block .paging a:hover {
+  background: #cd1442;
+}
+/* line 76, ../sass/personal-room-story.scss */
+#WishesContent .content-block article {
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+/* line 80, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story {
+  width: 735px;
+}
+/* line 83, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story .drop {
+  display: block;
+  height: 40px;
+}
+/* line 88, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td {
+  vertical-align: top;
+  border-right: 4px solid #fff;
+}
+/* line 92, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td span {
+  display: block;
+}
+/* line 96, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td.status {
+  width: 150px;
+  padding: 10px;
+  color: #fff;
+  vertical-align: top;
+  text-align: center;
+}
+/* line 103, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td.status.inwork {
+  background: #ffb400;
+}
+/* line 107, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td.status.done {
+  background: #028c33;
+}
+/* line 111, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td.status.canceled {
+  background: #c0061e;
+}
+/* line 115, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td.status .title, #WishesContent .content-block article table.orders-story td.status .date {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+/* line 121, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td.status .number {
+  font-size: 18px;
+}
+/* line 125, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td.status .price {
+  font-size: 30px;
+  font-weight: bold;
+}
+/* line 132, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list {
+  width: 100%;
+}
+/* line 135, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td {
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #5a5a5a;
+}
+/* line 140, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product {
+  width: 345px;
+}
+/* line 143, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product .name {
+  font-size: 18px;
+  text-transform: uppercase;
+}
+/* line 147, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product .articule {
+  clear: both;
+  float: left;
+  font-size: 12px;
+}
+/* line 153, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product section {
+  float: right;
+  margin-left: 5px;
+  font-size: 12px;
+  line-height: 19px;
+}
+/* line 160, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product section .title {
+  float: left;
+  font-size: 11px;
+  margin-right: 5px;
+}
+/* line 165, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product section .argument {
+  float: left;
+  height: 19px;
+  padding: 0 5px;
+  background: #5a5a5a;
+  color: #fff;
+}
+/* line 172, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product section .argument.color {
+  overflow: hidden;
+  padding: 0;
+}
+/* line 176, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.product section .argument.color img {
+  width: 25px;
+  height: 19px;
+}
+/* line 186, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.count {
+  width: 115px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+}
+/* line 193, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td .product-list td.price {
+  width: 110px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+}
+/* line 202, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td thead th {
+  background: #dadbdc;
+  padding: 5px 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-right: 4px solid #fff;
+  text-align: left;
+}
+/* line 211, ../sass/personal-room-story.scss */
+#WishesContent .content-block article table.orders-story td thead th.count, #WishesContent .content-block article table.orders-story td thead th.price {
+  text-align: right;
+}
+/* line 220, ../sass/personal-room-story.scss */
+#WishesContent .w235, #WishesContent .w725 {
+  float: left;
+}
+/* line 223, ../sass/personal-room-story.scss */
+#WishesContent .w725 {
+  margin-left: 20px;
+}

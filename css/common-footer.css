@@ -1,0 +1,63 @@
+/* line 1, ../sass/common-footer.scss */
+footer#GeneralFooter {
+  background: #eaebec;
+  overflow: hidden;
+  padding: 20px 0;
+  margin-top: 20px;
+  padding-bottom: 80px;
+}
+/* line 8, ../sass/common-footer.scss */
+footer#GeneralFooter .disclaimer {
+  float: left;
+  margin-right: 65px;
+}
+/* line 12, ../sass/common-footer.scss */
+footer#GeneralFooter .disclaimer .foot-logo {
+  display: block;
+  width: 295px;
+  height: 61px;
+  background: url(../img/general/logo.png) no-repeat;
+  text-indent: -3000px;
+}
+/* line 20, ../sass/common-footer.scss */
+footer#GeneralFooter .disclaimer .foot-phone {
+  display: block;
+  margin-top: 10px;
+  width: 185px;
+  height: 25px;
+  text-indent: -3000px;
+  background: url(../img/general/head-phone.png) no-repeat 0 0;
+}
+/* line 30, ../sass/common-footer.scss */
+footer#GeneralFooter #foot-menu dl {
+  float: left;
+  margin-right: 90px;
+  padding: 0;
+  margin-top: 0;
+}
+/* line 36, ../sass/common-footer.scss */
+footer#GeneralFooter #foot-menu dl.last {
+  margin-right: 0;
+}
+/* line 40, ../sass/common-footer.scss */
+footer#GeneralFooter #foot-menu dl dt {
+  display: block;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+/* line 48, ../sass/common-footer.scss */
+footer#GeneralFooter #foot-menu dl dd {
+  display: block;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+/* line 53, ../sass/common-footer.scss */
+footer#GeneralFooter #foot-menu dl dd a {
+  text-decoration: none;
+}
+/* line 56, ../sass/common-footer.scss */
+footer#GeneralFooter #foot-menu dl dd a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,89 @@
+/* line 1, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages {
+  margin-bottom: 40px;
+}
+/* line 4, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block {
+  margin-bottom: 20px;
+}
+/* line 7, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 12, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li {
+  float: left;
+  display: block;
+  margin-right: 2px;
+  height: 30px;
+}
+/* line 18, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li a {
+  display: block;
+  height: 30px;
+  text-indent: -4000px;
+  background: url(../img/blocks/tabs/look-at-this.png) no-repeat;
+}
+/* line 25, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li.tab-user-dressed a {
+  width: 269px;
+  background-position: 0 -120px;
+}
+/* line 30, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li.tab-user-dressed a:hover, #BlockDressedImages .dressed-block ul.tabs li.tab-user-dressed.active a {
+  background-position: 0 -80px;
+}
+/* line 34, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li.tab-other-dressed a {
+  width: 298px;
+  background-position: 0 -40px;
+}
+/* line 39, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li.tab-other-dressed a:hover, #BlockDressedImages .dressed-block ul.tabs li.tab-other-dressed.active a {
+  background-position: 0 0;
+}
+/* line 43, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li.tab-top-dressed a {
+  width: 267px;
+  background-position: 0 -210px;
+}
+/* line 48, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages .dressed-block ul.tabs li.tab-top-dressed a:hover, #BlockDressedImages .dressed-block ul.tabs li.tab-top-dressed.active a {
+  background-position: 0 -165px;
+}
+/* line 56, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages section.tab {
+  position: relative;
+  display: none;
+}
+/* line 60, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages section.tab.active {
+  display: block;
+}
+/* line 64, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages section.tab .sale-images {
+  overflow: hidden;
+  width: 910px !important;
+  float: left;
+  margin-left: 45px !important;
+  height: 300px;
+}
+/* line 70, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages section.tab .sale-images.active {
+  display: block;
+}
+/* line 74, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages section.tab .sale-images ul {
+  padding: 0;
+  overflow: hidden;
+}
+/* line 78, ../../sass/blocks/block-DressedImages.scss */
+#BlockDressedImages section.tab .sale-images ul li {
+  display: block;
+  overflow: hidden;
+  float: left;
+  height: 300px;
+  width: 180px!important;
+}

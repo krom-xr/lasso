@@ -1,0 +1,62 @@
+/* line 1, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader {
+  color: #fff;
+}
+/* line 4, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .headinfo {
+  height: 80px;
+}
+/* line 7, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .headinfo a {
+  color: #fff;
+}
+/* line 11, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .headinfo .logo {
+  background: url(../img/general/logo-dark.png) no-repeat;
+}
+/* line 15, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .headinfo .phone {
+  background: url(../img/general/head-phone-dark.png) no-repeat 0 0;
+}
+/* line 21, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader nav#Main .submenu {
+  background: #000;
+}
+/* line 24, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader nav#Main .submenu .container {
+  border-top: 4px solid #c0061e;
+}
+/* line 28, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader nav#Main .submenu .container .cat .title {
+  color: #5a5a5a;
+}
+/* line 38, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .cartblock {
+  float: right;
+  position: relative;
+  display: block;
+  background: url(../img/general/cart.png) no-repeat 0 0;
+  padding-left: 70px;
+}
+/* line 45, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .cartblock .cart {
+  padding-left: 10px;
+  padding-top: 10px;
+  float: left;
+  height: 70px;
+}
+/* line 51, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .cartblock .cart dt {
+  display: block;
+  margin: 0 0 5px 0;
+  font-size: 12px;
+}
+/* line 56, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .cartblock .cart dd {
+  display: block;
+  font-size: 11px;
+}
+/* line 62, ../sass/common-header-dark.scss */
+body.dark header#GeneralHeader .cartblock #OpenCart {
+  color: #5a5a5a;
+}

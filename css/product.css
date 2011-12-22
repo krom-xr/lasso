@@ -1,0 +1,201 @@
+/* line 1, ../sass/product.scss */
+#ProductContent {
+  margin-bottom: 40px;
+}
+/* line 5, ../sass/product.scss */
+#ProductContent.sale .sale-prices {
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 15, ../sass/product.scss */
+#ProductContent.sale .sale-prices .newprice {
+  display: block;
+  padding: 10px 5px 5px;
+  background: #cd1f45;
+}
+/* line 21, ../sass/product.scss */
+#ProductContent.sale .sale-prices .oldprice {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding: 2px 5px;
+  font-size: 28px;
+  background: #5a5a5a;
+}
+/* line 29, ../sass/product.scss */
+#ProductContent.sale .sale-prices .oldprice img.strike {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 5px;
+  z-index: 10;
+}
+/* line 40, ../sass/product.scss */
+#ProductContent.sale .strike-line {
+  display: block;
+  position: relative;
+  top: 17px;
+  border-top: 3px solid #5a5a5a;
+  transform: rotate(-17deg);
+  -webkit-transform: rotate(-17deg);
+  -ms-transform: rotate(-17deg);
+  -moz-transform: rotate(-17deg);
+}
+/* line 51, ../sass/product.scss */
+#ProductContent.sale .oldprice-info {
+  position: relative;
+  display: inline-block;
+  float: left;
+  overflow: hidden;
+  margin: 20px 0;
+  text-align: right;
+  font-size: 27px;
+  font-weight: bold;
+}
+/* line 62, ../sass/product.scss */
+#ProductContent.sale .tocart {
+  background: #cd1543;
+}
+/* line 65, ../sass/product.scss */
+#ProductContent.sale .tocart a, #ProductContent.sale .tocart a:hover {
+  color: #fff;
+}
+/* line 73, ../sass/product.scss */
+#ProductContent .content-block {
+  position: relative;
+}
+/* line 76, ../sass/product.scss */
+#ProductContent .content-block article {
+  position: relative;
+}
+/* line 81, ../sass/product.scss */
+#ProductContent .content-block article .big-photo {
+  border: 1px solid #808080;
+  width: 469px;
+}
+/* line 86, ../sass/product.scss */
+#ProductContent .content-block .photo-buttons {
+  position: relative;
+  top: 20px;
+  background: #dadbdc;
+  display: block;
+  height: 25px;
+  width: 471px;
+}
+/* line 96, ../sass/product.scss */
+#ProductContent .content-block .more-photos {
+  display: block;
+  float: left;
+  margin: 10px 0 10px 0;
+  width: 471px!important;
+}
+/* line 103, ../sass/product.scss */
+#ProductContent .content-block .more-photos ul.list {
+  overflow: hidden;
+  padding: 0 !important;
+  width: 471px;
+}
+/* line 108, ../sass/product.scss */
+#ProductContent .content-block .more-photos ul.list li.list-item {
+  float: left;
+  display: block;
+  position: relative;
+  height: 152px;
+  margin-right: 21px;
+  width: 102px !important;
+}
+/* line 116, ../sass/product.scss */
+#ProductContent .content-block .more-photos ul.list li.list-item.lastinline {
+  margin-right: 0;
+}
+/* line 120, ../sass/product.scss */
+#ProductContent .content-block .more-photos ul.list li.list-item img {
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 150px;
+  border: 1px solid #808080;
+}
+/* line 131, ../sass/product.scss */
+#ProductContent .w235, #ProductContent .w470 {
+  float: left;
+}
+/* line 134, ../sass/product.scss */
+#ProductContent .w470 {
+  margin: 0 20px;
+}
+/* line 138, ../sass/product.scss */
+#ProductContent .product-title {
+  margin-top: 40px;
+}
+/* line 141, ../sass/product.scss */
+#ProductContent .product-title header {
+  font-size: 28px;
+  text-transform: uppercase;
+}
+/* line 146, ../sass/product.scss */
+#ProductContent .product-title span.articule {
+  display: block;
+  font-size: 10px;
+  margin-bottom: 20px;
+}
+/* line 153, ../sass/product.scss */
+#ProductContent .likes {
+  margin: 20px 0 40px 0;
+  overflow: hidden;
+}
+/* line 157, ../sass/product.scss */
+#ProductContent .likes .twitter {
+  float: right;
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+}
+/* line 164, ../sass/product.scss */
+#ProductContent .likes .facebook {
+  float: right;
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+}
+/* line 173, ../sass/product.scss */
+#ProductContent .price {
+  margin: 20px 0;
+  text-align: right;
+  font-size: 50px;
+  font-weight: bold;
+}
+/* line 180, ../sass/product.scss */
+#ProductContent .tocart {
+  margin-top: 40px;
+  background: #dedede;
+  position: relative;
+  padding: 10px 50px 10px 10px;
+  font-size: 22px;
+}
+/* line 187, ../sass/product.scss */
+#ProductContent .tocart a {
+  text-decoration: none;
+  display: block;
+}
+/* line 191, ../sass/product.scss */
+#ProductContent .tocart a:hover {
+  color: #000;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+/* line 198, ../sass/product.scss */
+#ProductContent .tocart .cart {
+  position: absolute;
+  right: 0px;
+  top: -20px;
+}

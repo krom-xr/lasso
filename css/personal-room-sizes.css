@@ -1,0 +1,267 @@
+/* line 2, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes {
+  margin-bottom: 40px;
+}
+/* line 5, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes nav {
+  float: left;
+  width: 100%;
+  display: block;
+  margin: 3px 0 20px 0;
+}
+/* line 11, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes nav ul {
+  display: block;
+  float: left;
+}
+/* line 15, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes nav ul li.man, #PersonalRoomSizes nav ul li.child, #PersonalRoomSizes nav ul li.woman {
+  float: left;
+}
+/* line 18, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes nav ul li.man a.head, #PersonalRoomSizes nav ul li.child a.head, #PersonalRoomSizes nav ul li.woman a.head {
+  padding: 3px 10px;
+  margin-right: 10px;
+  margin-top: 0;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  background: #5a5a5a;
+}
+/* line 28, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes nav ul li.woman a:hover, #PersonalRoomSizes nav ul li.woman a.active {
+  background: #c0061e;
+}
+/* line 31, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes nav ul li.man a:hover, #PersonalRoomSizes nav ul li.man a.active {
+  background: #028c33;
+}
+/* line 34, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes nav ul li.child a:hover, #PersonalRoomSizes nav ul li.child a.active {
+  background: #179fea;
+}
+/* line 40, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes header {
+  clear: left;
+  background: #5a5a5a url(../img/blocks/tabs/sizes.png) no-repeat 10px 0;
+  display: block;
+  height: 30px;
+  text-indent: -3000px;
+  line-height: 30px;
+}
+/* line 49, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .man-sizes header {
+  background-position: 10px -40px;
+}
+/* line 53, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes header {
+  background-position: 10px -80px;
+}
+/* line 58, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article {
+  position: relative;
+  width: 100%;
+  height: 670px;
+  background: url(../img/sizes/woman.png) no-repeat center 40px;
+}
+/* line 64, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .block.gray, #PersonalRoomSizes article .note {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 5px;
+}
+/* line 70, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .note {
+  width: 230px;
+  font-size: 10px;
+}
+/* line 75, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .rost {
+  top: 566px;
+  right: 20px;
+}
+/* line 80, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .bedra {
+  top: 394px;
+  left: 1px;
+}
+/* line 85, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .tors {
+  top: 693px;
+  right: 36px;
+}
+/* line 90, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .niz-talii {
+  top: 214px;
+  left: 0px;
+}
+/* line 95, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .pod-grudyu {
+  top: 244px;
+  left: 0;
+}
+/* line 100, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .plechi {
+  top: 166px;
+  right: 20px;
+}
+/* line 105, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .talia {
+  top: 315px;
+  right: 20px;
+}
+/* line 110, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .grud {
+  top: 110px;
+  left: 0px;
+}
+/* line 114, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .stopa {
+  top: 553px;
+  left: 0px;
+}
+/* line 119, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .user-sizes.man, #PersonalRoomSizes article .user-sizes.woman, #PersonalRoomSizes article .user-sizes.child {
+  background: #c0061e;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
+/* line 128, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .user-sizes b {
+  float: left;
+  margin-right: 5px;
+  font-weight: normal;
+}
+/* line 133, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .user-sizes .info {
+  margin-left: 5px;
+  cursor: help;
+  font-style: normal;
+  background: url(../img/general/icons/icon-info-mini.png) no-repeat 0 3px;
+  width: 10px;
+  height: 15px;
+  display: block;
+  float: left;
+  text-indent: -4000px;
+}
+/* line 145, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .user-sizes.man {
+  background: #028c33;
+}
+/* line 148, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article .user-sizes.child {
+  background: #179fea;
+}
+/* line 153, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article label {
+  float: left;
+  line-height: 25px;
+  width: 120px;
+  font-size: 14px;
+}
+/* line 160, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article input {
+  float: left;
+  width: 40px;
+}
+/* line 165, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes article span.mm {
+  float: left;
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 25px;
+}
+/* line 173, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .man-sizes article {
+  background: url(../img/sizes/man.png) no-repeat center 40px;
+}
+/* line 176, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .man-sizes article .bedra {
+  top: 366px;
+}
+/* line 180, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .man-sizes article .plechi {
+  top: 164px;
+}
+/* line 184, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .man-sizes article .rost {
+  top: 556px;
+  right: 20px;
+}
+/* line 189, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .man-sizes article .stopa {
+  top: 595px;
+  left: 0px;
+}
+/* line 195, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article {
+  background: url(../img/sizes/child.png) no-repeat center 40px;
+}
+/* line 198, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .bedra {
+  top: 270px;
+  left: 495px;
+}
+/* line 203, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .vozrast {
+  top: 20px;
+  left: 0;
+}
+/* line 207, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .vozrast .block {
+  float: left;
+  overflow: visible;
+}
+/* line 212, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .vozrast label {
+  width: 80px;
+}
+/* line 216, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .vozrast .jqTransformSelectWrapper {
+  width: 128px!important;
+}
+/* line 220, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .vozrast .jqTransformSelectWrapper div span {
+  width: 123px!important;
+}
+/* line 225, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .vozrast .jqTransformSelectWrapper ul {
+  width: 128px!important;
+  height: 79px!important;
+}
+/* line 231, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .rost {
+  top: 439px;
+  right: 20px;
+}
+/* line 237, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .stopa {
+  top: 398px;
+  left: 0px;
+}
+/* line 242, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .grud {
+  top: 120px;
+  left: 0;
+}
+/* line 247, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .child-sizes article .talia {
+  left: 0;
+  top: 237px;
+}
+/* line 253, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .w725, #PersonalRoomSizes .w235 {
+  float: left;
+}
+/* line 257, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .w725 {
+  margin-left: 20px;
+}
+/* line 261, ../sass/personal-room-sizes.scss */
+#PersonalRoomSizes .w160 {
+  float: left;
+  display: block;
+  width: 160px;
+}

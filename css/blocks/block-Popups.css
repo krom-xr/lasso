@@ -1,0 +1,845 @@
+/* line 2, ../../sass/blocks/block-Popups.scss */
+.close {
+  display: block;
+  width: 14px;
+  height: 14px;
+  float: right;
+  background: url(../img/general/icons/icon-delete-mini.png) no-repeat 0 0;
+}
+/* line 9, ../../sass/blocks/block-Popups.scss */
+.close:hover {
+  background-position: 0 -18px;
+}
+
+/* line 14, ../../sass/blocks/block-Popups.scss */
+.popup-delete-button {
+  display: none;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: url(../img/general/icons/icon-delete-mini.png) no-repeat 0 0;
+}
+/* line 23, ../../sass/blocks/block-Popups.scss */
+.popup-delete-button:hover {
+  background-position: 0 -18px;
+}
+
+/* line 28, ../../sass/blocks/block-Popups.scss */
+.popup {
+  -moz-box-shadow: 5px 5px 5px #666666;
+  -webkit-box-shadow: 5px 5px 5px #666666;
+  -o-box-shadow: 5px 5px 5px #666666;
+  box-shadow: 5px 5px 5px #666666;
+  width: 235px;
+  position: absolute;
+  display: none;
+  z-index: 21000;
+  background: #dedede;
+}
+/* line 37, ../../sass/blocks/block-Popups.scss */
+.popup.display {
+  display: block;
+}
+/* line 41, ../../sass/blocks/block-Popups.scss */
+.popup header {
+  display: block;
+  padding: 5px 10px;
+  font-size: 14px;
+  overflow: hidden;
+  text-transform: uppercase;
+  color: #fff;
+}
+/* line 50, ../../sass/blocks/block-Popups.scss */
+.popup aside {
+  padding: 0 10px 10px 10px;
+  margin-top: 0;
+  overflow: hidden;
+}
+/* line 55, ../../sass/blocks/block-Popups.scss */
+.popup aside a {
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+/* line 61, ../../sass/blocks/block-Popups.scss */
+.popup aside a:hover {
+  text-decoration: underline;
+}
+/* line 65, ../../sass/blocks/block-Popups.scss */
+.popup aside a.select-view {
+  float: left;
+  width: 68px;
+  height: 73px;
+  overflow: hidden;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  border: 1px solid #5a5a5a;
+}
+/* line 74, ../../sass/blocks/block-Popups.scss */
+.popup aside a.select-view.lastinline {
+  margin-right: 0;
+}
+/* line 78, ../../sass/blocks/block-Popups.scss */
+.popup aside a.select-view:hover, .popup aside a.select-view.active {
+  border: 1px solid #c0061e;
+}
+/* line 87, ../../sass/blocks/block-Popups.scss */
+.popup fieldset dl {
+  padding: 0;
+  display: block;
+  width: 100%;
+  clear: both;
+  float: left;
+  margin-top: 10px;
+}
+/* line 96, ../../sass/blocks/block-Popups.scss */
+.popup fieldset dd {
+  display: block;
+  float: left;
+}
+/* line 100, ../../sass/blocks/block-Popups.scss */
+.popup fieldset dd label {
+  float: left;
+  margin-right: 5px;
+  font-size: 11px;
+  line-height: 18px;
+}
+/* line 108, ../../sass/blocks/block-Popups.scss */
+.popup fieldset .jqTransformRadioWrapper {
+  float: left;
+  display: block;
+  width: 50%;
+  margin-bottom: 10px;
+}
+/* line 112, ../../sass/blocks/block-Popups.scss */
+.popup fieldset .jqTransformRadioWrapper label {
+  line-height: 16px;
+  margin-left: 8px;
+}
+/* line 117, ../../sass/blocks/block-Popups.scss */
+.popup fieldset .jqTransformRadio {
+  text-indent: -3000px;
+  background: transparent url(../img/forms/radio-button-big.png) no-repeat left top;
+  vertical-align: middle;
+  float: left;
+  height: 16px;
+  margin-left: 0px;
+  width: 16px;
+  display: block;
+  /*display: -moz-inline-block;*/
+}
+/* line 128, ../../sass/blocks/block-Popups.scss */
+.popup fieldset a.jqTransformDisabled {
+  background-position: right bottom;
+}
+/* line 129, ../../sass/blocks/block-Popups.scss */
+.popup fieldset a.jqTransformChecked {
+  background-position: left bottom;
+}
+/* line 132, ../../sass/blocks/block-Popups.scss */
+.popup ul {
+  padding: 10px;
+}
+/* line 135, ../../sass/blocks/block-Popups.scss */
+.popup ul li {
+  clear: both;
+  margin-bottom: 20px;
+  display: block;
+}
+/* line 140, ../../sass/blocks/block-Popups.scss */
+.popup ul li.selectors {
+  margin-bottom: 10px;
+}
+/* line 144, ../../sass/blocks/block-Popups.scss */
+.popup ul li .title {
+  float: left;
+  font-size: 16px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+/* line 151, ../../sass/blocks/block-Popups.scss */
+.popup ul li .title a {
+  text-decoration: none;
+}
+/* line 154, ../../sass/blocks/block-Popups.scss */
+.popup ul li .title a:hover {
+  text-decoration: underline;
+}
+/* line 160, ../../sass/blocks/block-Popups.scss */
+.popup ul li .articule {
+  clear: left;
+  float: left;
+  font-size: 12px;
+}
+/* line 166, ../../sass/blocks/block-Popups.scss */
+.popup ul li .price {
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 174, ../../sass/blocks/block-Popups.scss */
+.popup .to-order {
+  display: block;
+  padding: 5px 10px;
+  text-align: center;
+  background: #5a5a5a;
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 184, ../../sass/blocks/block-Popups.scss */
+.popup .to-order:hover {
+  background: #cd1442;
+}
+/* line 189, ../../sass/blocks/block-Popups.scss */
+.popup .send {
+  display: block;
+  float: right;
+  padding: 5px 10px;
+  text-align: center;
+  background: #028c33;
+  font-size: 12px;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 201, ../../sass/blocks/block-Popups.scss */
+.popup .send:hover {
+  background: #5a5a5a;
+}
+/* line 206, ../../sass/blocks/block-Popups.scss */
+.popup .cancel {
+  display: block;
+  float: right;
+  padding: 5px 10px;
+  text-align: center;
+  background: #c0061e;
+  font-size: 12px;
+  margin-right: 10px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* line 218, ../../sass/blocks/block-Popups.scss */
+.popup .cancel:hover {
+  background: #5a5a5a;
+}
+/* line 223, ../../sass/blocks/block-Popups.scss */
+.popup .total {
+  clear: both;
+  display: block;
+  text-align: right;
+  margin: 0 10px 10px 10px;
+}
+/* line 229, ../../sass/blocks/block-Popups.scss */
+.popup .allprice {
+  margin-bottom: 0;
+  text-align: right;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+/* line 235, ../../sass/blocks/block-Popups.scss */
+.popup .allprice .price {
+  font-size: 22px;
+  margin-left: 10px;
+  float: none;
+}
+/* line 241, ../../sass/blocks/block-Popups.scss */
+.popup .to-dressed {
+  display: block;
+  float: left;
+  height: 15px;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 0 10px 10px;
+  background: #5a5a5a url(../img/general/icons/icons-dressed-mini.png) no-repeat center 2px;
+  font-size: 10px;
+  padding: 18px 5px 0px 5px;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 254, ../../sass/blocks/block-Popups.scss */
+.popup .to-dressed:hover {
+  background-color: #cd1442;
+}
+/* line 259, ../../sass/blocks/block-Popups.scss */
+.popup .to-details {
+  display: block;
+  float: left;
+  height: 15px;
+  overflow: hidden;
+  text-align: center;
+  margin: 0 0 10px 10px;
+  background: #5a5a5a url(../img/general/icons/icons-info-mini.png) no-repeat center 2px;
+  font-size: 10px;
+  padding: 18px 5px 0px 5px;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 272, ../../sass/blocks/block-Popups.scss */
+.popup .to-details:hover {
+  background-color: #cd1442;
+}
+/* line 277, ../../sass/blocks/block-Popups.scss */
+.popup .to-cart {
+  display: block;
+  width: 78px;
+  height: 28px;
+  position: relative;
+  float: right;
+  text-align: left;
+  margin: 0 10px 10px 0;
+  background: #5a5a5a;
+  font-size: 10px;
+  padding: 5px 38px 0px 5px;
+  vertical-align: middle;
+  line-height: 1.1;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 293, ../../sass/blocks/block-Popups.scss */
+.popup .to-cart .text {
+  display: block;
+  float: left;
+}
+/* line 298, ../../sass/blocks/block-Popups.scss */
+.popup .to-cart .cart {
+  display: block;
+  width: 33px;
+  height: 45px;
+  background: url(../img/general/cart-mini.png) no-repeat;
+  position: absolute;
+  z-index: 40;
+  top: -10px;
+  right: 4px;
+}
+/* line 309, ../../sass/blocks/block-Popups.scss */
+.popup .to-cart:hover {
+  background-color: #cd1442;
+}
+
+/* line 315, ../../sass/blocks/block-Popups.scss */
+.dressed-popup {
+  width: 180px;
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  z-index: 50;
+  display: block;
+}
+/* line 323, ../../sass/blocks/block-Popups.scss */
+.dressed-popup span {
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 329, ../../sass/blocks/block-Popups.scss */
+.dressed-popup .to-cart {
+  float: left;
+  margin-left: 10px;
+}
+/* line 334, ../../sass/blocks/block-Popups.scss */
+.dressed-popup .back-to {
+  clear: both;
+  position: relative;
+  display: block;
+  font-size: 11px;
+  margin-bottom: 5px;
+  padding-left: 13px;
+}
+/* line 342, ../../sass/blocks/block-Popups.scss */
+.dressed-popup .back-to.up {
+  background: url(../img/dressed/popup-up-down.png) no-repeat;
+  background-position: 0 2px;
+}
+/* line 346, ../../sass/blocks/block-Popups.scss */
+.dressed-popup .back-to.up:hover {
+  background-position: 0 -41px;
+}
+/* line 351, ../../sass/blocks/block-Popups.scss */
+.dressed-popup .back-to.down {
+  background: url(../img/dressed/popup-up-down.png) no-repeat;
+  background-position: 0 -88px;
+}
+/* line 355, ../../sass/blocks/block-Popups.scss */
+.dressed-popup .back-to.down:hover {
+  background-position: 0 -138px;
+}
+/* line 361, ../../sass/blocks/block-Popups.scss */
+.dressed-popup header {
+  background: #5a5a5a;
+}
+
+/* line 366, ../../sass/blocks/block-Popups.scss */
+#LoginForm {
+  width: 345px;
+  z-index: 21000;
+  position: fixed;
+  font-size: 12px;
+}
+/* line 372, ../../sass/blocks/block-Popups.scss */
+#LoginForm .close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+/* line 380, ../../sass/blocks/block-Popups.scss */
+#LoginForm fieldset legend {
+  background: #5a5a5a url(../img/general/popups/title-auth.png) no-repeat;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  display: block;
+  text-indent: -4000px;
+}
+/* line 389, ../../sass/blocks/block-Popups.scss */
+#LoginForm fieldset dl {
+  padding: 20px 0;
+  overflow: hidden;
+}
+/* line 394, ../../sass/blocks/block-Popups.scss */
+#LoginForm fieldset dd {
+  padding: 0 20px;
+  clear: both;
+  margin-bottom: 10px;
+}
+/* line 399, ../../sass/blocks/block-Popups.scss */
+#LoginForm fieldset dd label {
+  font-size: 12px;
+  width: 75px!important;
+  line-height: 25px;
+}
+/* line 407, ../../sass/blocks/block-Popups.scss */
+#LoginForm .error {
+  color: #cd1543;
+  margin-bottom: 0;
+  margin-top: 10px;
+  font-size: 11px;
+}
+/* line 413, ../../sass/blocks/block-Popups.scss */
+#LoginForm .error a {
+  color: #5a5a5a;
+  text-decoration: none;
+}
+/* line 417, ../../sass/blocks/block-Popups.scss */
+#LoginForm .error a:hover {
+  text-decoration: underline;
+}
+/* line 423, ../../sass/blocks/block-Popups.scss */
+#LoginForm .reg {
+  float: left;
+  margin: 5px 0 0 20px;
+  font-size: 11px;
+  text-decoration: none;
+}
+/* line 429, ../../sass/blocks/block-Popups.scss */
+#LoginForm .reg:hover {
+  text-decoration: underline;
+}
+/* line 434, ../../sass/blocks/block-Popups.scss */
+#LoginForm button {
+  display: block;
+  width: 120px;
+  height: 30px;
+  position: relative;
+  margin-right: 20px;
+  float: right;
+  border: 0;
+  outline: 0;
+  text-indent: -4000px;
+  background: url(../img/forms/buttons/popup-button-login.png) no-repeat 0 0;
+}
+/* line 446, ../../sass/blocks/block-Popups.scss */
+#LoginForm button:hover {
+  background-position: 0 -40px;
+}
+
+/* line 454, ../../sass/blocks/block-Popups.scss */
+.open-product {
+  position: absolute;
+  top: -30px;
+  left: -190px;
+  z-index: 15000;
+}
+/* line 461, ../../sass/blocks/block-Popups.scss */
+.open-product .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+/* line 467, ../../sass/blocks/block-Popups.scss */
+.open-product ul {
+  padding: 10px;
+  width: auto!important;
+}
+/* line 471, ../../sass/blocks/block-Popups.scss */
+.open-product ul li {
+  margin-bottom: 5px;
+  margin-left: 0!important;
+  height: auto!important;
+  width: 100%;
+}
+/* line 477, ../../sass/blocks/block-Popups.scss */
+.open-product ul li.selectors {
+  margin-bottom: 0px;
+}
+/* line 481, ../../sass/blocks/block-Popups.scss */
+.open-product ul li .title {
+  margin-bottom: 0px;
+}
+/* line 485, ../../sass/blocks/block-Popups.scss */
+.open-product ul li.allprice {
+  margin-bottom: 10px;
+}
+
+/* line 492, ../../sass/blocks/block-Popups.scss */
+.open-dressed {
+  position: absolute;
+  top: -30px;
+  left: -190px;
+}
+/* line 497, ../../sass/blocks/block-Popups.scss */
+.open-dressed header {
+  background: #C0061E;
+  margin-bottom: 0!important;
+}
+/* line 502, ../../sass/blocks/block-Popups.scss */
+.open-dressed label.checker {
+  color: #959595;
+}
+/* line 505, ../../sass/blocks/block-Popups.scss */
+.open-dressed label.checker.checked {
+  color: #5a5a5a;
+}
+/* line 510, ../../sass/blocks/block-Popups.scss */
+.open-dressed span.jqTransformCheckboxWrapper {
+  display: block;
+  float: left;
+  margin-top: 1px;
+  margin-right: 5px;
+}
+/* line 516, ../../sass/blocks/block-Popups.scss */
+.open-dressed a.jqTransformCheckbox {
+  background: transparent url(../img/forms/category-checkbox.png) no-repeat center top;
+  vertical-align: middle;
+  margin-top: 2px;
+  padding: 0;
+  height: 12px;
+  width: 12px;
+  display: block;
+  /*display: -moz-inline-block;*/
+}
+/* line 525, ../../sass/blocks/block-Popups.scss */
+.open-dressed a.jqTransformCheckbox.jqTransformChecked {
+  background: transparent url(../img/forms/category-checkbox.png) no-repeat center bottom;
+}
+/* line 530, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper {
+  position: relative;
+  height: 18px;
+  width: 40px!important;
+  color: #fff;
+  z-index: 100!important;
+  background: #5a5a5a;
+  float: left;
+}
+/* line 541, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper div span {
+  font-size: 10px;
+  float: none;
+  width: 48px!important;
+  z-index: 20!important;
+  display: block;
+  position: absolute;
+  white-space: nowrap;
+  height: 18px;
+  line-height: 19px;
+  padding: 0px 3px 0 7px;
+  left: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 556, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper div span .select-img {
+  position: relative;
+  left: -7px;
+  width: 40px;
+  height: 25px;
+}
+/* line 563, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper div span:hover {
+  background: url(../img/forms/sort-select-hover.png) no-repeat top right;
+}
+/* line 567, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper div span.selected {
+  background: url(../img/forms/sort-select-active.png) no-repeat top right;
+}
+/* line 572, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper a.jqTransformSelectOpen {
+  display: block;
+  position: absolute;
+  left: 0px;
+  z-index: 30!important;
+  width: 18px;
+  height: 18px;
+  background: url(../img/forms/sort-select-inactive.png) no-repeat top right;
+}
+/* line 582, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper ul {
+  position: absolute;
+  top: 20px;
+  left: 0px;
+  list-style: none;
+  display: none;
+  margin: 0px;
+  width: 58px!important;
+  padding: 0px;
+  height: 60px!important;
+  overflow: auto!important;
+  overflow-x: hidden !important;
+  z-index: 0!important;
+}
+/* line 596, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper ul li {
+  margin: 0;
+}
+/* line 600, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper ul .select-img {
+  position: relative;
+  left: -7px;
+  width: 58px;
+  height: 20px;
+  float: left;
+  overflow: hidden;
+  cursor: pointer;
+}
+/* line 611, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper ul a {
+  display: block;
+  padding: 2px 7px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #959595;
+  font-size: 10px;
+}
+/* line 620, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper ul a.selected {
+  background: #5a5a5a;
+  color: #fff;
+}
+/* line 625, ../../sass/blocks/block-Popups.scss */
+.open-dressed .jqTransformSelectWrapper ul a:hover, .open-dressed .jqTransformSelectWrapper ul a.selected:hover {
+  background: #cd1442;
+  color: #fff;
+}
+/* line 632, ../../sass/blocks/block-Popups.scss */
+.open-dressed fieldset dd {
+  display: block;
+  width: 50%;
+  float: left;
+  margin-bottom: 10px;
+}
+/* line 639, ../../sass/blocks/block-Popups.scss */
+.open-dressed ul {
+  padding: 10px;
+  margin-top: 0;
+}
+/* line 643, ../../sass/blocks/block-Popups.scss */
+.open-dressed ul li {
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+/* line 647, ../../sass/blocks/block-Popups.scss */
+.open-dressed ul li.selectors {
+  margin-bottom: 10px;
+}
+
+/* line 654, ../../sass/blocks/block-Popups.scss */
+#OpenCanceled {
+  width: 235px;
+  background: #dedede;
+}
+/* line 658, ../../sass/blocks/block-Popups.scss */
+#OpenCanceled header {
+  background: #c0061e;
+}
+/* line 662, ../../sass/blocks/block-Popups.scss */
+#OpenCanceled ul {
+  padding: 10px 10px 0 10px;
+}
+
+/* line 667, ../../sass/blocks/block-Popups.scss */
+.send-to-friend {
+  position: absolute;
+  width: 400px;
+  top: 30px;
+  left: 60px;
+  display: block;
+}
+/* line 674, ../../sass/blocks/block-Popups.scss */
+.send-to-friend header {
+  background: #5a5a5a;
+}
+/* line 678, ../../sass/blocks/block-Popups.scss */
+.send-to-friend .product-image {
+  margin: 10px 0 10px 10px;
+  float: left;
+  width: 170px;
+  height: 250px;
+}
+/* line 685, ../../sass/blocks/block-Popups.scss */
+.send-to-friend ul {
+  float: left;
+  width: 200px;
+  clear: none;
+}
+/* line 691, ../../sass/blocks/block-Popups.scss */
+.send-to-friend ol li {
+  float: left;
+  margin-bottom: 10px;
+}
+/* line 695, ../../sass/blocks/block-Popups.scss */
+.send-to-friend ol li label {
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 3px;
+}
+/* line 701, ../../sass/blocks/block-Popups.scss */
+.send-to-friend ol li .white-form {
+  width: 190px;
+}
+/* line 705, ../../sass/blocks/block-Popups.scss */
+.send-to-friend ol li textarea {
+  resize: none;
+}
+/* line 710, ../../sass/blocks/block-Popups.scss */
+.send-to-friend .material, .send-to-friend .madein {
+  display: block;
+  clear: left;
+}
+
+/* line 717, ../../sass/blocks/block-Popups.scss */
+#OpenCart {
+  position: absolute;
+  right: 0;
+  z-index: 10000;
+  margin: 10px 0;
+}
+/* line 723, ../../sass/blocks/block-Popups.scss */
+#OpenCart header {
+  background: #028c33;
+}
+
+/* line 728, ../../sass/blocks/block-Popups.scss */
+.notify-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  color: #fff;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+/* line 738, ../../sass/blocks/block-Popups.scss */
+.notify-modal .w980 {
+  margin: 0 auto;
+  background: #028c33;
+  padding: 20px;
+}
+/* line 743, ../../sass/blocks/block-Popups.scss */
+.notify-modal .w980 header {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+/* line 750, ../../sass/blocks/block-Popups.scss */
+.notify-modal .w980 article {
+  font-size: 14px;
+}
+
+/* line 756, ../../sass/blocks/block-Popups.scss */
+.notify-error {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  color: #fff;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+}
+/* line 766, ../../sass/blocks/block-Popups.scss */
+.notify-error .w980 {
+  margin: 0 auto;
+  background: #c0061e;
+  padding: 20px;
+}
+/* line 771, ../../sass/blocks/block-Popups.scss */
+.notify-error .w980 header {
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+/* line 778, ../../sass/blocks/block-Popups.scss */
+.notify-error .w980 article {
+  font-size: 14px;
+}
+
+/* line 784, ../../sass/blocks/block-Popups.scss */
+#CallBack {
+  display: block;
+  position: absolute;
+  top: 400px;
+  left: 400px;
+  z-index: 10000;
+}
+/* line 791, ../../sass/blocks/block-Popups.scss */
+#CallBack header {
+  background: #5a5a5a;
+}
+/* line 795, ../../sass/blocks/block-Popups.scss */
+#CallBack p {
+  padding: 10px;
+  border-bottom: 1px solid #5a5a5a;
+}
+/* line 800, ../../sass/blocks/block-Popups.scss */
+#CallBack form {
+  overflow: hidden;
+  padding: 10px;
+}
+/* line 804, ../../sass/blocks/block-Popups.scss */
+#CallBack form .white-form {
+  width: 205px;
+}
+/* line 808, ../../sass/blocks/block-Popups.scss */
+#CallBack form label {
+  display: block;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+}
+/* line 814, ../../sass/blocks/block-Popups.scss */
+#CallBack form li {
+  float: left;
+  margin-bottom: 10px;
+}
+/* line 819, ../../sass/blocks/block-Popups.scss */
+#CallBack .to-order {
+  font-size: 18px;
+}
+
+/* line 824, ../../sass/blocks/block-Popups.scss */
+#mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 20000;
+  display: none;
+}

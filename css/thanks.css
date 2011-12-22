@@ -1,0 +1,64 @@
+/* line 1, ../sass/thanks.scss */
+#ThanksContent {
+  margin-bottom: 40px;
+}
+/* line 4, ../sass/thanks.scss */
+#ThanksContent .thanks, #ThanksContent .bonuses {
+  background: #dedede;
+  margin-bottom: 10px;
+  overflow: hidden;
+  padding: 40px 0;
+}
+/* line 10, ../sass/thanks.scss */
+#ThanksContent .thanks .w260, #ThanksContent .thanks .w710, #ThanksContent .bonuses .w260, #ThanksContent .bonuses .w710 {
+  float: left;
+}
+/* line 14, ../sass/thanks.scss */
+#ThanksContent .thanks .w260, #ThanksContent .bonuses .w260 {
+  width: 210px;
+  padding-right: 50px;
+}
+/* line 19, ../sass/thanks.scss */
+#ThanksContent .thanks .cart, #ThanksContent .bonuses .cart {
+  display: block;
+  float: right;
+  width: 106px;
+  height: 138px;
+  background: url(../img/general/cart-big.png) no-repeat 0 0;
+}
+/* line 27, ../sass/thanks.scss */
+#ThanksContent .thanks .count-bonuses, #ThanksContent .bonuses .count-bonuses {
+  font-size: 52px;
+  line-height: 52px;
+  font-weight: bold;
+  display: block;
+  float: right;
+}
+/* line 35, ../sass/thanks.scss */
+#ThanksContent .thanks article, #ThanksContent .bonuses article {
+  padding-right: 40px;
+}
+/* line 38, ../sass/thanks.scss */
+#ThanksContent .thanks article h1, #ThanksContent .bonuses article h1 {
+  font-size: 24px;
+  text-transform: none;
+  margin-bottom: 20px;
+}
+/* line 44, ../sass/thanks.scss */
+#ThanksContent .thanks article p, #ThanksContent .bonuses article p {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+/* line 52, ../sass/thanks.scss */
+#ThanksContent .bonuses {
+  padding: 20px 0 0 0;
+}
+/* line 57, ../sass/thanks.scss */
+#ThanksContent .go-back .save.reg {
+  background: url(../img/forms/buttons/reg-button.png) no-repeat top right;
+}
+/* line 60, ../sass/thanks.scss */
+#ThanksContent .go-back .save.reg:hover {
+  background-position: bottom right;
+}

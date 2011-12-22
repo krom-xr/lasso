@@ -1,0 +1,54 @@
+/* line 3, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .prev-button, #BlockLookAtThis .prev-button, #BlockSaleImages .prev-button {
+  display: block;
+  width: 35px;
+  height: 300px;
+  text-indent: -4000px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 12, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .prev-button a, #BlockLookAtThis .prev-button a, #BlockSaleImages .prev-button a {
+  display: block;
+  background: url(../img/slider/nav-h300-sprite.png) no-repeat;
+  background-position: 0 -310px;
+  width: 35px;
+  height: 300px;
+}
+/* line 19, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .prev-button a:hover, #BlockLookAtThis .prev-button a:hover, #BlockSaleImages .prev-button a:hover {
+  background-position: 0 0;
+}
+/* line 22, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .prev-button a.inactive, #BlockLookAtThis .prev-button a.inactive, #BlockSaleImages .prev-button a.inactive {
+  cursor: default;
+  background-position: 0 -1240px;
+}
+/* line 29, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .next-button, #BlockLookAtThis .next-button, #BlockSaleImages .next-button {
+  display: block;
+  width: 35px;
+  height: 300px;
+  text-indent: -4000px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* line 38, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .next-button a, #BlockLookAtThis .next-button a, #BlockSaleImages .next-button a {
+  display: block;
+  background: url(../img/slider/nav-h300-sprite.png) no-repeat;
+  background-position: 0 -930px;
+  width: 35px;
+  height: 300px;
+}
+/* line 45, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .next-button a:hover, #BlockLookAtThis .next-button a:hover, #BlockSaleImages .next-button a:hover {
+  background-position: 0 -620px;
+}
+/* line 49, ../../sass/blocks/block-slider-elements.scss */
+#BlockDressedImages .next-button a.inactive, #BlockLookAtThis .next-button a.inactive, #BlockSaleImages .next-button a.inactive {
+  cursor: default;
+  background-position: 0 -1550px;
+}

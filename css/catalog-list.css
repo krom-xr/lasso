@@ -1,0 +1,177 @@
+/* line 3, ../sass/catalog-list.scss */
+.catalog-product-list ul, .wishes-products-list ul, .slide-catalog-product-list ul {
+  padding: 0;
+}
+/* line 6, ../sass/catalog-list.scss */
+.catalog-product-list ul li, .catalog-product-list ul div.item, .wishes-products-list ul li, .wishes-products-list ul div.item, .slide-catalog-product-list ul li, .slide-catalog-product-list ul div.item {
+  display: block;
+  position: relative;
+  float: left;
+  height: 270px;
+  width: 170px;
+  margin-bottom: 80px;
+  margin-right: 15px;
+}
+/* line 17, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .sale-prices, .catalog-product-list ul div.item.sale-item .sale-prices, .wishes-products-list ul li.sale-item .sale-prices, .wishes-products-list ul div.item.sale-item .sale-prices, .slide-catalog-product-list ul li.sale-item .sale-prices, .slide-catalog-product-list ul div.item.sale-item .sale-prices {
+  position: absolute;
+  z-index: 100;
+  top: 5px;
+  left: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+/* line 27, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .sale-prices .newprice, .catalog-product-list ul div.item.sale-item .sale-prices .newprice, .wishes-products-list ul li.sale-item .sale-prices .newprice, .wishes-products-list ul div.item.sale-item .sale-prices .newprice, .slide-catalog-product-list ul li.sale-item .sale-prices .newprice, .slide-catalog-product-list ul div.item.sale-item .sale-prices .newprice {
+  display: block;
+  padding: 5px;
+  background: #cd1f45;
+}
+/* line 33, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .sale-prices .oldprice, .catalog-product-list ul div.item.sale-item .sale-prices .oldprice, .wishes-products-list ul li.sale-item .sale-prices .oldprice, .wishes-products-list ul div.item.sale-item .sale-prices .oldprice, .slide-catalog-product-list ul li.sale-item .sale-prices .oldprice, .slide-catalog-product-list ul div.item.sale-item .sale-prices .oldprice {
+  display: block;
+  position: relative;
+  padding: 2px 5px;
+  font-size: 13px;
+  background: #5a5a5a;
+}
+/* line 40, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .sale-prices .oldprice img.strike, .catalog-product-list ul div.item.sale-item .sale-prices .oldprice img.strike, .wishes-products-list ul li.sale-item .sale-prices .oldprice img.strike, .wishes-products-list ul div.item.sale-item .sale-prices .oldprice img.strike, .slide-catalog-product-list ul li.sale-item .sale-prices .oldprice img.strike, .slide-catalog-product-list ul div.item.sale-item .sale-prices .oldprice img.strike {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0;
+  z-index: 10;
+}
+/* line 49, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .sale-prices .oldprice .strike-line, .catalog-product-list ul div.item.sale-item .sale-prices .oldprice .strike-line, .wishes-products-list ul li.sale-item .sale-prices .oldprice .strike-line, .wishes-products-list ul div.item.sale-item .sale-prices .oldprice .strike-line, .slide-catalog-product-list ul li.sale-item .sale-prices .oldprice .strike-line, .slide-catalog-product-list ul div.item.sale-item .sale-prices .oldprice .strike-line {
+  display: block;
+  position: relative;
+  top: 10px;
+  border-top: 2px solid #5a5a5a;
+  transform: rotate(-20deg);
+  -webkit-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+}
+/* line 62, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .info, .catalog-product-list ul div.item.sale-item .info, .wishes-products-list ul li.sale-item .info, .wishes-products-list ul div.item.sale-item .info, .slide-catalog-product-list ul li.sale-item .info, .slide-catalog-product-list ul div.item.sale-item .info {
+  color: #fff;
+  background: #cd1f45;
+}
+/* line 65, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .info a, .catalog-product-list ul div.item.sale-item .info a, .wishes-products-list ul li.sale-item .info a, .wishes-products-list ul div.item.sale-item .info a, .slide-catalog-product-list ul li.sale-item .info a, .slide-catalog-product-list ul div.item.sale-item .info a {
+  color: #fff;
+}
+/* line 71, ../sass/catalog-list.scss */
+.catalog-product-list ul li.sale-item .info .tocart a, .catalog-product-list ul div.item.sale-item .info .tocart a, .wishes-products-list ul li.sale-item .info .tocart a, .wishes-products-list ul div.item.sale-item .info .tocart a, .slide-catalog-product-list ul li.sale-item .info .tocart a, .slide-catalog-product-list ul div.item.sale-item .info .tocart a {
+  background: url(../img/general/cart-sale-mini.png) no-repeat 0 0 !important;
+}
+/* line 79, ../sass/catalog-list.scss */
+.catalog-product-list ul li a, .catalog-product-list ul div.item a, .wishes-products-list ul li a, .wishes-products-list ul div.item a, .slide-catalog-product-list ul li a, .slide-catalog-product-list ul div.item a {
+  text-decoration: none;
+}
+/* line 83, ../sass/catalog-list.scss */
+.catalog-product-list ul li .image, .catalog-product-list ul div.item .image, .wishes-products-list ul li .image, .wishes-products-list ul div.item .image, .slide-catalog-product-list ul li .image, .slide-catalog-product-list ul div.item .image {
+  width: 168px;
+  height: 248px;
+  border: 1px solid #5a5a5a;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/* line 93, ../sass/catalog-list.scss */
+.catalog-product-list ul li .image.active, .catalog-product-list ul div.item .image.active, .wishes-products-list ul li .image.active, .wishes-products-list ul div.item .image.active, .slide-catalog-product-list ul li .image.active, .slide-catalog-product-list ul div.item .image.active {
+  border: 1px solid #c0061e;
+}
+/* line 97, ../sass/catalog-list.scss */
+.catalog-product-list ul li .image img, .catalog-product-list ul div.item .image img, .wishes-products-list ul li .image img, .wishes-products-list ul div.item .image img, .slide-catalog-product-list ul li .image img, .slide-catalog-product-list ul div.item .image img {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  max-width: 168px;
+  height: auto;
+}
+/* line 108, ../sass/catalog-list.scss */
+.catalog-product-list ul li.lastinline, .catalog-product-list ul div.item.lastinline, .wishes-products-list ul li.lastinline, .wishes-products-list ul div.item.lastinline, .slide-catalog-product-list ul li.lastinline, .slide-catalog-product-list ul div.item.lastinline {
+  margin-right: 0;
+}
+/* line 112, ../sass/catalog-list.scss */
+.catalog-product-list ul li .info, .catalog-product-list ul div.item .info, .wishes-products-list ul li .info, .wishes-products-list ul div.item .info, .slide-catalog-product-list ul li .info, .slide-catalog-product-list ul div.item .info {
+  display: block;
+  background: #dadbdc;
+  margin-top: 12px;
+  height: 15px;
+  padding: 10px 5px;
+}
+/* line 119, ../sass/catalog-list.scss */
+.catalog-product-list ul li .info .title, .catalog-product-list ul div.item .info .title, .wishes-products-list ul li .info .title, .wishes-products-list ul div.item .info .title, .slide-catalog-product-list ul li .info .title, .slide-catalog-product-list ul div.item .info .title {
+  display: block;
+  float: left;
+  text-decoration: underline;
+  overflow: hidden;
+  width: 65px;
+  white-space: nowrap;
+  height: 20px;
+  font-size: 12px;
+}
+/* line 129, ../sass/catalog-list.scss */
+.catalog-product-list ul li .info .title:hover, .catalog-product-list ul div.item .info .title:hover, .wishes-products-list ul li .info .title:hover, .wishes-products-list ul div.item .info .title:hover, .slide-catalog-product-list ul li .info .title:hover, .slide-catalog-product-list ul div.item .info .title:hover {
+  text-decoration: none;
+}
+/* line 134, ../sass/catalog-list.scss */
+.catalog-product-list ul li .info .price, .catalog-product-list ul div.item .info .price, .wishes-products-list ul li .info .price, .wishes-products-list ul div.item .info .price, .slide-catalog-product-list ul li .info .price, .slide-catalog-product-list ul div.item .info .price {
+  display: block;
+  position: relative;
+  top: -2px;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 146, ../sass/catalog-list.scss */
+.catalog-product-list .brand-icon, .wishes-products-list .brand-icon, .slide-catalog-product-list .brand-icon {
+  position: absolute;
+  bottom: 60px;
+  right: 0;
+  z-index: 40;
+}
+
+/* line 155, ../sass/catalog-list.scss */
+.buttons {
+  clear: both;
+  background: #dadbdc;
+  display: block;
+  float: left;
+  height: 25px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* line 165, ../sass/catalog-list.scss */
+.tocart {
+  float: right;
+}
+/* line 168, ../sass/catalog-list.scss */
+.tocart a {
+  background: url(../img/main/sale-leaders-element-cart.png) no-repeat 0 0;
+  width: 39px;
+  height: 51px;
+  display: block;
+  text-indent: -4000px;
+  float: right;
+  position: relative;
+  top: -23px;
+  right: -5px;
+}
+/* line 179, ../sass/catalog-list.scss */
+.tocart a:hover {
+  opacity: 0.70;
+  filter: alpha(opacity=70);
+}

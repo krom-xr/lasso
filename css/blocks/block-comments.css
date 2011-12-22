@@ -1,0 +1,81 @@
+/* line 1, ../../sass/blocks/block-comments.scss */
+.comments {
+  margin-bottom: 40px;
+}
+/* line 4, ../../sass/blocks/block-comments.scss */
+.comments header {
+  font-size: 20px;
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 10px;
+  color: #fff;
+  background: #5a5a5a;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+/* line 16, ../../sass/blocks/block-comments.scss */
+.comments article {
+  clear: both;
+  padding: 10px;
+  margin: 0;
+}
+/* line 21, ../../sass/blocks/block-comments.scss */
+.comments article p {
+  margin-bottom: 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+/* line 26, ../../sass/blocks/block-comments.scss */
+.comments article p .date {
+  font-weight: bold;
+}
+/* line 30, ../../sass/blocks/block-comments.scss */
+.comments article p.message {
+  font-size: 12px;
+  margin-bottom: 0;
+  text-transform: none;
+  border-bottom: 1px solid #dedede;
+  padding-bottom: 20px;
+}
+/* line 41, ../../sass/blocks/block-comments.scss */
+.comments .add-comment {
+  background: #dedede;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px;
+}
+/* line 47, ../../sass/blocks/block-comments.scss */
+.comments .add-comment legend {
+  font-size: 16px;
+  float: left;
+  display: block;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+/* line 55, ../../sass/blocks/block-comments.scss */
+.comments .add-comment dd {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  margin-top: 10px;
+}
+/* line 62, ../../sass/blocks/block-comments.scss */
+.comments .add-comment button.gray {
+  background: #5a5a5a;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+/* line 72, ../../sass/blocks/block-comments.scss */
+.comments .add-comment button.gray:focus {
+  background: #cd1442;
+}
+/* line 77, ../../sass/blocks/block-comments.scss */
+.comments .add-comment textarea.white-form {
+  width: 100%;
+}

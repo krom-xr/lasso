@@ -1,0 +1,95 @@
+/* line 2, ../sass/order.scss */
+#OrderContent {
+  margin-bottom: 40px;
+}
+/* line 6, ../sass/order.scss */
+#OrderContent .content-block header {
+  padding: 5px 10px;
+  text-align: left;
+  background: #5a5a5a;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+/* line 15, ../sass/order.scss */
+#OrderContent .content-block .order-form {
+  display: block;
+  width: 725px;
+}
+/* line 19, ../sass/order.scss */
+#OrderContent .content-block .order-form dd.aside-info {
+  padding-bottom: 10px;
+}
+/* line 23, ../sass/order.scss */
+#OrderContent .content-block .order-form dd.aside-info .comment a {
+  color: #c0061e;
+}
+/* line 29, ../sass/order.scss */
+#OrderContent .content-block .order-form dl.type-select, #OrderContent .content-block .order-form dl.cash-type-select {
+  border-bottom: 5px solid #fff;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+/* line 34, ../sass/order.scss */
+#OrderContent .content-block .order-form dl.type-select dd, #OrderContent .content-block .order-form dl.cash-type-select dd {
+  margin-bottom: 10px;
+}
+/* line 37, ../sass/order.scss */
+#OrderContent .content-block .order-form dl.type-select dd input, #OrderContent .content-block .order-form dl.cash-type-select dd input {
+  float: left;
+  margin-right: 10px;
+}
+/* line 41, ../sass/order.scss */
+#OrderContent .content-block .order-form dl.type-select dd label, #OrderContent .content-block .order-form dl.cash-type-select dd label {
+  float: left;
+  line-height: 16px;
+}
+/* line 48, ../sass/order.scss */
+#OrderContent .content-block .order-form dl.cash-type-select {
+  border-bottom: 0;
+}
+/* line 51, ../sass/order.scss */
+#OrderContent .content-block .order-form dl.cash-type-select dd {
+  margin-bottom: 0px;
+}
+/* line 56, ../sass/order.scss */
+#OrderContent .content-block .order-form dd.metro {
+  margin-top: -10px;
+}
+/* line 60, ../sass/order.scss */
+#OrderContent .content-block .order-form dd .price {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: right;
+  margin-top: 20px;
+}
+/* line 66, ../sass/order.scss */
+#OrderContent .content-block .order-form dd .comment {
+  font-size: 11px;
+  line-height: 12px;
+  text-align: left;
+  margin-left: 25px;
+  margin-top: -10px;
+}
+/* line 74, ../sass/order.scss */
+#OrderContent .content-block .order-form .jqTransformRadioWrapper label {
+  margin-top: -16px;
+}
+/* line 80, ../sass/order.scss */
+#OrderContent .content-block .go-back .save.order {
+  width: 300px;
+  background: url(../img/forms/buttons/cart-order-button.png) no-repeat top right;
+}
+/* line 84, ../sass/order.scss */
+#OrderContent .content-block .go-back .save.order:hover {
+  background-position: bottom right;
+}
+/* line 91, ../sass/order.scss */
+#OrderContent .w235, #OrderContent .w725 {
+  float: left;
+}
+/* line 94, ../sass/order.scss */
+#OrderContent .w725 {
+  margin-right: 20px;
+}

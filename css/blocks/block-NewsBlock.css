@@ -1,0 +1,99 @@
+/* line 1, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock {
+  overflow: hidden;
+  margin-bottom: 40px;
+}
+/* line 5, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock header.titles {
+  height: 30px;
+  margin-bottom: 20px;
+}
+/* line 9, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock header.titles h3 {
+  display: block;
+  width: 485px;
+  height: 30px;
+  text-indent: -3000px;
+}
+/* line 15, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock header.titles h3.thestore {
+  float: left;
+  background: url(../img/main/title-news.png) no-repeat 0 0;
+}
+/* line 20, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock header.titles h3.fun {
+  float: right;
+  background: url(../img/main/title-fun.png) no-repeat 0 0;
+}
+/* line 27, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock .w485 {
+  float: left;
+  margin-right: 10px;
+}
+/* line 31, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock .w485.right {
+  margin-right: 0;
+}
+/* line 36, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article {
+  display: block;
+  float: left;
+  margin-right: 15px;
+  width: 235px;
+  background: #eaebec;
+  font-size: 11px;
+}
+/* line 44, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article.thestore {
+  float: left;
+}
+/* line 47, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article.thestore.last {
+  margin-right: 0;
+}
+/* line 54, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article.fun {
+  float: left;
+}
+/* line 57, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article.fun.last {
+  margin-right: 0;
+}
+/* line 62, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article .text {
+  padding: 10px;
+}
+/* line 66, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article img {
+  display: block;
+  width: 235px;
+  height: auto;
+}
+/* line 72, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article h2.title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 76, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article h2.title a {
+  text-decoration: none;
+}
+/* line 79, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article h2.title a:hover {
+  text-decoration: underline;
+}
+/* line 85, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article a.more {
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 89, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article a.more:hover {
+  text-decoration: underline;
+}
+/* line 94, ../../sass/blocks/block-NewsBlock.scss */
+#NewsBlock article p {
+  font-size: 10px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}

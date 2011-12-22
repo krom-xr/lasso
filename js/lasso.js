@@ -1,6 +1,7 @@
 // объект заполнятеся при инициализации объекта Contur
 var global = {
-    start_point: {x: '', y: ''},
+    AJAX_PATH: "http://thestore.ru/fitting_room/faces/51/lasso_preview/",
+    start_point: {x: 0, y: 0},
     paper_size: {w: '', h: ''},
     dot_size: 4,
     _contur_closed: ko.observable(false),
@@ -73,18 +74,28 @@ var Dot = function(data) {
     this.toString = function() { return this.i };
 }
 
+ko.bindingHandlers.getDomEl = {
+    init: function(element, valueAccessor, allBindingsAccessor, viewModel) {
+        var value = valueAccessor();
+        value(element)
+    },
+}
+
+
 var Contur = function(data) {
     var it = this;
     this.data = data;
     this.dots = ko.observableArray();
 
-    global.start_point = data.start_point;
+    //global.start_point = data.start_point;
     global.paper_size = data.paper_size;
 
     var get_browser_offset = function(e, axis) {
         if ($.browser.opera) { return e['offset' + axis.toUpperCase()] };
         return e['layer' + axis.toUpperCase()];
     }
+
+    this.image_url = ko.observable(data.image_url);
 
     this.back_path_right = [
         ['M', data.start_point.x, data.start_point.y], 
@@ -111,11 +122,17 @@ var Contur = function(data) {
         [0, data.paper_size.h, 'z']
     ];
 
-    //this.paper = Raphael(data.start_point.x, data.start_point.y, 
-                         //data.paper_size.w, data.paper_size.h);
+    this.setStartPoint = function(element) {
+        $(it.paper.canvas).css('left', $(element).offset().left + 'px');
+        $(it.paper.canvas).css('top',  $(element).offset().top + 'px');
+    }
+
 
     this.paper = Raphael(data.start_point.x, data.start_point.y, 
                          data.paper_size.w, data.paper_size.h);
+
+    //this.paper = Raphael(50, 50, 
+                         //data.paper_size.w, data.paper_size.h);
     //this.paper = Raphael();
      
     this.back = this.paper.path();
@@ -245,52 +262,6 @@ var Contur = function(data) {
 
 
         if (global.contur_closed()) {
-            //it.paper.freeTransform(it.contur).setOpts({
-                //attrs:      { fill: 'red', stroke: 'white' },
-                //drag:       true,
-                //grid:       15,
-                //gridSnap:   15,
-                //keepRatio:  true,
-                //rotate:     false,
-                ////rotateSnap: 15,
-                //scale:      true,
-                ////showBBox:   true,
-                ////size:       5 
-            //}, function(e, data) {
-                ////console.log(it.contur);
-                ////console.log(e);
-                ////console.log(data);
-                ////console.log(it.contur._.sx);
-
-                //$.each(it.contur.attr('path'), function(i, val) {
-                    //if (val[0]!='Z') {
-                        ////it.dots()[i].x(val[1]);
-                        ////it.dots()[i].y(val[2]);
-                        ////
-                    //};
-                //})
-            //});
-
-            it.contur.mouseup(function() {
-                //console.log('test');
-                //console.log(it.contur._.sx);
-                //var k = 1.1;
-                //console.log(it.contur.attr('path'));
-                //it.contur.scale(1.1)
-                //$.each(it.contur.attr('path'), function(i, val) {
-                //$.each(it.dots(), function(i, val) {
-                    //val.x(val.x()*k);
-                    //val.y(val.y()*k);
-                //})
-                //it.paper.freeTransform(contur).unplug();
-                 
-                //console.log(it.contur.attr('path'));
-                //it.render_path();
-                //console.log(it.contur.getBBox());
-            });
-
-
-
             // эта функция определяет замкнут контур: по часовой или против.
             // если сумма sum больше 0 то по, иначе - против
             (function() {
@@ -313,7 +284,37 @@ var Contur = function(data) {
                     }
             })();
             it.back.attr('path', this.direction_path + path );
+
+            it.getPreview();
         };
+    }
+
+    var _getPoints = function() {
+        var points = Array();
+        $.each(it.dots(), function(i, dot) {
+            points.push(dot.x() + ',' + dot.y());
+        });
+        return points.join(',') ;
+    }
+
+    this.preview = ko.observable(true);
+
+    this.getPreview = function() {
+        console.log('test');
+        //$.get('http://yandex.ru');
+        _getPoints();
+        $.ajax({
+            url: global.AJAX_PATH + '?jsoncallback=?',
+            dataType: 'json',
+            data: {
+                points: _getPoints(),
+            },
+            complete: function(data) {
+            },
+            success: function(data){
+                it.preview("http://thestore.ru" + data.copped_url + '?' + Math.random());
+            }
+        })
     }
 
     this.increase = function() {
@@ -335,6 +336,10 @@ var Contur = function(data) {
         it.render_path();
     }
 
+    this.nextStep = function() {
+        if (!global.contur_closed()) { return false };
+        return true;
+    }
 
     $(document).on('newDot', function(e, dot) {
         if (!Boolean(it.dots().length)) { 
@@ -392,13 +397,14 @@ var Contur = function(data) {
     })
 
 
-    $('.clear_all').click(function() {
+    $('.clearall').click(function() {
         it.dots.removeAll();
         global.contur_closed(false);
         it.render_path();
         it.direction_path = false;
         it.back.attr('path', '');
         it.lasso_area.mousemove(lasso_area_mousemove);
+        return false;
     })
 
 

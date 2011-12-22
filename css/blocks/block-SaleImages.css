@@ -1,0 +1,167 @@
+/* line 1, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages {
+  margin-bottom: 20px;
+}
+/* line 4, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale {
+  margin-bottom: 20px;
+}
+/* line 7, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale ul.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 12, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale ul.tabs li {
+  float: left;
+  display: block;
+  margin-right: 2px;
+  height: 50px;
+}
+/* line 18, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale ul.tabs li a {
+  display: block;
+  height: 50px;
+  text-indent: -4000px;
+  background: url(../img/blocks/tabs/sale-looks.png) no-repeat;
+}
+/* line 25, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale ul.tabs li.tab-sale-leaders a {
+  width: 360px;
+  background-position: 0 -180px;
+}
+/* line 30, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale ul.tabs li.tab-sale-leaders a:hover, #BlockSaleImages .sale ul.tabs li.tab-sale-leaders.active a {
+  background-position: 0 -120px;
+}
+/* line 33, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale ul.tabs li.tab-sale-images a {
+  width: 490px;
+  background-position: 0 -60px;
+}
+/* line 38, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages .sale ul.tabs li.tab-sale-images a:hover, #BlockSaleImages .sale ul.tabs li.tab-sale-images.active a {
+  background-position: 0 0;
+}
+/* line 46, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab {
+  position: relative;
+  display: none;
+}
+/* line 50, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab.active {
+  display: block;
+}
+/* line 54, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-images {
+  width: 980px !important;
+  height: 300px;
+}
+/* line 57, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-images.active {
+  display: block;
+}
+/* line 61, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-images ul {
+  padding: 0;
+  width: 890px !important;
+}
+/* line 65, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-images ul li {
+  display: block;
+  overflow: hidden;
+  float: left;
+  height: 300px;
+  width: 170px;
+  margin-right: 10px;
+}
+/* line 73, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-images ul li.lastinline {
+  margin-right: 0;
+}
+/* line 77, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-images ul li img {
+  display: block;
+  position: relative;
+}
+/* line 86, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders {
+  width: 980px !important;
+  height: 300px !important;
+}
+/* line 91, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 {
+  padding: 0;
+  width: 890px !important;
+  overflow: hidden;
+}
+/* line 96, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li {
+  display: block;
+  overflow: hidden;
+  float: left;
+  height: 300px;
+  margin-right: 10px;
+  width: 170px;
+}
+/* line 104, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li.lastinline {
+  margin-right: 0;
+}
+/* line 108, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li .image {
+  position: relative;
+  display: block;
+  width: 168px;
+  height: 247px;
+  border: 1px solid #5a5a5a;
+}
+/* line 116, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li .info {
+  display: block;
+  background: #dadbdc;
+  margin-top: 15px;
+  height: 15px;
+  padding: 10px 5px;
+}
+/* line 124, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li .info .title {
+  display: block;
+  float: left;
+  overflow: hidden;
+  width: 65px;
+  white-space: nowrap;
+  height: 20px;
+  font-size: 12px;
+}
+/* line 134, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li .info .price {
+  display: block;
+  position: relative;
+  top: -2px;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 143, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li .info .tocart {
+  float: right;
+}
+/* line 146, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li .info .tocart a {
+  background: url(../img/main/sale-leaders-element-cart.png) no-repeat 0 0;
+  width: 39px;
+  height: 51px;
+  display: block;
+  text-indent: -4000px;
+  float: right;
+  position: relative;
+  top: -23px;
+  right: -5px;
+}
+/* line 157, ../../sass/blocks/block-SaleImages.scss */
+#BlockSaleImages section.tab .sale-leaders ul.w980 li .info .tocart a:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}

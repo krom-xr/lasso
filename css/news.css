@@ -1,0 +1,119 @@
+/* line 1, ../sass/news.scss */
+.comments {
+  margin-top: 40px;
+}
+
+/* line 5, ../sass/news.scss */
+#NewsContent {
+  margin-bottom: 40px;
+}
+/* line 8, ../sass/news.scss */
+#NewsContent .w235, #NewsContent .w725 {
+  float: left;
+}
+/* line 11, ../sass/news.scss */
+#NewsContent .w725 {
+  margin: 0 0 0 20px;
+}
+
+/* line 17, ../sass/news.scss */
+.content {
+  position: relative;
+}
+/* line 20, ../sass/news.scss */
+.content .text-content {
+  font-size: 12px;
+}
+/* line 23, ../sass/news.scss */
+.content .text-content header {
+  margin-bottom: 20px;
+}
+/* line 26, ../sass/news.scss */
+.content .text-content header h1 {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+/* line 34, ../sass/news.scss */
+.content .text-content header .date {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+/* line 41, ../sass/news.scss */
+.content .text-content ul {
+  margin-left: 20px;
+}
+/* line 44, ../sass/news.scss */
+.content .text-content ul li {
+  margin: 0 20px;
+  font-style: italic;
+  list-style: square;
+  margin-bottom: 10px;
+}
+/* line 53, ../sass/news.scss */
+.content .text-content ol {
+  margin-left: 20px;
+}
+/* line 56, ../sass/news.scss */
+.content .text-content ol li {
+  margin: 0 20px;
+  font-style: italic;
+  list-style: decimal;
+  margin-bottom: 10px;
+}
+/* line 64, ../sass/news.scss */
+.content .text-content img {
+  border: 1px solid #5a5a5a;
+  margin: 0;
+}
+/* line 68, ../sass/news.scss */
+.content .text-content img[align=right] {
+  margin-left: 10px;
+}
+/* line 72, ../sass/news.scss */
+.content .text-content img[align=left] {
+  margin-right: 10px;
+}
+/* line 77, ../sass/news.scss */
+.content .text-content p {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+/* line 81, ../sass/news.scss */
+.content .text-content p:last-child {
+  margin-bottom: 0px;
+}
+/* line 86, ../sass/news.scss */
+.content .text-content .likes {
+  margin: 0;
+  float: left;
+  overflow: hidden;
+}
+/* line 91, ../sass/news.scss */
+.content .text-content .likes .title {
+  font-size: 12px;
+  line-height: 28px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+/* line 98, ../sass/news.scss */
+.content .text-content .likes img {
+  border: 0;
+}
+/* line 102, ../sass/news.scss */
+.content .text-content .likes .twitter {
+  float: left;
+  display: block;
+  width: 28px;
+  margin-left: 10px;
+}
+/* line 108, ../sass/news.scss */
+.content .text-content .likes .facebook {
+  float: left;
+  display: block;
+  width: 28px;
+  height: 28px;
+}

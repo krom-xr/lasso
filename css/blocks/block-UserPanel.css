@@ -1,0 +1,281 @@
+/* line 4, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active {
+  width: 980px;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  padding: 0;
+  height: 70px;
+  overflow: hidden;
+}
+/* line 14, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active.display {
+  display: block;
+  overflow: hidden;
+}
+/* line 19, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li {
+  float: left;
+  background: #5a5a5a;
+  height: 70px;
+  overflow: hidden;
+  color: #fff;
+  border-right: 3px solid #fff;
+  padding: 15px 30px;
+}
+/* line 28, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+/* line 33, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li a:hover {
+  text-decoration: underline;
+}
+/* line 38, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.login-reg {
+  text-transform: uppercase;
+  width: 130px;
+}
+/* line 42, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.login-reg a.login {
+  display: inline;
+  font-size: 24px;
+  line-height: 24px;
+  padding: 0;
+  letter-spacing: 2px;
+}
+/* line 50, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.login-reg a.reg {
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: bold;
+}
+/* line 57, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu {
+  font-size: 11px;
+}
+/* line 60, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu ul {
+  width: auto;
+  float: left;
+  position: relative;
+  margin-right: 30px;
+}
+/* line 66, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu ul.last {
+  margin-right: 0;
+}
+/* line 70, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu ul li {
+  float: none;
+  height: auto;
+  margin: 0;
+  border-right: 0;
+  padding: 3px 0;
+}
+/* line 78, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu ul li a {
+  display: block;
+  color: #969696;
+}
+/* line 82, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu ul li a span {
+  background: #9a9b9b;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: #5a5a5a;
+  margin-left: 5px;
+  padding: 1px 3px;
+  font-size: 9px;
+  text-decoration: none;
+}
+/* line 94, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu ul li a:hover span {
+  text-decoration: none!important;
+}
+/* line 103, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu.logined li a {
+  color: #fff;
+}
+/* line 106, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu.logined li a span {
+  background: #fff;
+}
+/* line 111, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.user-menu.logined li a:hover span {
+  text-decoration: none!important;
+}
+/* line 120, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.bonuses {
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+}
+/* line 125, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.bonuses span {
+  font-size: 24px;
+}
+/* line 130, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.search {
+  width: 111px;
+  padding: 10px 20px;
+}
+/* line 133, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.search form {
+  margin: 15px auto;
+  width: 105px;
+}
+/* line 137, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.search .searchtext {
+  border: 0;
+  margin: 3px 0 0 0;
+  padding: 0;
+  float: left;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 14px;
+  width: 80px;
+}
+/* line 151, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.search .gosearch {
+  border: 0;
+  float: left;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: url(../img/general/icons/search.png) no-repeat 4px 5px;
+}
+/* line 167, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.hide {
+  padding: 0;
+  float: left;
+  margin-right: 0;
+  border-right: 0;
+  border-right: 0;
+  width: 40px;
+  background: #fff;
+  height: 70px;
+  text-indent: -4000px;
+}
+/* line 178, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.hide a {
+  display: block;
+  padding: 0;
+  margin: 0;
+  background: #cd1442 url(../img/general/hide.png) no-repeat 0 0;
+  width: 40px;
+  height: 70px;
+}
+/* line 186, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.hide a:hover {
+  background-position: -40px 0;
+}
+/* line 192, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.active li.hide-visible {
+  margin: 0;
+  padding: 0;
+  margin-right: 0;
+  border-right: 0;
+  background: #fff;
+  width: 40px;
+}
+/* line 204, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  height: 35px;
+  width: 194px;
+}
+/* line 214, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li {
+  float: left;
+  background: #5a5a5a;
+  height: 35px;
+  overflow: hidden;
+  float: left;
+  color: #fff;
+  border-right: 3px solid #fff;
+  padding: 5px 35px;
+}
+/* line 224, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+/* line 229, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li a:hover {
+  text-decoration: underline;
+}
+/* line 234, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li.search {
+  width: 111px;
+  padding: 5px 20px;
+}
+/* line 238, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li.search form {
+  margin: 3px auto;
+  width: 105px;
+}
+/* line 243, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li.search .searchtext {
+  border: 0;
+  margin: 3px 0 0 0;
+  padding: 0;
+  float: left;
+  background: none;
+  outline: none;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  line-height: 14px;
+  width: 80px;
+}
+/* line 257, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li.search .gosearch {
+  border: 0;
+  float: left;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  background: url(../img/general/icons/search.png) no-repeat 4px 5px;
+}
+/* line 271, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li.visible {
+  padding: 0;
+  margin-right: 0;
+  border-right: 0;
+  float: right;
+  text-indent: -4000px;
+}
+/* line 278, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li.visible a {
+  display: block;
+  background: #cd1442 url(../img/general/visible.png) no-repeat 0 0;
+  width: 40px;
+  height: 35px;
+}
+/* line 284, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive li.visible a:hover {
+  background-position: -40px 0;
+}
+/* line 291, ../../sass/blocks/block-UserPanel.scss */
+#UserPanel ul.unactive.displayme {
+  display: block;
+}

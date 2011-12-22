@@ -1,0 +1,54 @@
+/* line 3, ../sass/registration.scss */
+#RegistrationContent .w980 {
+  background: url(../img/general/registration-bg.jpg) no-repeat 290px 50px;
+  padding-bottom: 40px;
+}
+/* line 12, ../sass/registration.scss */
+#RegistrationContent .content .order-form {
+  display: block;
+}
+/* line 15, ../sass/registration.scss */
+#RegistrationContent .content .order-form dt {
+  color: #fff;
+  margin: 20px 0;
+  margin-left: -10px;
+  display: block;
+  width: 100%;
+  background: #5a5a5a;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+/* line 26, ../sass/registration.scss */
+#RegistrationContent .content .order-form dt a.add {
+  float: right;
+  background: #dedede;
+  color: #5a5a5a;
+  display: block;
+  text-decoration: none;
+  padding: 3px 10px;
+}
+/* line 34, ../sass/registration.scss */
+#RegistrationContent .content .order-form dt a.add span {
+  border-bottom: 1px dashed;
+}
+/* line 39, ../sass/registration.scss */
+#RegistrationContent .content .order-form dt a.add:hover span {
+  border-bottom: 1px solid;
+}
+/* line 50, ../sass/registration.scss */
+#RegistrationContent .go-back .save.reg {
+  background: url(../img/forms/buttons/reg-button.png) no-repeat top right;
+}
+/* line 53, ../sass/registration.scss */
+#RegistrationContent .go-back .save.reg:hover {
+  background-position: bottom right;
+}
+/* line 59, ../sass/registration.scss */
+#RegistrationContent .w235, #RegistrationContent .w485, #RegistrationContent .w220 {
+  float: left;
+}
+/* line 62, ../sass/registration.scss */
+#RegistrationContent .w485 {
+  margin: 0;
+}

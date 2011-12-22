@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/xml; charset=UTF-8" />
+    <title>Do Not Forget Edit It</title>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="js/jquery.rule.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.dragndrop.js"></script>
+
+    <script type="text/javascript" src="js/knockout.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/raphael.js"></script>
+    <script type="text/javascript" src="js/raphael.freetransform.js"></script>
+
+    <script type="text/javascript" src="js/lasso.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            contur = new Contur({
+                image_url: "temp/727_img.jpg",
+                start_point: {x: 50, y: 50},
+                paper_size: {w: 800, h: 600},
+                contur: {
+                    color: 'white',
+                    dasharray: "--..", // possible values “”, “-”, “.”, “-.”, “-..”, “. ”, “- ”, “--”, “- .”, “--.”, “--..”
+                    width: 2,
+                },
+                back: {
+                    color: 'green',
+                    opacity: 0.8,
+                },
+                lasso_area: {
+                    color: 'black',
+                    opacity: 0.5,
+                },
+                dot: {
+                    color: 'yellow',
+                    start_color: 'red',
+                    size: 6,// число должно быть четным
+                    border_radius: 2,
+                },
+                // если заполнить, то по этим точкам построится область
+                dots: [
+                    [137, 133],
+                    [512, 129],
+                    [409, 359],
+
+                ],
+                selectors: {
+                    lasso_area: '#lasso_area',
+                    dot: '.dot',
+                    start: '.dot.start'
+
+                }
+            });
+        });
+    </script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/lasso.css" media="all"/>
+
+</head> 
+<body>
+    <div id="lasso_area">
+        <div class="model" 
+            data-bind="style: {'width': data.paper_size.w + 'px', 'height': data.paper_size.h + 'px',
+                               'left': data.start_point.x + 'px', 'top': data.start_point.y + 'px',
+                               'backgroundImage': 'url(temp/727_img.jpg)'}">
+            <div class="dots" data-bind="template: {name: 'dot', foreach: dots}">
+                <script id="dot" type="text/x-jquery-tmpl" >
+                    <div class="dot" data-bind="
+                        style: {left: x() - radius + 'px', top: y() - radius + 'px',
+                            backgroundColor: test,
+                        },
+                        css: {start: show_start_dot() },
+                        event: {drag: drag, dblclick: remove }
+                        ">
+                    </div> 
+                </script>
+            </div>
+        </div>
+
+        <input type="button" name="clear_all" class="clear_all" value="очистить все">
+
+        <input type="button" name="some_name" value="+" data-bind="click: increase">
+        <input type="button" name="some_name" value="-" data-bind="click: decrease">
+
+        <form action="move_face.html" method="get" accept-charset="utf-8">
+            <div data-bind="template: {name: 'dot_input', foreach: dots}">
+                <script id="dot_input" type="text/x-jquery-tmpl" >
+                    <input type="hidden" name="dot[]" data-bind="value: x() + ':' + y()">
+                </script> 
+            </div>
+
+
+            
+        
+            <input type="submit" value="Continue &rarr;">
+        </form>
+
+
+    </div>
+</body> 
+</html> 

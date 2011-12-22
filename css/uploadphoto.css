@@ -1,0 +1,281 @@
+/* line 1, ../sass/uploadphoto.scss */
+#UploadPhotoContent {
+  margin-bottom: 40px;
+}
+/* line 4, ../sass/uploadphoto.scss */
+#UploadPhotoContent .w280, #UploadPhotoContent .w680, #UploadPhotoContent .w240, #UploadPhotoContent .w420 {
+  float: left;
+}
+/* line 8, ../sass/uploadphoto.scss */
+#UploadPhotoContent .w280, #UploadPhotoContent .w420 {
+  margin: 0 20px 0 0;
+}
+/* line 12, ../sass/uploadphoto.scss */
+#UploadPhotoContent .upload-info {
+  padding: 20px;
+  background: #dedede;
+  font-size: 14px;
+}
+/* line 18, ../sass/uploadphoto.scss */
+#UploadPhotoContent .step {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+/* line 23, ../sass/uploadphoto.scss */
+#UploadPhotoContent .step .active {
+  color: #000;
+}
+/* line 27, ../sass/uploadphoto.scss */
+#UploadPhotoContent .step .inactive {
+  color: #dedede;
+}
+/* line 32, ../sass/uploadphoto.scss */
+#UploadPhotoContent .upload {
+  margin-top: 20px;
+}
+/* line 35, ../sass/uploadphoto.scss */
+#UploadPhotoContent .upload .select-button {
+  width: 280px;
+  height: 37px;
+  background: url(../img/forms/buttons/upload-photo.png) no-repeat 0 0;
+  overflow: hidden;
+  position: relative;
+}
+/* line 42, ../sass/uploadphoto.scss */
+#UploadPhotoContent .upload .select-button .select-photo {
+  width: 290px;
+  height: 200px;
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+}
+/* line 53, ../sass/uploadphoto.scss */
+#UploadPhotoContent .upload .select-button:hover {
+  background: url(../img/forms/buttons/upload-photo.png) no-repeat 0 -40px;
+}
+/* line 57, ../sass/uploadphoto.scss */
+#UploadPhotoContent .upload .file-name {
+  margin-top: 10px;
+  display: block;
+  width: 258px;
+  padding: 5px 10px;
+  border: 1px solid #dedede;
+}
+/* line 66, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples {
+  position: relative;
+}
+/* line 69, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .lasso {
+  border: 1px solid #dedede;
+  width: 678px;
+  height: 443px;
+  overflow: hidden;
+}
+/* line 76, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples header {
+  background: #5a5a5a;
+  padding: 0 10px;
+  line-height: 28px;
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+/* line 85, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .selector {
+  width: 680px!important;
+  z-index: 20;
+  overflow: hidden;
+  height: 470px!important;
+  padding: 0;
+  background: #eaeced;
+}
+/* line 95, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .theme-px725.slider-wrapper {
+  width: 680px !important;
+}
+/* line 99, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .theme-px725 .nivoSlider {
+  width: 680px !important;
+}
+/* line 103, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .theme-px725 .nivo-caption {
+  max-width: 680px !important;
+}
+/* line 107, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .theme-px725 .nivo-caption {
+  max-width: 680px !important;
+}
+/* line 110, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .theme-px725 .nivo-directionNav a {
+  top: 445px;
+}
+/* line 114, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .theme-px725 .nivo-controlNav {
+  bottom: -45px;
+}
+/* line 118, ../sass/uploadphoto.scss */
+#UploadPhotoContent .examples .buttons {
+  background: #dadbdc;
+  display: block;
+  position: relative;
+  top: -20px;
+  height: 25px;
+  width: 100%;
+}
+/* line 129, ../sass/uploadphoto.scss */
+#UploadPhotoContent .go-back {
+  clear: both;
+  float: left;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid #dedede;
+  margin-top: 20px;
+}
+/* line 136, ../sass/uploadphoto.scss */
+#UploadPhotoContent .go-back .save.next {
+  width: 235px;
+  background: url(../img/forms/buttons/next.png) no-repeat top right;
+}
+/* line 140, ../sass/uploadphoto.scss */
+#UploadPhotoContent .go-back .save.next:hover {
+  background-position: bottom right;
+}
+/* line 145, ../sass/uploadphoto.scss */
+#UploadPhotoContent .go-back .save.prev {
+  margin-left: 0;
+  width: 360px;
+  float: left;
+  background: url(../img/forms/buttons/prev-step.png) no-repeat top right;
+}
+/* line 151, ../sass/uploadphoto.scss */
+#UploadPhotoContent .go-back .save.prev:hover {
+  background-position: bottom right;
+}
+/* line 156, ../sass/uploadphoto.scss */
+#UploadPhotoContent .go-back .save.done {
+  width: 200px;
+  background: url(../img/forms/buttons/save.png) no-repeat top right;
+}
+/* line 160, ../sass/uploadphoto.scss */
+#UploadPhotoContent .go-back .save.done:hover {
+  background-position: bottom right;
+}
+/* line 168, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content header {
+  margin-bottom: 40px;
+  height: 18px;
+}
+/* line 173, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article {
+  margin-top: 30px;
+  position: relative;
+  float: left;
+}
+/* line 178, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article header {
+  background: #5a5a5a;
+  display: block;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  margin-bottom: 20px!important;
+}
+/* line 190, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article header a {
+  text-decoration: none;
+  color: #fff;
+}
+/* line 195, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article .dressed-list {
+  float: left;
+  height: 300px;
+}
+/* line 199, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article .dressed-list ul {
+  padding: 0!important;
+  width: 725px !important;
+}
+/* line 203, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article .dressed-list ul li.list-item {
+  display: block;
+  margin-right: 15px;
+  position: relative;
+  float: left;
+  height: 300px;
+  width: 170px!important;
+}
+/* line 212, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article .dressed-list ul li.list-item.lastinline {
+  margin-right: 0;
+}
+/* line 216, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article .dressed-list ul li.list-item .image {
+  width: 168px;
+  height: 298px;
+  float: left;
+}
+/* line 222, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article .dressed-list ul li.list-item .delete {
+  display: none;
+  width: 14px;
+  height: 14px;
+  background: url(../img/general/icons/icon-delete-mini.png) no-repeat 0 -18px;
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  z-index: 40;
+}
+/* line 232, ../sass/uploadphoto.scss */
+#UploadPhotoContent .content article .dressed-list ul li.list-item .delete:hover {
+  background-position: 0 0;
+}
+/* line 242, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select {
+  float: left;
+  margin-bottom: 20px;
+}
+/* line 250, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select.color ul li {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+/* line 255, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select.color ul li img {
+  border: 1px solid #5a5a5a;
+}
+/* line 259, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select.color ul li.lastinline {
+  margin-right: 0;
+}
+/* line 266, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select label {
+  display: block;
+  margin-bottom: 3px;
+}
+/* line 271, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select .jqTransformSelectWrapper {
+  width: 240px!important;
+}
+/* line 275, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select .jqTransformSelectWrapper div span {
+  width: 235px!important;
+}
+/* line 279, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select .jqTransformSelectWrapper ul {
+  width: 240px!important;
+}
+/* line 283, ../sass/uploadphoto.scss */
+#UploadPhotoContent .select .white-form {
+  border: 1px solid #dedede;
+  width: 200px;
+}

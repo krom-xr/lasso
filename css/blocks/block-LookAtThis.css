@@ -1,0 +1,150 @@
+/* line 1, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis {
+  margin-bottom: 40px;
+}
+/* line 4, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale {
+  margin-bottom: 20px;
+}
+/* line 6, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale ul.tabs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* line 11, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale ul.tabs li {
+  float: left;
+  display: block;
+  margin-right: 2px;
+  height: 30px;
+}
+/* line 17, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale ul.tabs li a {
+  display: block;
+  height: 30px;
+  text-indent: -4000px;
+  background: url(../img/blocks/tabs/look-at-this.png) no-repeat;
+}
+/* line 24, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale ul.tabs li.tab-lookatthis a {
+  width: 269px;
+  background-position: 0 -120px;
+}
+/* line 29, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale ul.tabs li.tab-lookatthis a:hover, #BlockLookAtThis .sale ul.tabs li.tab-lookatthis.active a {
+  background-position: 0 -80px;
+}
+/* line 32, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale ul.tabs li.tab-images a {
+  width: 298px;
+  background-position: 0 -40px;
+}
+/* line 37, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis .sale ul.tabs li.tab-images a:hover, #BlockLookAtThis .sale ul.tabs li.tab-images.active a {
+  background-position: 0 0;
+}
+/* line 45, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab {
+  position: relative;
+  display: none;
+}
+/* line 49, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab.active {
+  display: block;
+}
+/* line 53, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-images {
+  overflow: hidden;
+  width: 910px !important;
+  float: left;
+  margin-left: 45px !important;
+  height: 300px;
+}
+/* line 59, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-images.active {
+  display: block;
+}
+/* line 63, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-images ul {
+  padding: 0;
+  overflow: hidden;
+}
+/* line 67, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-images ul li {
+  display: block;
+  overflow: hidden;
+  float: left;
+  height: 300px;
+  width: 180px!important;
+}
+/* line 78, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders {
+  overflow: hidden;
+  width: 910px !important;
+  float: left;
+  margin-left: 45px !important;
+  height: 300px;
+}
+/* line 86, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul {
+  padding: 0;
+  overflow: hidden;
+}
+/* line 90, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul li {
+  display: block;
+  overflow: hidden;
+  float: left;
+  height: 300px;
+  width: 180px!important;
+}
+/* line 98, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul li .info {
+  display: block;
+  background: #dadbdc;
+  margin-top: 12px;
+  height: 15px;
+  padding: 10px 5px;
+  margin-right: 10px;
+}
+/* line 106, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul li .info .title {
+  display: block;
+  float: left;
+  overflow: hidden;
+  width: 65px;
+  white-space: nowrap;
+  height: 20px;
+  font-size: 12px;
+}
+/* line 116, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul li .info .price {
+  display: block;
+  position: relative;
+  top: -2px;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 125, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul li .info .tocart {
+  float: right;
+}
+/* line 128, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul li .info .tocart a {
+  background: url(../img/main/sale-leaders-element-cart.png) no-repeat 0 0;
+  width: 39px;
+  height: 51px;
+  display: block;
+  text-indent: -4000px;
+  float: right;
+  position: relative;
+  top: -23px;
+  right: -5px;
+}
+/* line 139, ../../sass/blocks/block-LookAtThis.scss */
+#BlockLookAtThis section.tab .sale-leaders ul li .info .tocart a:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}

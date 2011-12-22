@@ -1,0 +1,131 @@
+/* line 1, ../sass/competition.scss */
+#CompetitionContent, #ToSocialContent {
+  margin-bottom: 40px;
+}
+/* line 4, ../sass/competition.scss */
+#CompetitionContent .competition-users, #ToSocialContent .competition-users {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/* line 12, ../sass/competition.scss */
+#CompetitionContent .sort-navigation, #ToSocialContent .sort-navigation {
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* line 18, ../sass/competition.scss */
+#CompetitionContent .iwant, #ToSocialContent .iwant {
+  display: block;
+  float: left;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: #c0061e;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 27, ../sass/competition.scss */
+#CompetitionContent .iwant:hover, #ToSocialContent .iwant:hover {
+  background: #5a5a5a;
+}
+/* line 34, ../sass/competition.scss */
+#CompetitionContent .dressed-list li, #ToSocialContent .dressed-list li {
+  height: 360px;
+  margin-right: 32px;
+  position: relative;
+}
+/* line 39, ../sass/competition.scss */
+#CompetitionContent .dressed-list li .tocart a, #ToSocialContent .dressed-list li .tocart a {
+  position: absolute;
+  right: -5px;
+  top: 315px;
+}
+/* line 45, ../sass/competition.scss */
+#CompetitionContent .dressed-list li.lastinline, #ToSocialContent .dressed-list li.lastinline {
+  margin-left: 1px;
+  margin-right: 0;
+}
+/* line 51, ../sass/competition.scss */
+#CompetitionContent .dressed-list span, #ToSocialContent .dressed-list span {
+  display: block;
+  float: left;
+}
+/* line 55, ../sass/competition.scss */
+#CompetitionContent .dressed-list span.look-name, #ToSocialContent .dressed-list span.look-name {
+  font-size: 12px;
+  font-weight: bold;
+}
+/* line 60, ../sass/competition.scss */
+#CompetitionContent .dressed-list span.vote, #ToSocialContent .dressed-list span.vote {
+  margin-top: 10px;
+  clear: left;
+}
+/* line 63, ../sass/competition.scss */
+#CompetitionContent .dressed-list span.vote a, #ToSocialContent .dressed-list span.vote a {
+  background: #028c33;
+  color: #fff;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+/* line 69, ../sass/competition.scss */
+#CompetitionContent .dressed-list span.vote a:hover, #ToSocialContent .dressed-list span.vote a:hover {
+  background: #5a5a5a;
+}
+/* line 78, ../sass/competition.scss */
+#CompetitionContent .competition-name, #ToSocialContent .competition-name {
+  background: none !important;
+  color: #5a5a5a !important;
+  font-size: 32px !important;
+  margin-bottom: 10px !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  line-height: 32px;
+}
+/* line 88, ../sass/competition.scss */
+#CompetitionContent .stat, #ToSocialContent .stat {
+  overflow: hidden;
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+/* line 95, ../sass/competition.scss */
+#CompetitionContent .competition-info, #ToSocialContent .competition-info {
+  margin-left: 220px;
+}
+
+/* line 100, ../sass/competition.scss */
+.content {
+  position: relative;
+}
+/* line 103, ../sass/competition.scss */
+.content .text-content {
+  font-size: 14px !important;
+}
+/* line 106, ../sass/competition.scss */
+.content .text-content header {
+  margin-bottom: 20px;
+}
+/* line 110, ../sass/competition.scss */
+.content .text-content img {
+  border: 1px solid #5a5a5a;
+  margin: 0;
+}
+/* line 114, ../sass/competition.scss */
+.content .text-content img[align=right] {
+  margin-left: 10px;
+}
+/* line 118, ../sass/competition.scss */
+.content .text-content img[align=left] {
+  margin-right: 10px;
+}
+/* line 123, ../sass/competition.scss */
+.content .text-content p {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+/* line 127, ../sass/competition.scss */
+.content .text-content p:last-child {
+  margin-bottom: 0px;
+}

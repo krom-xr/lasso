@@ -1,0 +1,25 @@
+/* line 1, ../sass/catalog.scss */
+#CatalogContent {
+  margin-bottom: 40px;
+}
+/* line 7, ../sass/catalog.scss */
+#CatalogContent .content header {
+  margin-bottom: 40px;
+  height: 18px;
+}
+/* line 11, ../sass/catalog.scss */
+#CatalogContent .content footer {
+  background: none;
+  overflow: visible;
+  height: 18px;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+/* line 20, ../sass/catalog.scss */
+#CatalogContent .w235, #CatalogContent .w725 {
+  float: left;
+}
+/* line 24, ../sass/catalog.scss */
+#CatalogContent .w725 {
+  margin-left: 20px;
+}

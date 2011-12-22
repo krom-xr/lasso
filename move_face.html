@@ -26,7 +26,34 @@
     <script type="text/javascript" src="js/move_face.js"></script>
 
 
-	<link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/lasso.css" media="all"/>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new MoveFace({
+                model: {
+                    url: "img/main/banners/big-1.jpg", 
+                    w: 420, 
+                    h: 560,
+                },
+                face: {
+                    url: "temp/face.png",
+                    w: 150,
+                    h: 180, 
+                },
+                restrict: { max: 300, min: 50 }, //ограничения по ширине
+                selectors: {
+                    model: '#model',
+                    face: '#face',
+                    face_area: '#face_area',
+                    face_img: "#face img.face",
+                    flip: "#face .flip",
+                    rotate: "#rotate",
+                    rotate_handle: "#rotate_handle .handle",
+                }
+            });
+        });
+    </script> 
 
 </head> 
 <body>

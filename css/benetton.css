@@ -1,0 +1,212 @@
+/* line 1, ../sass/benetton.scss */
+#BenettonContent, #GuideProduct {
+  margin-bottom: 40px;
+}
+/* line 5, ../sass/benetton.scss */
+#BenettonContent .w235, #BenettonContent .w725, #GuideProduct .w235, #GuideProduct .w725 {
+  float: left;
+}
+/* line 9, ../sass/benetton.scss */
+#BenettonContent .w235, #GuideProduct .w235 {
+  margin-left: 20px;
+}
+/* line 13, ../sass/benetton.scss */
+#BenettonContent article, #GuideProduct article {
+  width: 314px;
+  float: left;
+  margin-right: 19px;
+  margin-bottom: 20px;
+}
+/* line 19, ../sass/benetton.scss */
+#BenettonContent article p, #GuideProduct article p {
+  font-size: 12px;
+  line-height: 16px;
+}
+/* line 25, ../sass/benetton.scss */
+#BenettonContent article.last-in-line, #GuideProduct article.last-in-line {
+  margin-right: 0;
+}
+/* line 29, ../sass/benetton.scss */
+#BenettonContent article.first-in-next-line, #GuideProduct article.first-in-next-line {
+  clear: both;
+}
+/* line 33, ../sass/benetton.scss */
+#BenettonContent article.infopage, #GuideProduct article.infopage {
+  width: 100%;
+  float: left;
+}
+/* line 37, ../sass/benetton.scss */
+#BenettonContent article.infopage h2, #GuideProduct article.infopage h2 {
+  background: #5a5a5a;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+/* line 44, ../sass/benetton.scss */
+#BenettonContent article.infopage .symbols, #BenettonContent article.infopage .ust, #BenettonContent article.infopage .labels, #BenettonContent article.infopage .sizes, #GuideProduct article.infopage .symbols, #GuideProduct article.infopage .ust, #GuideProduct article.infopage .labels, #GuideProduct article.infopage .sizes {
+  margin: 20px 0;
+  width: 100%;
+}
+/* line 48, ../sass/benetton.scss */
+#BenettonContent article.infopage .symbols td, #BenettonContent article.infopage .ust td, #BenettonContent article.infopage .labels td, #BenettonContent article.infopage .sizes td, #GuideProduct article.infopage .symbols td, #GuideProduct article.infopage .ust td, #GuideProduct article.infopage .labels td, #GuideProduct article.infopage .sizes td {
+  vertical-align: middle;
+  text-align: left;
+}
+/* line 53, ../sass/benetton.scss */
+#BenettonContent article.infopage .symbols td.icon, #BenettonContent article.infopage .ust td.icon, #BenettonContent article.infopage .labels td.icon, #BenettonContent article.infopage .sizes td.icon, #GuideProduct article.infopage .symbols td.icon, #GuideProduct article.infopage .ust td.icon, #GuideProduct article.infopage .labels td.icon, #GuideProduct article.infopage .sizes td.icon {
+  width: 60px;
+  padding-right: 10px;
+}
+/* line 58, ../sass/benetton.scss */
+#BenettonContent article.infopage .symbols td.im, #BenettonContent article.infopage .ust td.im, #BenettonContent article.infopage .labels td.im, #BenettonContent article.infopage .sizes td.im, #GuideProduct article.infopage .symbols td.im, #GuideProduct article.infopage .ust td.im, #GuideProduct article.infopage .labels td.im, #GuideProduct article.infopage .sizes td.im {
+  width: 82px;
+  padding-right: 10px;
+}
+/* line 63, ../sass/benetton.scss */
+#BenettonContent article.infopage .symbols td.title, #BenettonContent article.infopage .ust td.title, #BenettonContent article.infopage .labels td.title, #BenettonContent article.infopage .sizes td.title, #GuideProduct article.infopage .symbols td.title, #GuideProduct article.infopage .ust td.title, #GuideProduct article.infopage .labels td.title, #GuideProduct article.infopage .sizes td.title {
+  width: 190px;
+  background: #5a5a5a;
+  padding: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+/* line 71, ../sass/benetton.scss */
+#BenettonContent article.infopage .symbols td.title.bars, #BenettonContent article.infopage .ust td.title.bars, #BenettonContent article.infopage .labels td.title.bars, #BenettonContent article.infopage .sizes td.title.bars, #GuideProduct article.infopage .symbols td.title.bars, #GuideProduct article.infopage .ust td.title.bars, #GuideProduct article.infopage .labels td.title.bars, #GuideProduct article.infopage .sizes td.title.bars {
+  width: 20px;
+}
+/* line 76, ../sass/benetton.scss */
+#BenettonContent article.infopage .symbols td.label, #BenettonContent article.infopage .ust td.label, #BenettonContent article.infopage .labels td.label, #BenettonContent article.infopage .sizes td.label, #GuideProduct article.infopage .symbols td.label, #GuideProduct article.infopage .ust td.label, #GuideProduct article.infopage .labels td.label, #GuideProduct article.infopage .sizes td.label {
+  width: 260px;
+  padding-right: 10px;
+}
+/* line 85, ../sass/benetton.scss */
+#BenettonContent article.infopage .ust td h3, #BenettonContent article.infopage .labels td h3, #GuideProduct article.infopage .ust td h3, #GuideProduct article.infopage .labels td h3 {
+  margin-top: 0;
+}
+/* line 91, ../sass/benetton.scss */
+#BenettonContent article.infopage .labels, #GuideProduct article.infopage .labels {
+  margin-bottom: 0;
+}
+/* line 93, ../sass/benetton.scss */
+#BenettonContent article.infopage .labels td, #GuideProduct article.infopage .labels td {
+  padding-bottom: 20px;
+}
+/* line 98, ../sass/benetton.scss */
+#BenettonContent article.infopage .sizes, #GuideProduct article.infopage .sizes {
+  width: auto;
+}
+/* line 101, ../sass/benetton.scss */
+#BenettonContent article.infopage .sizes th, #GuideProduct article.infopage .sizes th {
+  padding-bottom: 10px;
+  text-align: left;
+  font-size: 14px;
+}
+/* line 106, ../sass/benetton.scss */
+#BenettonContent article.infopage .sizes td, #GuideProduct article.infopage .sizes td {
+  padding: 10px;
+  border: 1px solid #fff;
+}
+/* line 112, ../sass/benetton.scss */
+#BenettonContent article.infopage ol, #GuideProduct article.infopage ol {
+  list-style: decimal;
+  margin-left: 40px;
+}
+/* line 116, ../sass/benetton.scss */
+#BenettonContent article.infopage ol li, #GuideProduct article.infopage ol li {
+  margin: 5px 0;
+}
+/* line 121, ../sass/benetton.scss */
+#BenettonContent article.infopage h3, #GuideProduct article.infopage h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 20px 0 10px 0;
+}
+/* line 131, ../sass/benetton.scss */
+#BenettonContent h2.title, #BenettonContent .guide-categories header, #GuideProduct h2.title, #GuideProduct .guide-categories header {
+  display: block;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+/* line 139, ../sass/benetton.scss */
+#BenettonContent h2.title a, #BenettonContent .guide-categories header a, #GuideProduct h2.title a, #GuideProduct .guide-categories header a {
+  display: block;
+  width: 100%;
+  padding: 5px 0;
+  color: #fff;
+  text-decoration: none;
+}
+/* line 147, ../sass/benetton.scss */
+#BenettonContent h2.title.woman, #BenettonContent .guide-categories header.woman, #GuideProduct h2.title.woman, #GuideProduct .guide-categories header.woman {
+  background: #cf0012;
+}
+/* line 151, ../sass/benetton.scss */
+#BenettonContent h2.title.man, #BenettonContent .guide-categories header.man, #GuideProduct h2.title.man, #GuideProduct .guide-categories header.man {
+  background: #e85f00;
+}
+/* line 155, ../sass/benetton.scss */
+#BenettonContent h2.title.child, #BenettonContent .guide-categories header.child, #GuideProduct h2.title.child, #GuideProduct .guide-categories header.child {
+  background: #97ce1e;
+}
+/* line 159, ../sass/benetton.scss */
+#BenettonContent h2.title.adv, #BenettonContent .guide-categories header.adv, #GuideProduct h2.title.adv, #GuideProduct .guide-categories header.adv {
+  background: #acd6b4;
+}
+/* line 163, ../sass/benetton.scss */
+#BenettonContent h2.title.ideas, #BenettonContent .guide-categories header.ideas, #GuideProduct h2.title.ideas, #GuideProduct .guide-categories header.ideas {
+  background: #ffcd00;
+}
+/* line 167, ../sass/benetton.scss */
+#BenettonContent h2.title.video, #BenettonContent .guide-categories header.video, #GuideProduct h2.title.video, #GuideProduct .guide-categories header.video {
+  background: #670067;
+}
+/* line 171, ../sass/benetton.scss */
+#BenettonContent h2.title.radio, #BenettonContent .guide-categories header.radio, #GuideProduct h2.title.radio, #GuideProduct .guide-categories header.radio {
+  background: #009a2c;
+}
+/* line 175, ../sass/benetton.scss */
+#BenettonContent h2.title.journal, #BenettonContent .guide-categories header.journal, #GuideProduct h2.title.journal, #GuideProduct .guide-categories header.journal {
+  background: #e20006;
+}
+/* line 179, ../sass/benetton.scss */
+#BenettonContent h2.title.facebook, #BenettonContent .guide-categories header.facebook, #GuideProduct h2.title.facebook, #GuideProduct .guide-categories header.facebook {
+  background: #39569a;
+}
+/* line 185, ../sass/benetton.scss */
+#BenettonContent .guide-categories header, #GuideProduct .guide-categories header {
+  text-align: left;
+  font-weight: normal;
+  background: #5a5a5a;
+  padding: 6px 0 6px 10px;
+}
+/* line 192, ../sass/benetton.scss */
+#BenettonContent .guide-categories ul li, #GuideProduct .guide-categories ul li {
+  padding: 20px 0 0 0;
+}
+/* line 195, ../sass/benetton.scss */
+#BenettonContent .guide-categories ul li h3, #GuideProduct .guide-categories ul li h3 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* line 200, ../sass/benetton.scss */
+#BenettonContent .guide-categories ul li img, #GuideProduct .guide-categories ul li img {
+  float: left;
+  margin-right: 10px;
+}
+/* line 205, ../sass/benetton.scss */
+#BenettonContent .guide-categories ul li a, #GuideProduct .guide-categories ul li a {
+  text-decoration: none;
+}
+/* line 208, ../sass/benetton.scss */
+#BenettonContent .guide-categories ul li a:hover, #GuideProduct .guide-categories ul li a:hover {
+  text-decoration: underline;
+}
+
+/* line 217, ../sass/benetton.scss */
+#GuideProduct p {
+  margin-bottom: 20px;
+}

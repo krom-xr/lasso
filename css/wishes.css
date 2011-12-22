@@ -1,0 +1,52 @@
+/* line 1, ../sass/wishes.scss */
+#WishesContent {
+  margin-bottom: 40px;
+}
+/* line 6, ../sass/wishes.scss */
+#WishesContent .content header {
+  margin-bottom: 40px;
+  height: 18px;
+}
+/* line 10, ../sass/wishes.scss */
+#WishesContent .content header p {
+  float: left;
+  width: 470px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+/* line 16, ../sass/wishes.scss */
+#WishesContent .content header p.welcome {
+  margin-top: 0;
+}
+/* line 19, ../sass/wishes.scss */
+#WishesContent .content header p.welcome .user {
+  font-size: 16px;
+}
+/* line 25, ../sass/wishes.scss */
+#WishesContent .content header .block.bonuses {
+  float: right;
+  text-align: center;
+}
+/* line 30, ../sass/wishes.scss */
+#WishesContent .content footer {
+  background: none;
+  overflow: visible;
+  height: 18px;
+  margin: 0;
+  padding: 0;
+}
+/* line 38, ../sass/wishes.scss */
+#WishesContent .content .head-sort {
+  clear: both;
+  margin: 10px 0 20px 0;
+  width: 100%;
+  float: left;
+}
+/* line 46, ../sass/wishes.scss */
+#WishesContent .w235, #WishesContent .w725 {
+  float: left;
+}
+/* line 49, ../sass/wishes.scss */
+#WishesContent .w725 {
+  margin-left: 20px;
+}

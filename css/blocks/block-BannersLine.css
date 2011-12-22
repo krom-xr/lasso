@@ -1,0 +1,194 @@
+/* line 1, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine {
+  clear: both;
+  overflow: hidden;
+  display: block;
+  margin-bottom: 20px;
+}
+/* line 7, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 {
+  position: relative;
+}
+/* line 10, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .prev-button, #BannersLine .w980 .next-button {
+  display: none;
+}
+/* line 14, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .parent {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  top: 560px;
+  left: 0;
+  padding: 20px 0;
+}
+/* line 23, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 *:first-child + html .parent span {
+  display: inline-block;
+}
+/* line 27, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 #Rotator {
+  margin: 0 auto;
+  width: auto;
+  display: table;
+  text-align: center;
+  list-style: none;
+}
+/* line 34, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 #Rotator li {
+  float: left;
+}
+/* line 37, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 #Rotator li a {
+  display: block;
+  float: left;
+  text-indent: -4000px;
+  width: 26px;
+  background: url(../img/main/banners/slider-nav.png) no-repeat right 0;
+  height: 25px;
+  margin: 0 5px;
+}
+/* line 47, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 #Rotator .current a, #BannersLine .w980 #Rotator a:hover {
+  background-position: left 0;
+}
+/* line 53, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .head-banner {
+  position: relative;
+  display: block;
+  height: 640px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+/* line 60, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .head-banner ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/* line 66, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .head-banner ul li {
+  overflow: hidden;
+}
+/* line 73, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner {
+  float: left;
+  width: 314px;
+  overflow: hidden;
+  display: block;
+  margin-right: 19px;
+}
+/* line 80, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.last {
+  margin-right: 0;
+}
+/* line 84, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner a {
+  display: block;
+  width: 314px;
+  height: 100px;
+}
+/* line 90, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton a {
+  background: url(../img/general/banners/downline-1.png) no-repeat 0 0;
+}
+/* line 93, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton a:hover {
+  opacity: 0.80;
+  filter: alpha(opacity=80);
+}
+/* line 98, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.sisley a {
+  background: url(../img/general/banners/downline-2.png) no-repeat 0 0;
+}
+/* line 101, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.sisley a:hover {
+  opacity: 0.80;
+  filter: alpha(opacity=80);
+}
+/* line 107, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.hogg a {
+  background: url(../img/general/banners/downline-3.png) no-repeat 0 0;
+}
+/* line 110, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.hogg a:hover {
+  opacity: 0.80;
+  filter: alpha(opacity=80);
+}
+/* line 119, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.benetton a {
+  background: url(../img/general/banners/downline-1-white-inactive.png) no-repeat 0 0;
+}
+/* line 122, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.benetton a:hover {
+  background: url(../img/general/banners/downline-1.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 128, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.benetton.active a {
+  background: url(../img/general/banners/downline-1.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 133, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.sisley a {
+  background: url(../img/general/banners/downline-2-white-inactive.png) no-repeat 0 0;
+}
+/* line 136, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.sisley a:hover {
+  background: url(../img/general/banners/downline-2.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 142, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.sisley.active a {
+  background: url(../img/general/banners/downline-2.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 147, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.hogg a {
+  background: url(../img/general/banners/downline-3-white-inactive.png) no-repeat 0 0;
+}
+/* line 150, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.hogg a:hover {
+  background: url(../img/general/banners/downline-3.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 155, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .down-banner.benetton-page.hogg.active a {
+  background: url(../img/general/banners/downline-3.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 164, ../../sass/blocks/block-BannersLine.scss */
+.dark #BannersLine .w980 .down-banner.benetton a {
+  background: url(../img/general/banners/downline-1-inactive.png) no-repeat 0 0;
+}
+/* line 167, ../../sass/blocks/block-BannersLine.scss */
+.dark #BannersLine .w980 .down-banner.benetton a:hover {
+  background: url(../img/general/banners/downline-1.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 173, ../../sass/blocks/block-BannersLine.scss */
+.dark #BannersLine .w980 .down-banner.sisley a {
+  background: url(../img/general/banners/downline-2-inactive.png) no-repeat 0 0;
+}
+/* line 176, ../../sass/blocks/block-BannersLine.scss */
+.dark #BannersLine .w980 .down-banner.sisley a:hover {
+  opacity: 1;
+}
+/* line 181, ../../sass/blocks/block-BannersLine.scss */
+.dark #BannersLine .w980 .down-banner.hogg a {
+  background: url(../img/general/banners/downline-3-inactive.png) no-repeat 0 0;
+}
+/* line 184, ../../sass/blocks/block-BannersLine.scss */
+.dark #BannersLine .w980 .down-banner.hogg a:hover {
+  background: url(../img/general/banners/downline-3.png) no-repeat 0 0;
+  opacity: 1;
+}
+/* line 190, ../../sass/blocks/block-BannersLine.scss */
+#BannersLine .w980 .graphic, #BannersLine .w980 #prevBtn, #BannersLine .w980 #nextBtn {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: none;
+  text-indent: -8000px;
+}

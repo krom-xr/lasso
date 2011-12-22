@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+	<title>Личный кабинет / Загрузка фото / Шаг 2</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="css/nslider.css" media="all"/>
+	<link rel="stylesheet" href="sthemes/px725/px725.css" type="text/css" media="screen" />		
+	<link rel="stylesheet" href="sthemes/px421/px421.css" type="text/css" media="screen" />		
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/jquery.cookie.js"></script>
+
+	<script type="text/javascript" src="js/nivoslider.js"></script>	
+	<script type="text/javascript" src="js/slider.js"></script>	
+	<script type="text/javascript" src="js/popups.js"></script>		
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/forms.js"></script>	
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js"></script>
+	<![endif]-->	
+	<script language="javascript">
+		$(function(){
+			$('.filter').jqTransform();
+			$('.subcategory-filter').jqTransform();
+			$('.select').jqTransform();
+			$('.open-dressed .selectors').jqTransform();
+			$('.open-product .selectors').jqTransform();
+		});			
+	</script>	
+
+
+    <!-- здесь скрипты и стили для lasso-->
+    <script type="text/javascript" src="js/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="js/jquery.rule.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.dragndrop.js"></script>
+
+    <script type="text/javascript" src="js/knockout.js"></script>
+    <script type="text/javascript" src="js/utils.js"></script>
+    <script type="text/javascript" src="js/raphael.js"></script>
+
+    <script type="text/javascript" src="js/lasso.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            contur = new Contur({
+                image_url: "http://thestore.ru/uploads/fitting_room/face/image/51/fitting_standart___C_1001D1574_f_15.jpg",
+                start_point: {x: 0, y: 0},
+                paper_size: {w: 678, h: 445},
+                contur: {
+                    color: 'white',
+                    dasharray: "--..", // possible values “”, “-”, “.”, “-.”, “-..”, “. ”, “- ”, “--”, “- .”, “--.”, “--..”
+                    width: 2,
+                },
+                back: {
+                    color: 'gray',
+                    opacity: 0.8,
+                },
+                lasso_area: {
+                    color: '',
+                    opacity: 0,
+                },
+                dot: {
+                    color: 'yellow',
+                    start_color: 'red',
+                    size: 6,// число должно быть четным
+                    border_radius: 2,
+                },
+                // если заполнить, то по этим точкам построится область
+                dots: [
+                    [137, 133],
+                    [512, 129],
+                    [409, 359],
+
+                ],
+                selectors: {
+                    lasso_area: '#lasso_area',
+                    dot: '.dot',
+                    start: '.dot.start'
+
+                }
+            });
+        });
+    </script>
+
+	<link rel="stylesheet" type="text/css" href="css/lasso.css" media="all"/>
+
+</head>
+<body>
+	<section id="rightmenu">
+		<a class="p1" href="#"><span>Бонусы</span><em></em></a>
+		<a class="p2" href="#"><span>Подобрать размер</span><em></em></a>
+		<a class="p3" href="#"><span>Правила ухода</span><em></em></a>
+		<a class="p4" href="#"><span>Видео</span><em></em></a>
+		<a class="p5" href="#"><span>Игры</span><em></em></a>
+
+		<a class="p6" href="#"><span>3D магазин</span><em></em></a>
+		<a class="p7" href="#"><span>Гаджеты</span><em></em></a>
+		<a class="p8" href="#"><span>Web-радио</span><em></em></a>		
+	</section>
+	<header id="GeneralHeader">
+
+		<section class="headinfo">
+			<div class="w980 clearfix">
+
+				<a href="#" class="logo" title="Логотип"><h1>Логотип</h1></a>
+				<div class="cartblock w130">
+					<dl class="cart">
+						<dt>В корзине:</dt>
+						<dd><a href="#">2 товара</a></dd>
+						<dd><a href="#">645 000 руб.</a></dd>
+					</dl>
+
+					<section id="OpenCart" class="popup">
+						<header>ваш заказ</header>
+						<ul>
+							<li>
+								<span class="price">9999-</span>
+								<span class="title w130">Куртка</span>
+								<span class="articule w130">Артикул: S0K123452-K</span>
+
+							</li>
+							<li>
+								<span class="price">9999-</span>
+								<span class="title w130">Куртка</span>
+								<span class="articule w130">Артикул: S0K123452-K</span>
+							</li>		
+							<li class="allprice">
+								Итого: <span class="price">9999-</span>
+
+							</li>					
+						</ul>
+						<a href="#" class="to-order">Оформить заказ</a>
+					</section>					
+				</div>			
+				<div class="w190">
+					<div class="phone">
+						<a href="#">Доставка</a>&nbsp;&nbsp;&nbsp;<a href="#">Оплата</a>&nbsp;&nbsp;&nbsp;<a href="#">Перезвоните</a>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<nav id="Main" class="bg-1">
+			<div class="w980 clearfix">
+				<ul>
+					<li class="with-submenu">
+						<a class="woman" href="#">Женская</a>
+
+						<section class="submenu woman">
+							<div class="container">
+								<ul class="brands">
+									<li><a href="#">ВСЕ БРЕНДЫ</a></li>
+									<li><a href="#" class="benetton">BENETTON</a></li>
+									<li><a href="#" class="sisley">SISLEY</a></li>
+									<li><a href="#" class="playlife">PLAYLIFE</a></li>
+
+								</ul>
+								<aside class="banner"><a href="#"><img src="img/general/menu/woman-banner.jpg" alt=""/></a></aside>
+								<ul class="cat line1">
+									<li><a href="">ПЛАТЬЯ</a></li>
+									<li><a href="#">ТОПЫ</a></li>
+									<li><a href="">ФУТБОЛКИ</a></li>
+									<li><a href="">РУБАШКИ, БЛУЗКИ</a></li>
+
+									<li><a href="">СВИТЕР</a></li>
+									<li><a href="">БРЮКИ</a></li>
+								</ul>
+								<ul class="cat line2">
+									<li><a href="">ШОРТЫ, БЕРМУДЫ</a></li>
+									<li><a href="#">ЮБКИ</a></li>
+									<li><a href="">МОНО, КОМБИНЕЗОНЫ</a></li>
+
+									<li><a href="">БЕЛЬЕ</a></li>
+									<li><a href="">КУПАЛЬНИКИ</a></li>
+								</ul>								
+							</div>
+						</section>							
+					</li>
+					<li class="with-submenu">
+						<a class="man" href="#">Мужская</a>
+
+						<section class="submenu man">
+							<div class="container">
+								<ul class="brands">
+									<li><a href="#">ВСЕ БРЕНДЫ</a></li>
+									<li><a href="#" class="benetton">BENETTON</a></li>
+									<li><a href="#" class="sisley">SISLEY</a></li>
+									<li><a href="#" class="playlife">PLAYLIFE</a></li>
+
+								</ul>
+								<aside class="banner"><a href="#"><img src="img/general/menu/man-banner.jpg" alt=""/></a></aside>
+								<ul class="cat line1">
+									<li><a href="">БРЮКИ</a></li>
+									<li><a href="#">ДЖИНСЫ</a></li>
+									<li><a href="">КОФТЫ</a></li>
+									<li><a href="">КАРДИГАНЫ</a></li>
+
+									<li><a href="">ФУТБОЛКИ И ПОЛО</a></li>
+									<li><a href="">ЖИЛЕТЫ</a></li>
+									<li><a href="">КОСТЮМЫ И ПИДЖАКИ</a></li>							
+								</ul>
+								<ul class="cat line2">
+									<li><a href="">ВЕРХНЯЯ ОДЕЖДА</a></li>
+									<li><a href="#">РУБАШКИ</a></li>
+
+									<li><a href="">ТОЛСТОВКИ</a></li>
+									<li><a href="">СВИТЕРА И ПУЛОВЕРЫ</a></li>
+									<li><a href="">ШОРТЫ</a></li>
+								</ul>
+							</div>
+						</section>							
+					</li>
+					<li><a class="child" href="#">Детская</a></li>
+
+					<li class="collection">Коллекция осень/зима 2010-2011</li>
+				</ul>			
+			</div>					
+		</nav>
+	</header>
+	
+	<section id="UploadPhotoContent">
+		<div class="w980 clearfix" id="lasso_area">
+			<nav class="bread">
+				<a href="#">THE STORE</a> |
+				<a href="#">Личный кабинет</a>
+
+			</nav>	
+			<div class="w980">
+				<nav class="step">
+					<span class="active">Загрузка фотографии</span> 
+					<span class="active"> &rarr; Вырезание лица из фотографии</span>
+					<span class="inactive"> &rarr; Вставка вашего лица в маникен</span>
+
+				</nav>
+			</div>
+			<div class="w980">
+				<section class="upload-info ontop">
+					Выделите на фотографии контур лица, используя лассо. Вы можете: устанавливать новые точки и перемещать текущие используя кнопку мыши, а так же удалять точки с помощью двойного щелчка. В итоге, вы должны замкнуть лассо. После того как вы замкнули лассо, вы можете его переместить.
+				</section>
+			<div class="w680">
+				<section class="examples">
+					<section class="lasso">
+
+						<!--<img src="img/main/banners/big-2.jpg" width="678" height="445" alt="" />-->
+                        <div class="model"  style="*background-position: center center"
+                            data-bind="style: {'width': data.paper_size.w + 'px', 'height': data.paper_size.h + 'px',
+                                               'backgroundImage': 'url(' + image_url() + ')', }, getDomEl: setStartPoint ">
+                            <div class="dots" data-bind="template: {name: 'dot', foreach: dots}">
+                                <script id="dot" type="text/x-jquery-tmpl" >
+                                    <div class="dot" data-bind="
+                                        style: {left: x() - radius + 'px', top: y() - radius + 'px',
+                                            backgroundColor: test,
+                                        },
+                                        css: {start: show_start_dot() },
+                                        event: {drag: drag, dblclick: remove }
+                                        ">
+                                    </div> 
+                                </script>
+                            </div>
+                        </div>
+
+					</section>
+				</section>
+			</div>
+			<div class="w280 toright">
+				<header class="header-title">
+					Предпросмотр
+				</header>
+					<section class="preview">
+						<img  width="278" height="360" alt="" data-bind="visible: preview, attr: {src: preview() }" />
+					</section>
+					<a href="#" class="clearall">Очистить всё</a>
+			</div>			
+				<section class="go-back">
+                    <form action="upload-photo1.html" method="get" accept-charset="utf-8">
+                        <button type="submit" class="save prev">Вернуться назад</button>
+                    </form>
+
+                    <form action="upload-photo3.html" data-bind="submit: nextStep" method="get" accept-charset="utf-8">
+                        <div data-bind="template: {name: 'dot_input', foreach: dots}">
+                            <script id="dot_input" type="text/x-jquery-tmpl" >
+                                <input type="hidden" name="dot[]" data-bind="value: x() + ':' + y()">
+                            </script> 
+                        </div>
+
+                        <button class="save next" >Продолжить</button>
+                    </form> 
+				</section>					
+			</div>
+
+		</div>
+	</section>
+	<section id="UserPanel">
+		<div class="active display">
+			<div class="w980">
+				<ul>
+					<li class="login-reg">
+						<a class="login" href="#LoginForm" name="modal">Войти</a>
+
+						<a class="reg" href="#">зарегистрироваться</a>
+					</li>
+					<li class="user-menu">
+						<ul class="col">
+						<li><a href="#">Моя примерочная (0)</a></li>
+						<li><a href="#">Мои желания (0)</a></li>
+						</ul>
+
+						<ul class="col">
+						<li><a href="#">Мой размер <span>off</span></a></li>
+						<li><a href="#">Мои заказы (0)</a></li>
+						</ul>	
+						<ul class="col last">
+						<li><a href="#">Мои игры (0)</a></li>
+						<li><a href="#">Мой 3D магазин</a></li>
+
+						</ul>						
+					</li>
+					<li class="bonuses">
+						<span>90</span> бонусов
+					</li>
+					<li class="search">
+						<form action="">
+						<input type="text" class="searchtext" onblur="if (!value) value=defaultValue" onclick="if (value==defaultValue) value=''" value="ПОИСК" />
+						<button type="submit" class="gosearch"></button>
+
+						</form>
+					</li>
+					<li class="hide-visible hide">
+						<a href="#">Свернуть</a>
+					</li>
+				</ul>
+			</div>		
+		</div>
+		<div class="user-block unactive">
+
+			<div class="w980">
+				<ul>
+					<li class="search">
+						<form action="">
+						<input type="text" class="searchtext" onblur="if (!value) value=defaultValue" onclick="if (value==defaultValue) value=''" value="ПОИСК" />
+						<button type="submit" class="gosearch"></button>
+						</form>
+					</li>
+					<li class="hide-visible visible">
+
+						<a href="#">Свернуть</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section id="LoginForm" class="popup">
+		<a href="#" class="close"></a>
+
+		<form action="#">
+			<fieldset>
+				<legend>Авторизация</legend>
+				<dl>
+					<dt></dt>
+					<dd>
+						<label for="login" class="login">Логин</label>
+						<input type="text" class="white-form" name="login" id="login" />			
+					</dd>	
+					<dd>
+
+						<label for="password">Пароль</label>
+						<input type="text" class="white-form" name="password" id="password" />									
+					</dd>
+					<dd class="error">
+						Вы ввели неверные логин или пароль.<br/>
+						<a href="#">Восстановить данные</a>
+					</dd>		
+				</dl>
+
+			</fieldset>
+			<a href="#" class="reg">зарегистрироваться</a>
+			<button type="submit">Войти</button>
+		</form>
+	</section>	
+	<footer id="GeneralFooter">
+		<div class="w980 clearfix">
+			<div class="disclaimer">
+
+				<a href="#" class="foot-logo">The Store</a>
+				<span class="foot-phone">Telephone Number</span>
+			</div>
+			<nav id="foot-menu">
+				<dl>
+					<dt>МАГАЗИН</dt>
+					<dd><a href="#">Оплата</a></dd>
+
+					<dd><a href="#">Возврат и обмен товаров</a></dd>
+					<dd><a href="#">Преимущества</a></dd>
+					<dd><a href="#">Поддержка</a></dd>
+				</dl>
+				<dl>
+					<dt>ИНФОРМАЦИЯ</dt>
+					<dd><a href="#">FAQ</a></dd>
+
+					<dd><a href="#">Адреса магазинов</a></dd>
+					<dd><a href="#">Как выбрать размер</a></dd>
+					<dd><a href="#">Обратная связь</a></dd>
+				</dl>	
+				<dl class="last">
+					<dt>О КОМПАНИИ</dt>
+					<dd><a href="#">Справка</a></dd>
+
+					<dd><a href="#">Раздел для СМИ</a></dd>
+					<dd><a href="#">Информация о компании</a></dd>
+					<dd><a href="#">Правила использования сайта</a></dd>
+				</dl>			
+			</nav>
+		</div>
+	</footer>
+	<div id="mask"></div>	
+
+<script type="text/javascript">
+jQuery(window).load(function(){
+    jQuery(".example-list").nivoSlider({
+        effect:"fade",
+        captionOpacity: 1,
+        animSpeed:200,
+        startSlide:0,
+        directionNav:true,
+        directionNavHide:false,
+        controlNav:true,
+        manualAdvance:true
+    });        
+});
+</script>	
+</body>
+</html>

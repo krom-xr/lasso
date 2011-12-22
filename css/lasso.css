@@ -1,0 +1,77 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/*path{*/
+    /*cursor: pointer;*/
+/*}*/
+#lasso_area {
+    position: relative;
+}
+#lasso_area .model {
+    position: absolute;
+    background-position: left;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+}
+.dot {
+    position: absolute !important;
+    cursor: pointer;
+    z-index: 100;
+    border: 1px solid black;
+}
+
+/*#face img.main {*/
+    /*[>padding: 40px<]*/
+/*}*/
+
+/*move face*/
+#model{
+    /*width: 600px; */
+    /*height: 800px; */
+    position: relative;
+    /*left: 200px; */
+    /*top: 50px; */
+    border: 1px solid black;
+    /*background-position: center center;*/
+
+}
+
+#face {
+    position: absolute;
+}
+
+#face .flip{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+#face_area { border: 1px solid green; padding: 4px }
+
+#rotate {
+    position: absolute; 
+    text-align: center; 
+    width: 32px; 
+    height: 32px; 
+    left: 0px; 
+    top: 0px;  
+    z-index: 200; 
+    cursor: pointer;
+    /*background-color: red;*/
+}
+#rotate_handle {
+    width: 100%; 
+    position: absolute; 
+    top: -20px;  
+    text-align: center;
+
+}
+#rotate_handle .handle { 
+    position: relative;
+    width: 15px; 
+    height: 15px;
+    background-color: green;
+    display: inline-block; 
+    border-radius: 50%
+}

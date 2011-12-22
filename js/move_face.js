@@ -43,21 +43,13 @@ var MoveFace = function(data) {
             if (data.position.top < 0) { data.position.top = 0 };
         }
     });
-    this.drag = function(e, data) {
-        if (data.position.left > it.data.model.w - $(this).width()) { data.position.left = it.data.model.w - $(this).width() };
-        if (data.position.left < 0) { data.position.left = 0 };
-
-        if (data.position.top > it.data.model.h - $(this).height()) { data.position.top = it.data.model.h - $(this).height() };
-        if (data.position.top < 0) { data.position.top = 0 };
-    }
 
     $(it.data.selectors.face_area).resizable({
         aspectRatio: true,
         maxWidth: it.data.restrict.max,
         minWidth: it.data.restrict.min,
         alsoResize: it.data.selectors.face_img,
-        resize: function() {
-            $(it.data.selectors.rotate).trigger('drag');
+        resize: function(e, data) {
         }
     });
 
@@ -66,56 +58,69 @@ var MoveFace = function(data) {
         transform();
     });
 
-    $(it.data.selectors.rotate).draggable({
-        drag: function(e, data) {
-            var R = $(it.data.selectors.face).height()/2;
-            var O = {}
-            O.x = $(it.data.selectors.face).width()/2;
-            O.y = $(it.data.selectors.face).height()/2;
-            var x_y = rotation(O, {x: data.position.left, y: data.position.top}, R + 20);
+    /* вращение объекта */
+    (function(){
+        $(it.data.selectors.rotate).draggable({
+            drag: function(e, data) {
+                var R = $(it.data.selectors.face).height()/2;
+                var O = {}
+                O.x = $(it.data.selectors.face).width()/2;
+                O.y = $(it.data.selectors.face).height()/2;
+                var x_y = rotation(O, {x: data.position.left, y: data.position.top}, R + 20);
 
-            if (x_y.l) {
-                angle = Math.atan(x_y.k)*57 + 90;
-            } else if(x_y.r){
-                angle = Math.atan(x_y.k)*57 - 90;
-            }
-            transform();
-        },
+                if (x_y.l) {
+                    angle = Math.atan(x_y.k)*57 + 90;
+                } else if(x_y.r){
+                    angle = Math.atan(x_y.k)*57 - 90;
+                }
+                transform();
+            },
+        });
+        $(it.data.selectors.rotate_handle).mouseover(function(e, data){
+            $(it.data.selectors.rotate).show();
+            $(it.data.selectors.rotate).css('left', e.pageX - $(it.data.selectors.model).position().left 
+                - $(it.data.selectors.face).position().left - 16 + 'px');
+            $(it.data.selectors.rotate).css('top' , e.pageY - $(it.data.selectors.model).position().top
+                - $(it.data.selectors.face).position().top - 16 + 'px');
+        })
+        $(it.data.selectors.rotate).mouseout(function(){
+            $(this).hide();
+        });
+    })();
+
+
+    $(it.data.selectors.model_colors).find('a').click(function() {
+
+        return false;
+    })
+
+    // выбор модели (М|Ж)
+    $(it.data.selectors.select_model).change(function(e, data) {
+        $(it.data.selectors.model).css('background', 'url(' + $(this).val().split('|')[1] + ')');
     });
 
-    $(it.data.selectors.rotate_handle).mouseover(function(e, data){
-        console.log(e);
-        $(it.data.selectors.rotate).show();
-        $(it.data.selectors.rotate).css('left', e.pageX - $(it.data.selectors.model).position().left 
-            - $(it.data.selectors.face).position().left - 16 + 'px');
-        $(it.data.selectors.rotate).css('top' , e.pageY - $(it.data.selectors.model).position().top
-            - $(it.data.selectors.face).position().top - 16 + 'px');
-    })
-    $(it.data.selectors.rotate).mouseout(function(){
-        $(this).hide();
+    // сохранение
+    $(it.data.selectors.save_form).submit(function() {
+        var form = $(this);
+
+        var img_addition_x = $(it.data.selectors.face_img).position().left;
+        var img_addition_y = $(it.data.selectors.face_img).position().top;
+        var x = $(it.data.selectors.face).position().left + img_addition_x;
+        var y = $(it.data.selectors.face).position().top + img_addition_y;
+        var _flip = flip; 
+        var _angle = _flip*angle; 
+        var width = $(it.data.selectors.face_img).width();
+        var height = $(it.data.selectors.face_img).height();
+        var sex = $(it.data.selectors.select_model).val().split('|')[0];
+        
+        form.find('input[name=x]').val(x); 
+        form.find('input[name=y]').val(y); 
+        form.find('input[name=flip]').val(_flip); 
+        form.find('input[name=angle]').val(_angle); 
+        form.find('input[name=width]').val(width); 
+        form.find('input[name=height]').val(height); 
+        form.find('input[name=sex]').val(sex); 
+
+        return false;
     });
 }
-$(document).ready(function(){
-    new MoveFace({
-        model: {
-            url: "temp/maneken.jpg", 
-            w: 600, 
-            h: 800,
-        },
-        face: {
-            url: "temp/face.png",
-            w: 150,
-            h: 180, 
-        },
-        restrict: { max: 300, min: 100 }, //ограничения по ширине
-        selectors: {
-            model: '#model',
-            face: '#face',
-            face_area: '#face_area',
-            face_img: "#face img.face",
-            flip: "#face .flip",
-            rotate: "#rotate",
-            rotate_handle: "#rotate_handle .handle",
-        }
-    });
-});

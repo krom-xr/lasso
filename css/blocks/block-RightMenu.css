@@ -1,0 +1,82 @@
+/* line 1, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories {
+  background: #fff;
+  margin-bottom: 5px;
+}
+/* line 5, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories {
+  position: relative;
+  top: -8px;
+}
+/* line 9, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li {
+  font-size: 16px;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+/* line 14, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li.active {
+  background: #5a5a5a;
+  margin-bottom: 10px;
+}
+/* line 18, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li.active a {
+  color: #fff;
+}
+/* line 21, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li.active a:hover {
+  text-decoration: none;
+}
+/* line 27, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li a {
+  padding: 5px 10px;
+  display: block;
+  text-decoration: none;
+}
+/* line 32, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li a:hover {
+  text-decoration: underline;
+}
+/* line 37, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li ul {
+  background: #dadbdc;
+  display: block;
+  padding: 10px 0 5px 0;
+}
+/* line 42, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li ul li {
+  font-size: 14px;
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+/* line 49, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li ul li label {
+  color: #959595;
+  padding-left: 8px;
+}
+/* line 53, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li ul li label.checked {
+  color: #5a5a5a;
+}
+/* line 58, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li ul li span.jqTransformCheckboxWrapper {
+  display: block;
+  float: left;
+}
+/* line 61, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li ul li a.jqTransformCheckbox {
+  background: transparent url(../img/forms/category-checkbox.png) no-repeat center top;
+  vertical-align: middle;
+  margin-top: 2px;
+  padding: 0;
+  height: 12px;
+  width: 12px;
+  display: block;
+  /*display: -moz-inline-block;*/
+}
+/* line 70, ../../sass/blocks/block-RightMenu.scss */
+#CatalogCategories ul.categories li ul li a.jqTransformCheckbox.jqTransformChecked {
+  background: transparent url(../img/forms/category-checkbox.png) no-repeat center bottom;
+}

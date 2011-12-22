@@ -1,0 +1,304 @@
+/* line 3, ../sass/common-header.scss */
+header#GeneralHeader .w980 {
+  position: relative;
+  overflow: visible;
+}
+/* line 7, ../sass/common-header.scss */
+header#GeneralHeader .headinfo {
+  height: 80px;
+}
+/* line 11, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .logo {
+  display: block;
+  float: left;
+  margin-top: 5px;
+  width: 295px;
+  height: 61px;
+  background: url(../img/general/logo.png) no-repeat;
+  text-indent: -3000px;
+}
+/* line 20, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .logo.dark {
+  background: url(../img/general/logo-dark.png) no-repeat;
+}
+/* line 25, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w190 {
+  float: right;
+}
+/* line 28, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w190 .phone {
+  margin-top: 13px;
+}
+/* line 31, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w190 .phone a {
+  text-decoration: none;
+}
+/* line 34, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w190 .phone a:hover {
+  text-decoration: underline;
+}
+/* line 41, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w130 {
+  float: right;
+  margin-right: 20px;
+}
+/* line 45, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w130 .clientmenu {
+  margin-top: 13px;
+  float: right;
+}
+/* line 49, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w130 .clientmenu li {
+  text-align: right;
+}
+/* line 52, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w130 .clientmenu li a {
+  text-decoration: none;
+}
+/* line 55, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .w130 .clientmenu li a:hover {
+  text-decoration: underline;
+}
+/* line 63, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .cartblock {
+  float: right;
+  position: relative;
+  display: block;
+  background: white url(../img/general/cart.png) no-repeat 0 0;
+  padding-left: 70px;
+}
+/* line 70, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .cartblock .cart {
+  padding-left: 10px;
+  padding-top: 10px;
+  float: left;
+  height: 70px;
+}
+/* line 76, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .cartblock .cart dt {
+  display: block;
+  margin: 0 0 5px 0;
+  font-size: 12px;
+}
+/* line 81, ../sass/common-header.scss */
+header#GeneralHeader .headinfo .cartblock .cart dd {
+  display: block;
+  font-size: 11px;
+}
+/* line 90, ../sass/common-header.scss */
+header#GeneralHeader nav#Main {
+  margin-bottom: 20px;
+  float: left;
+}
+/* line 94, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+/* line 102, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li {
+  display: block;
+  position: relative;
+  float: left;
+  margin-right: 2px;
+}
+/* line 108, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li a {
+  text-indent: -4000px;
+  display: block;
+  background: url(../img/general/menu/menu-sprite.png) no-repeat;
+}
+/* line 113, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li a.woman {
+  width: 214px;
+  height: 50px;
+  background-position: 0 -300px;
+}
+/* line 118, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li a.woman:hover, header#GeneralHeader nav#Main ul li a.woman.active {
+  background-position: 0 -240px;
+}
+/* line 122, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li a.man {
+  width: 214px;
+  height: 50px;
+  background-position: 0 -180px;
+}
+/* line 127, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li a.man:hover, header#GeneralHeader nav#Main ul li a.man.active {
+  background-position: 0 -120px;
+}
+/* line 131, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li a.child {
+  width: 214px;
+  height: 50px;
+  background-position: 0 -60px;
+}
+/* line 136, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li a.child:hover, header#GeneralHeader nav#Main ul li a.child.active {
+  background-position: 0 0px;
+}
+/* line 142, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li.collection {
+  margin-right: 0;
+  text-indent: -4000px;
+  float: right;
+  height: 50px;
+  width: 206px;
+  background: url(../img/general/season.png) no-repeat 0 7px;
+}
+/* line 151, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu {
+  position: absolute;
+  z-index: 500;
+  background: #fff;
+  width: 860px;
+  display: none;
+  top: 50px;
+  left: 0;
+}
+/* line 160, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu.man {
+  left: -180px;
+}
+/* line 163, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu.man .container {
+  border-top: 4px solid #028b33;
+}
+/* line 168, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu.child {
+  left: -380px;
+}
+/* line 171, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu.child .container {
+  border-top: 4px solid #179fea;
+}
+/* line 176, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container {
+  margin-top: 5px;
+  -moz-box-shadow: 5px 5px 10px #666666;
+  -webkit-box-shadow: 5px 5px 10px #666666;
+  -o-box-shadow: 5px 5px 10px #666666;
+  box-shadow: 5px 5px 10px #666666;
+  width: 860px;
+  float: left;
+  overflow: hidden;
+  padding: 10px 20px;
+  background: #dadbdc;
+  border-top: 4px solid #c0061e;
+  border-bottom: 2px solid #5a5a5a;
+}
+/* line 187, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container a {
+  background: none;
+  text-indent: 0;
+}
+/* line 192, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands {
+  float: left;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+}
+/* line 198, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li {
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+/* line 205, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li.to-dressed {
+  margin-right: 0;
+  float: right;
+}
+/* line 209, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li.to-dressed a {
+  color: #fff;
+  background: #5a5a5a;
+  padding: 5px 20px;
+  text-decoration: none;
+}
+/* line 215, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li.to-dressed a:hover {
+  text-decoration: none;
+  background: #cd1442;
+}
+/* line 222, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li a {
+  text-decoration: none;
+}
+/* line 225, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li a.benetton {
+  color: #028c33;
+}
+/* line 229, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li a.sisley, header#GeneralHeader nav#Main ul li .submenu .container .brands li a.hogg {
+  color: #2d2d2d;
+}
+/* line 233, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li a:hover {
+  text-decoration: underline;
+}
+/* line 238, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .brands li .title {
+  font-size: 17px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+/* line 246, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat {
+  float: left;
+  width: 180px;
+}
+/* line 250, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat li {
+  float: none;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+/* line 255, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat li a {
+  text-decoration: none;
+}
+/* line 258, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat li a:hover {
+  text-decoration: underline;
+}
+/* line 263, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat li.title {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+/* line 272, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat.general {
+  width: 340px;
+}
+/* line 276, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat .cat {
+  width: 160px;
+}
+/* line 281, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .cat.line2 {
+  margin-right: 0;
+}
+/* line 285, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .banner {
+  float: right;
+  display: none;
+}
+/* line 289, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu .container .banner.active {
+  display: block;
+}
+/* line 295, ../sass/common-header.scss */
+header#GeneralHeader nav#Main ul li .submenu.active {
+  display: block;
+}

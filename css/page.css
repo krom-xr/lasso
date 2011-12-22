@@ -1,0 +1,209 @@
+/* line 1, ../sass/page.scss */
+.comments {
+  margin-top: 40px;
+}
+
+/* line 5, ../sass/page.scss */
+#PageContent {
+  margin-bottom: 40px;
+}
+/* line 8, ../sass/page.scss */
+#PageContent .w235, #PageContent .w725 {
+  float: left;
+}
+/* line 11, ../sass/page.scss */
+#PageContent .w725 {
+  margin: 0 0 0 20px;
+}
+
+/* line 17, ../sass/page.scss */
+.content {
+  position: relative;
+}
+/* line 20, ../sass/page.scss */
+.content .text-content {
+  font-size: 12px;
+}
+/* line 23, ../sass/page.scss */
+.content .text-content header {
+  margin-bottom: 20px;
+}
+/* line 27, ../sass/page.scss */
+.content .text-content h1 {
+  display: block;
+  background: #5a5a5a;
+  padding: 10px;
+  font-size: 16px!important;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+/* line 37, ../sass/page.scss */
+.content .text-content h2, .content .text-content h3 {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 14px;
+  margin: 20px 0;
+  margin-top: 30px;
+}
+/* line 46, ../sass/page.scss */
+.content .text-content h2.size-title {
+  margin-bottom: 10px;
+}
+/* line 50, ../sass/page.scss */
+.content .text-content h3.size-title {
+  margin-top: 0;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+/* line 56, ../sass/page.scss */
+.content .text-content h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+/* line 61, ../sass/page.scss */
+.content .text-content ul {
+  margin-left: 20px;
+}
+/* line 63, ../sass/page.scss */
+.content .text-content ul li {
+  margin: 0 20px;
+  font-style: normal;
+  list-style: square;
+  margin-bottom: 10px;
+}
+/* line 71, ../sass/page.scss */
+.content .text-content .nomargin {
+  margin-bottom: 10px;
+}
+/* line 75, ../sass/page.scss */
+.content .text-content ol {
+  margin-left: 20px;
+}
+/* line 77, ../sass/page.scss */
+.content .text-content ol li {
+  margin: 0 20px;
+  font-style: normal;
+  list-style: decimal;
+  margin-bottom: 10px;
+}
+/* line 85, ../sass/page.scss */
+.content .text-content img {
+  border: 1px solid #5a5a5a;
+  margin: 0;
+}
+/* line 89, ../sass/page.scss */
+.content .text-content img[align=right] {
+  margin-left: 10px;
+}
+/* line 93, ../sass/page.scss */
+.content .text-content img[align=left] {
+  margin-right: 10px;
+}
+/* line 98, ../sass/page.scss */
+.content .text-content p {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+/* line 102, ../sass/page.scss */
+.content .text-content p:last-child {
+  margin-bottom: 0px;
+}
+/* line 108, ../sass/page.scss */
+.content .text-content .page-table {
+  width: 100%;
+  text-align: left;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+/* line 114, ../sass/page.scss */
+.content .text-content .page-table th {
+  background: #028c33;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-top: 0 !important;
+}
+/* line 122, ../sass/page.scss */
+.content .text-content .page-table td {
+  padding: 5px 10px;
+  background: #dedede;
+  text-transform: uppercase;
+}
+/* line 127, ../sass/page.scss */
+.content .text-content .page-table td.title {
+  background: #5a5a5a;
+  text-transform: none;
+  color: #fff;
+}
+/* line 134, ../sass/page.scss */
+.content .text-content .page-table th, .content .text-content .page-table td {
+  border: 2px solid #fff;
+  border-right: 3px solid #fff;
+}
+/* line 139, ../sass/page.scss */
+.content .text-content .page-table.bonuses {
+  width: auto;
+}
+/* line 142, ../sass/page.scss */
+.content .text-content .page-table.bonuses th {
+  background: #5a5a5a;
+  text-transform: none;
+  font-weight: bold;
+}
+/* line 148, ../sass/page.scss */
+.content .text-content .page-table.bonuses td {
+  text-transform: none;
+}
+/* line 153, ../sass/page.scss */
+.content .text-content .page-table.sizes {
+  width: 80%;
+}
+/* line 156, ../sass/page.scss */
+.content .text-content .page-table.sizes th {
+  background: #cd1e2f;
+  vertical-align: middle;
+  text-align: center;
+}
+/* line 162, ../sass/page.scss */
+.content .text-content .page-table.sizes.man th {
+  background: #009a42;
+}
+/* line 166, ../sass/page.scss */
+.content .text-content .page-table.sizes.child {
+  width: 100%;
+}
+/* line 170, ../sass/page.scss */
+.content .text-content .page-table.sizes.child th {
+  background: #008ad4;
+}
+/* line 174, ../sass/page.scss */
+.content .text-content .page-table.sizes.child th, .content .text-content .page-table.sizes.child td {
+  padding: 5px 7px;
+  font-size: 11px;
+}
+/* line 179, ../sass/page.scss */
+.content .text-content .page-table.sizes td {
+  text-align: center;
+}
+/* line 183, ../sass/page.scss */
+.content .text-content .page-table.sizes .left {
+  text-align: left;
+}
+/* line 190, ../sass/page.scss */
+.content .text-content .attention {
+  display: block;
+  padding: 10px;
+  background: #c0061e;
+  color: #fff;
+  margin-bottom: 20px;
+}
+/* line 197, ../sass/page.scss */
+.content .text-content .attention strong {
+  display: block;
+}
+/* line 201, ../sass/page.scss */
+.content .text-content .attention.green {
+  background: #028c33;
+}

@@ -1,0 +1,54 @@
+/* line 3, ../../sass/blocks/block-gray.scss */
+.block.dark {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+/* line 8, ../../sass/blocks/block-gray.scss */
+.block.dark h2 {
+  font-size: 18px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 10px;
+  line-height: 26px;
+}
+/* line 16, ../../sass/blocks/block-gray.scss */
+.block.dark h2 span {
+  display: block;
+}
+/* line 21, ../../sass/blocks/block-gray.scss */
+.block.dark img {
+  display: block;
+}
+/* line 25, ../../sass/blocks/block-gray.scss */
+.block.dark.radio {
+  background: url(../img/sisley/image-radio-block.png) no-repeat;
+  padding: 25px 25px 25px 90px;
+  font-size: 12px;
+  color: #fff;
+  overflow: hidden;
+}
+/* line 32, ../../sass/blocks/block-gray.scss */
+.block.dark.radio span {
+  color: #fb44d1;
+}
+/* line 36, ../../sass/blocks/block-gray.scss */
+.block.dark.radio .open {
+  display: block;
+  float: right;
+  margin-top: 3px;
+  background: #fb44d1;
+}
+/* line 42, ../../sass/blocks/block-gray.scss */
+.block.dark.radio .open a {
+  color: #fff;
+  display: block;
+  font-size: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  background: url(../img/general/icons/minidot.png) no-repeat right 7px;
+  padding: 5px 10px 5px 0px;
+  margin: 0 10px;
+}
