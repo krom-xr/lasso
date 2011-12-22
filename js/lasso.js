@@ -64,6 +64,10 @@ var Dot = function(data) {
         return true;
     }
 
+    this.mouseup = function() {
+        $(document).trigger('previewUpdate');
+    }
+
 
     this.remove = function(e, dot) {
         $(document).trigger('removeDot', this);
@@ -172,30 +176,46 @@ var Contur = function(data) {
     this.lasso_area.mousedown(lasso_area_mousdown);
     this.contur.mousedown(lasso_area_mousdown);
 
-    /* Очень, очень плохая музыка */
-    this.temporary = Array(); //ko.observableArray();
-    this.testmove = function(x, y, a, b, e) {
+    /* драгндроп для контура */
+    var _temporary = Array(); //ko.observableArray();
+    var _x = false;
+    var _y = false;
+    var _can_move = false;
+    this.dragContur = function(x, y, a, b, e) {
+        var delay = 40;
         if (!global.contur_closed()) { return false };
+        if (!global.contur_closed()) { return false };
+        if(!_can_move) {
+            if (Math.abs(_x - e.clientX) > delay || Math.abs(_y - e.clientY) > delay) { _can_move = true };
+        }
+        if (!_can_move) { return false };
         $.each(it.dots(), function(i, dot) {
-            var newx = it.temporary[i].x + x;
-            var newy = it.temporary[i].y + y;
+            var newx = _temporary[i].x + x;
+            var newy = _temporary[i].y + y;
             dot.x(newx);
             dot.y(newy);
         });
         it.render_path();
     }
-    this.startt = function() {
+    this.startDragContur = function(_,_,e) {
         if (!global.contur_closed()) { return false };
+        _x = e.clientX;
+        _y = e.clientY;
+
         $.each(it.dots(), function(i, dot) {
-            it.temporary.push({x: dot.x(), y: dot.y()});
+            _temporary.push({x: dot.x(), y: dot.y()});
         })
     }
-    this.stopp = function() {
+    this.stopDragContur = function() {
         if (!global.contur_closed()) { return false };
-        it.temporary = Array();//([]);
+        _x = false;
+        _y = false;
+        _can_move = false;
+        _temporary = Array();//([]);
+        $(document).trigger('previewUpdate');
     }
-    this.contur.drag(this.testmove, this.startt, this.stopp);
-    /* end Очень, очень плохая музыка */
+    this.contur.drag(this.dragContur, this.startDragContur, this.stopDragContur);
+    /* end драгндроп для контура */
 
 
     var lasso_area_mousemove = function(e) {
@@ -284,10 +304,13 @@ var Contur = function(data) {
                     }
             })();
             it.back.attr('path', this.direction_path + path );
-
-            it.getPreview();
         };
     }
+
+    $(document).on('previewUpdate', function() {
+        if (!global.contur_closed()) { return false };
+        it.getPreview();
+    })
 
     var _getPoints = function() {
         var points = Array();
@@ -296,13 +319,8 @@ var Contur = function(data) {
         });
         return points.join(',') ;
     }
-
     this.preview = ko.observable(true);
-
     this.getPreview = function() {
-        console.log('test');
-        //$.get('http://yandex.ru');
-        _getPoints();
         $.ajax({
             url: global.AJAX_PATH + '?jsoncallback=?',
             dataType: 'json',
@@ -324,7 +342,6 @@ var Contur = function(data) {
             dot.y(dot.y() * 1.01);
         })
         it.render_path();
-        //console.log('test');
     }
 
     this.decrease = function() {
@@ -441,6 +458,7 @@ var Contur = function(data) {
             if (i == last_index) { global.contur_closed(true) };
         });
         it.render_path();
+        $(document).trigger('previewUpdate');
     }
     if (data.dots) { this.add_dots(data.dots) };
 }
