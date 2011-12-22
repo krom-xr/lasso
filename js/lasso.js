@@ -146,7 +146,7 @@ var Contur = function(data) {
 
     this.lasso_area = this.paper.rect(0, 0, 
                                       data.paper_size.w, data.paper_size.h);
-    this.lasso_area.attr('fill', data.lasso_area.color);
+    this.lasso_area.attr('fill', data.lasso_area.color || "black");
     this.lasso_area.attr('opacity', data.lasso_area.opacity);
 
 
@@ -154,8 +154,8 @@ var Contur = function(data) {
     this.contur.attr('stroke', data.contur.color);
     this.contur.attr('stroke-dasharray', data.contur.dasharray);
     this.contur.attr('stroke-width', data.contur.width);
-    this.contur.attr('fill', 'blue');
-    this.contur.attr('fill-opacity', 0.3);
+    //this.contur.attr('fill', 'blue');
+    //this.contur.attr('fill-opacity', 0.3);
 
 
 
@@ -417,10 +417,10 @@ var Contur = function(data) {
     $('.clearall').click(function() {
         it.dots.removeAll();
         global.contur_closed(false);
-        it.render_path();
         it.direction_path = false;
         it.back.attr('path', '');
-        it.lasso_area.mousemove(lasso_area_mousemove);
+        //it.lasso_area.mousemove(lasso_area_mousemove);
+        it.render_path();
         return false;
     })
 
