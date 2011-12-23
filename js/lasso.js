@@ -386,6 +386,7 @@ var Contur = function(data) {
             it.dots()[it.dots().length -1].stop = true;         
             global.contur_closed(true);
             it.render_path();
+            $(document).trigger('previewUpdate');
         }
     })
 
