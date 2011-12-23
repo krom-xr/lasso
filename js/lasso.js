@@ -154,8 +154,8 @@ var Contur = function(data) {
     this.contur.attr('stroke', data.contur.color);
     this.contur.attr('stroke-dasharray', data.contur.dasharray);
     this.contur.attr('stroke-width', data.contur.width);
-    //this.contur.attr('fill', 'blue');
-    //this.contur.attr('fill-opacity', 0.3);
+    this.contur.attr('fill', 'black');
+    this.contur.attr('fill-opacity', 0);
 
 
 
@@ -312,7 +312,7 @@ var Contur = function(data) {
         it.getPreview();
     })
 
-    var _getPoints = function() {
+    this.getPoints = function() {
         var points = Array();
         $.each(it.dots(), function(i, dot) {
             points.push(dot.x() + ',' + dot.y());
@@ -325,12 +325,12 @@ var Contur = function(data) {
             url: global.AJAX_PATH + '?jsoncallback=?',
             dataType: 'json',
             data: {
-                points: _getPoints(),
+                points: it.getPoints(),
             },
             complete: function(data) {
             },
             success: function(data){
-                it.preview("http://thestore.ru" + data.copped_url + '?' + Math.random());
+                it.preview("http://thestore.ru" + data.cropped_url + '?' + Math.random());
             }
         })
     }

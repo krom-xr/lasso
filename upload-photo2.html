@@ -58,7 +58,7 @@
                     opacity: 0.8,
                 },
                 lasso_area: {
-                    color: '',
+                    color: 'black',
                     opacity: 0,
                 },
                 dot: {
@@ -280,12 +280,7 @@
                     </form>
 
                     <form action="upload-photo3.html" data-bind="submit: nextStep" method="get" accept-charset="utf-8">
-                        <div data-bind="template: {name: 'dot_input', foreach: dots}">
-                            <script id="dot_input" type="text/x-jquery-tmpl" >
-                                <input type="hidden" name="dot[]" data-bind="value: x() + ':' + y()">
-                            </script> 
-                        </div>
-
+                        <input type="hidden" name="points" data-bind="value: getPoints()">
                         <button class="save next" >Продолжить</button>
                     </form> 
 				</section>					

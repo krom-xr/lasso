@@ -88,15 +88,28 @@ var MoveFace = function(data) {
         });
     })();
 
+    var set_image = function(sex) {
+        var model_url = $(it.data.selectors.model_colors).find('.' + sex + '.active').find('a').attr('href');
+        $(it.data.selectors.model).css('background-image', 'url(' + model_url + ')');
+        $(it.data.selectors.model_colors).find('li').hide();
+        $(it.data.selectors.model_colors).find('li.' + sex).show();
+    }
+    //set_image($(it.data.selectors.select_model).val());
 
     $(it.data.selectors.model_colors).find('a').click(function() {
-
+        var current_model = $(it.data.selectors.select_model).val();
+        var it_li = $(this).parent('li');
+        it_li.addClass('active');
+        $(it.data.selectors.model_colors).find('li.' + current_model).each(function(i, li) {
+            if (li != it_li.get(0)) { $(li).removeClass('active')};
+        });
+        $(it.data.selectors.model).css('background-image', 'url(' + $(this).attr('href') + ')');
         return false;
     })
 
     // выбор модели (М|Ж)
     $(it.data.selectors.select_model).change(function(e, data) {
-        $(it.data.selectors.model).css('background', 'url(' + $(this).val().split('|')[1] + ')');
+        set_image($(this).val())
     });
 
     // сохранение
@@ -111,7 +124,8 @@ var MoveFace = function(data) {
         var _angle = _flip*angle; 
         var width = $(it.data.selectors.face_img).width();
         var height = $(it.data.selectors.face_img).height();
-        var sex = $(it.data.selectors.select_model).val().split('|')[0];
+        var sex = $(it.data.selectors.select_model).val;
+        var model_color = $(it.data.selectors.model_colors).find('.' + sex + '.active').find('a').attr('href');
         
         form.find('input[name=x]').val(x); 
         form.find('input[name=y]').val(y); 
@@ -120,6 +134,7 @@ var MoveFace = function(data) {
         form.find('input[name=width]').val(width); 
         form.find('input[name=height]').val(height); 
         form.find('input[name=sex]').val(sex); 
+        form.find('input[name=model_color]').val(model_color); 
 
         return false;
     });
